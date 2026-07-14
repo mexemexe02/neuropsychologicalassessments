@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F6F2"/>
+  <circle cx="1035" cy="105" r="300" fill="#DCE8E9"/>
+  <path d="M880 630C880 424.55 1029.1 258 1213 258V630H880Z" fill="#365D6B" fill-opacity=".18"/>
+  <circle cx="105" cy="104" r="31" stroke="#18343E" stroke-width="2"/>
+  <path d="M93 111C97.2 99.75 105.15 93.75 117 89.7M93.3 114.9C101.7 116.25 109.5 113.85 116.7 107.85" stroke="#18343E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="97.5" cy="100" r="1.8" fill="#18343E"/>
+  <text x="154" y="95" fill="#18343E" font-family="Georgia, serif" font-size="28">Neuropsychological</text>
+  <text x="155" y="123" fill="#536267" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="4">ASSESSMENTS</text>
+  <text x="94" y="333" fill="#16242A" font-family="Georgia, serif" font-size="88" letter-spacing="-4">Clarity for what</text>
+  <text x="94" y="423" fill="#16242A" font-family="Georgia, serif" font-size="88" letter-spacing="-4">comes next.</text>
+  <text x="98" y="505" fill="#536267" font-family="Arial, sans-serif" font-size="22">Assessment and psychotherapy for ages 4 to 90</text>
+</svg>

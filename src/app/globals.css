@@ -1,0 +1,13 @@
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/newsreader";
+@import "tailwindcss";
+@import "../styles/base.css";
+@import "../styles/navigation.css";
+@import "../styles/components.css";
+@import "../styles/pages.css";
+@import "../styles/content.css";
+@import "../styles/forms.css";
+@import "../styles/booking.css";
+@import "../styles/responsive.css";
+@import "../styles/booking-responsive.css";
+@import "../styles/demo-notice.css";

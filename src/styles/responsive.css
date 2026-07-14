@@ -1,0 +1,182 @@
+@media (max-width: 960px) {
+  :root {
+    --shell: min(100% - 36px, 760px);
+  }
+
+  .site-header__inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .desktop-nav,
+  .desktop-book {
+    display: none;
+  }
+
+  .menu-button {
+    display: grid;
+    place-items: center;
+  }
+
+  .page-hero__grid,
+  .home-hero__intro,
+  .intro-grid,
+  .split-grid,
+  .content-header,
+  .contact-layout,
+  .privacy-copy {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .page-hero__intro,
+  .intro-copy {
+    padding-top: 0;
+  }
+
+  .consultation-cta {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .service-plane__footer {
+    grid-template-columns: 1fr;
+  }
+
+  .area-grid,
+  .resource-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .area-item:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .area-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .timeline-row {
+    grid-template-columns: 3rem 0.7fr 1.3fr;
+    gap: 1.5rem;
+  }
+
+  .clinician {
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 3rem;
+  }
+
+  .contact-details {
+    position: static;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --shell: calc(100% - 28px);
+    --radius-lg: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(3.3rem, 16vw, 5.4rem);
+  }
+
+  .section {
+    padding-block: 5.5rem;
+  }
+
+  .home-hero {
+    min-height: 94svh;
+    padding-top: 8.5rem;
+  }
+
+  .home-hero::after {
+    width: 68vw;
+    height: 38vh;
+  }
+
+  .home-hero__content {
+    justify-content: flex-start;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  .service-plane {
+    min-height: 38rem;
+    padding: 2rem;
+  }
+
+  .service-plane__content {
+    min-height: 34rem;
+  }
+
+  .steps,
+  .area-grid,
+  .resource-grid,
+  .clinician,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    margin-top: 3rem;
+  }
+
+  .step,
+  .step + .step {
+    min-height: auto;
+    padding: 1.8rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step span {
+    margin-bottom: 2rem;
+  }
+
+  .area-item,
+  .area-item:nth-child(3n) {
+    min-height: 6rem;
+    border-right: 0;
+  }
+
+  .timeline-row {
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .timeline-row p {
+    grid-column: 2;
+  }
+
+  .portrait-placeholder {
+    max-width: 28rem;
+  }
+
+  .detail-list {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-cta {
+    padding: 2rem;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__legal {
+    flex-wrap: wrap;
+  }
+}
