@@ -1,8 +1,9 @@
-@media (max-width: 960px) {
-  :root {
-    --shell: min(100% - 36px, 760px);
-  }
-
+/*
+ * Collapse the header nav earlier, and also on touch phones.
+ * Android “Desktop site” often reports ~980–1200px width, which used to
+ * keep the tiny desktop nav visible on a real Galaxy/S24 screen.
+ */
+@media (max-width: 1100px), ((hover: none) and (pointer: coarse)) {
   .site-header__inner {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.75rem;
@@ -10,13 +11,24 @@
 
   .desktop-nav,
   .desktop-book {
-    display: none;
+    display: none !important;
   }
 
   .menu-button {
-    display: grid;
+    display: grid !important;
     place-items: center;
     flex-shrink: 0;
+  }
+
+  .brand-lockup {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --shell: min(100% - 36px, 760px);
   }
 
   .brand-lockup {
