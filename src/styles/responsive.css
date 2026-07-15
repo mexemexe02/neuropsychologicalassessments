@@ -96,7 +96,13 @@
   }
 }
 
-@media (max-width: 960px) {
+/*
+ * Tablet / narrow layout. Also apply on touch phones when Chrome’s
+ * “Desktop site” lies about width (~980px) — otherwise S24 keeps
+ * multi-column desktop grids and looks nothing like a phone layout.
+ */
+@media (max-width: 960px),
+  ((hover: none) and (pointer: coarse) and (max-width: 1200px)) {
   :root {
     --shell: min(100% - 36px, 760px);
   }
@@ -188,7 +194,13 @@
   }
 }
 
-@media (max-width: 640px) {
+/*
+ * True phone layout (single column + larger type).
+ * Include coarse-pointer phones up to 1200px so Android desktop-mode
+ * still gets the real mobile sizing, not a shrunk desktop page.
+ */
+@media (max-width: 640px),
+  ((hover: none) and (pointer: coarse) and (max-width: 1200px)) {
   :root {
     /* Slightly more side room, but type scales via html rem below. */
     --shell: calc(100% - 32px);

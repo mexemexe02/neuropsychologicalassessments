@@ -269,3 +269,14 @@ Header brand was still too small on phone. Stacked logo + name so a true
 
 ### Files Changed
 - `src/styles/responsive.css` — stacked phone brand lockup + hero/menu top padding
+
+## 2026-07-15 — Force real phone layout on S24 desktop-mode
+
+### Summary
+S24 was showing full desktop width (not shrunk mobile). Most phone CSS only
+used max-width 640/960; Android “Desktop site” reports ~980px so grids stayed
+desktop. Extended 640/960 breakpoints with coarse-pointer + max-width 1200px.
+
+### Files Changed
+- `src/styles/responsive.css`
+- `src/styles/booking-responsive.css`
