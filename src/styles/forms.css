@@ -1,8 +1,14 @@
 .contact-layout {
   display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
   gap: clamp(3rem, 8vw, 8rem);
   align-items: start;
+  min-width: 0;
+}
+
+/* Grid items default to min-width:auto and can force phone overflow. */
+.contact-layout > * {
+  min-width: 0;
 }
 
 .contact-details {
@@ -22,13 +28,21 @@
 
 .contact-methods a {
   display: grid;
-  grid-template-columns: 2.8rem 1fr;
+  grid-template-columns: 2.8rem minmax(0, 1fr);
   gap: 1rem;
   align-items: center;
+  min-width: 0;
   padding: 1rem 0;
   border-top: 1px solid var(--line);
   font-size: 0.79rem;
   font-weight: 700;
+}
+
+/* Long practice email must wrap inside the phone column. */
+.contact-methods a > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-methods a:last-child {
@@ -61,6 +75,8 @@
 .booking-details input,
 .booking-details textarea {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   padding: 0 1rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -122,6 +138,11 @@
 
 .privacy-copy article h2 {
   font-size: 2.2rem;
+}
+
+.privacy-copy a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .privacy-copy article p,

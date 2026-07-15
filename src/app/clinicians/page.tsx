@@ -4,42 +4,73 @@ import { ConsultationCta } from "@/components/consultation-cta";
 import { PageHero } from "@/components/page-hero";
 import { PortraitPlaceholder } from "@/components/portrait-placeholder";
 import { Reveal } from "@/components/reveal";
+// Static import so GitHub Pages basePath/assetPrefix is applied automatically.
+import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
 
 export const metadata: Metadata = {
-  title: "Meet Our Clinicians",
+  title: "Clinicians",
   description:
     "Meet Dr. Sylvie Sauriol, neuropsychologist, and Sebastian Jose, registered psychotherapist (qualifying).",
   alternates: { canonical: "/clinicians" },
 };
 
+const sauriolFocus = [
+  "Comprehensive neuropsychological assessment",
+  "Attention and executive functioning",
+  "Learning and academic concerns",
+  "Developmental and neurodivergent conditions",
+  "Memory and cognitive changes",
+  "Medical and neurological conditions",
+  "Emotional and behavioural functioning",
+  "Diagnostic clarification",
+  "Individualized recommendations for school, work, treatment, and daily life",
+] as const;
+
+const joseFocus = [
+  "Anxiety and persistent worry",
+  "Depression and reduced motivation",
+  "Trauma and post-traumatic stress",
+  "Grief, loss, and adjustment",
+  "Stress and occupational burnout",
+  "Anger and emotional regulation",
+  "Attachment and relationship concerns",
+  "Self-esteem, identity, and life transitions",
+  "Adjustment to illness, injury, or changes in functioning",
+] as const;
+
 export default function CliniciansPage() {
   return (
     <>
       <PageHero
-        eyebrow="Meet our clinicians"
+        eyebrow="Clinicians"
         title={<>Experienced care. A collaborative approach.</>}
-        intro="Our clinicians bring complementary experience in neuropsychological assessment, psychotherapy, mental health, and person-centred care. We are committed to providing services that are thoughtful, evidence-informed, respectful, and clearly explained."
-      />
-
-      <section className="section section--soft">
-        <div className="shell">
-          <Reveal className="intro-copy intro-copy--narrow">
+        intro={
+          <>
+            <p className="lead">
+              Our clinicians bring complementary experience in
+              neuropsychological assessment, psychotherapy, mental health, and
+              person-centred care. We are committed to providing services that
+              are thoughtful, evidence-informed, respectful, and clearly
+              explained.
+            </p>
             <p>
               Each service is provided within the clinician&apos;s professional
               role and scope of practice. When collaboration or supervision is
               part of the service, this will be explained before care begins.
             </p>
-          </Reveal>
+          </>
+        }
+      />
 
+      <section className="section section--soft">
+        <div className="shell">
           <article className="clinician">
             <Reveal>
               {/* TEMP: Replace with Dr. Sauriol’s approved headshot when it arrives. */}
               <PortraitPlaceholder initials="SS" />
             </Reveal>
             <Reveal className="clinician__bio" delay={100}>
-              <p className="eyebrow">Neuropsychology</p>
-              <h2>Dr. Sylvie Sauriol, Psy.D.</h2>
-              <p className="clinician__credentials">Neuropsychologist</p>
+              <h2>Dr. Sylvie Sauriol, Psy.D. Neuropsychologist</h2>
               <p>
                 Dr. Sylvie Sauriol is a psychologist with 20 years of experience
                 in neuropsychological assessment. Her work focuses on
@@ -59,19 +90,15 @@ export default function CliniciansPage() {
                 Her approach emphasizes careful clinical interpretation, clear
                 communication, and practical recommendations. Assessment findings
                 are considered within the individual&apos;s broader life context
-                rather than interpreted as isolated test scores. Services are
-                available in English and French.
+                rather than interpreted as isolated test scores.
+              </p>
+              <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
+                Areas of professional focus
               </p>
               <ul className="detail-list">
-                <li>Comprehensive neuropsychological assessment</li>
-                <li>Attention and executive functioning</li>
-                <li>Learning and academic concerns</li>
-                <li>Developmental and neurodivergent conditions</li>
-                <li>Memory and cognitive changes</li>
-                <li>Medical and neurological conditions</li>
-                <li>Emotional and behavioural functioning</li>
-                <li>Diagnostic clarification</li>
-                <li>Services in English and French</li>
+                {sauriolFocus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </Reveal>
           </article>
@@ -80,21 +107,17 @@ export default function CliniciansPage() {
             <Reveal>
               <div className="portrait-photo">
                 <Image
-                  src="/images/sebastian-jose-headshot.jpg"
+                  src={sebastianHeadshot}
                   alt="Sebastian Jose, Registered Psychotherapist (Qualifying)"
-                  width={720}
-                  height={900}
+                  fill
+                  sizes="(max-width: 960px) min(90vw, 22rem), 28vw"
                   className="portrait-photo__img"
                   priority
                 />
               </div>
             </Reveal>
             <Reveal className="clinician__bio" delay={100}>
-              <p className="eyebrow">Psychotherapy</p>
               <h2>Sebastian Jose, MPsy, MTh, RPQ</h2>
-              <p className="clinician__credentials">
-                Registered Psychotherapist (Qualifying)
-              </p>
               <p>
                 Sebastian Jose is a Registered Psychotherapist (Qualifying) who
                 provides psychotherapy for adults and contributes to
@@ -117,23 +140,19 @@ export default function CliniciansPage() {
                 approach that respects each client&apos;s values, culture,
                 beliefs, and lived experience.
               </p>
+              <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
+                Areas of professional focus
+              </p>
               <ul className="detail-list">
-                <li>Anxiety and persistent worry</li>
-                <li>Depression and reduced motivation</li>
-                <li>Trauma and post-traumatic stress</li>
-                <li>Grief, loss, and adjustment</li>
-                <li>Stress and occupational burnout</li>
-                <li>Anger and emotional regulation</li>
-                <li>Attachment and relationship concerns</li>
-                <li>Self-esteem, identity, and life transitions</li>
-                <li>Adjustment to illness, injury, or changes in functioning</li>
+                {joseFocus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </Reveal>
           </article>
 
           <Reveal className="intro-copy clinician-closing">
-            <p className="eyebrow">Our collaborative approach</p>
-            <h2>Clear questions. Useful next steps.</h2>
+            <h2>Our collaborative approach</h2>
             <p>
               Good care depends on a clear understanding of the question being
               asked. We take time to identify the purpose of the service, explain
@@ -145,11 +164,17 @@ export default function CliniciansPage() {
               providers, or other professionals involved in the individual&apos;s
               care.
             </p>
+            <p>
+              We aim to communicate in language that is accurate, accessible, and
+              useful. Our goal is not only to describe concerns, but also to
+              identify strengths, practical supports, and meaningful next steps.
+            </p>
           </Reveal>
         </div>
       </section>
 
       <ConsultationCta
+        eyebrow=""
         title="Finding the right clinician"
         text="A complimentary 15-minute consultation can help determine which clinician and service may be most appropriate for your needs. The consultation also provides an opportunity to ask about availability, fees, service format, and the next steps in beginning care."
       />

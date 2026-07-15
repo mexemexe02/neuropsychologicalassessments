@@ -176,6 +176,8 @@ h3 {
 }
 
 .reveal {
+  min-width: 0;
+  max-width: 100%;
   animation: reveal-in 800ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
   animation-delay: var(--reveal-delay, 0ms);
 }

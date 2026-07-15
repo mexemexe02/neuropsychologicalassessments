@@ -18,7 +18,7 @@ export function ConsultationCta({
       <div className="shell">
         <Reveal className="consultation-cta">
           <div>
-            <p className="eyebrow">{eyebrow}</p>
+            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
             <h2>{title}</h2>
           </div>
           <div>

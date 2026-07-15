@@ -26,8 +26,30 @@ export default function AssessmentsPage() {
     <>
       <PageHero
         eyebrow="Thoughtful care. Clear next steps."
-        title={<>Understanding how you think, learn, remember, and function.</>}
-        intro="A neuropsychological assessment provides an in-depth understanding of cognitive, emotional, behavioural, and everyday functioning. Through clinical interviews, standardized testing, questionnaires, and a review of relevant background information, we work to identify patterns of strengths and areas where additional support may be helpful."
+        title={<>Neuropsychological Assessments</>}
+        intro={
+          <>
+            <p className="lead">
+              Understanding how you think, learn, remember, and function.
+            </p>
+            <p>
+              A neuropsychological assessment provides an in-depth understanding
+              of cognitive, emotional, behavioural, and everyday functioning.
+            </p>
+            <p>
+              Through clinical interviews, standardized testing, questionnaires,
+              and a review of relevant background information, we work to
+              identify patterns of strengths and areas where additional support
+              may be helpful.
+            </p>
+            <p>
+              The purpose of an assessment is not simply to identify
+              difficulties. It is to develop a clearer and more complete
+              understanding of the individual and provide practical
+              recommendations for home, school, work, healthcare, or daily life.
+            </p>
+          </>
+        }
         actions={
           <>
             <Link href="/contact" className="button">
@@ -40,30 +62,20 @@ export default function AssessmentsPage() {
         }
       />
 
-      <section className="section">
-        <div className="shell intro-copy intro-copy--narrow">
-          <Reveal>
-            <p>
-              The purpose of an assessment is not simply to identify
-              difficulties. It is to develop a clearer and more complete
-              understanding of the individual and provide practical
-              recommendations for home, school, work, healthcare, or daily life.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="section section--soft">
         <div className="shell">
           <Reveal className="content-header">
             <div>
-              <p className="eyebrow">What is a neuropsychological assessment?</p>
-              <h2>
-                A neuropsychological assessment examines how different areas of
-                thinking and behaviour are functioning.
-              </h2>
+              <h2>What is a neuropsychological assessment?</h2>
             </div>
+            <p className="lead">
+              A neuropsychological assessment examines how different areas of
+              thinking and behaviour are functioning.
+            </p>
           </Reveal>
+          <p className="intro-copy" style={{ marginBottom: "1.5rem" }}>
+            Depending on the referral question, an assessment may explore:
+          </p>
           <div className="area-grid">
             {assessmentExploredAreas.map((area, index) => (
               <Reveal key={area} className="area-item" delay={(index % 3) * 60}>
@@ -84,12 +96,15 @@ export default function AssessmentsPage() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <p className="eyebrow">Reasons for seeking an assessment</p>
-            <h2>Common reasons people reach out.</h2>
+            <h2>Reasons for seeking an assessment</h2>
           </Reveal>
           <div className="reason-grid">
             {assessmentReasons.map((reason, index) => (
-              <Reveal key={reason.title} className="reason-card" delay={(index % 3) * 70}>
+              <Reveal
+                key={reason.title}
+                className="reason-card"
+                delay={(index % 3) * 70}
+              >
                 <h3>{reason.title}</h3>
                 <p>{reason.text}</p>
               </Reveal>
@@ -101,8 +116,7 @@ export default function AssessmentsPage() {
       <section className="section section--soft">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Neurodiversity</p>
-            <h2>Understanding neurodivergent conditions.</h2>
+            <h2>Understanding neurodivergent conditions</h2>
             <p className="lead">
               Different minds process the world in different ways.
             </p>
@@ -129,12 +143,27 @@ export default function AssessmentsPage() {
               others prefer diagnostic or person-specific language. We respect
               each individual&apos;s preferred terminology.
             </p>
+            <p>Neurodivergence is not defined only by difficulty.</p>
             <p>
-              Neurodivergence is not defined only by difficulty. A neurodivergent
-              person may experience meaningful strengths alongside areas
-              requiring support. The goal of assessment is to understand this
-              individual pattern rather than compare the person to a single idea
-              of how everyone should function.
+              A neurodivergent person may experience meaningful strengths
+              alongside areas requiring support.
+            </p>
+            <p>
+              These may include strengths in creativity, focused interests,
+              visual thinking, problem-solving, honesty, pattern recognition,
+              memory for specific information, persistence, or alternative ways
+              of understanding complex ideas.
+            </p>
+            <p>
+              At the same time, the individual may experience difficulties with
+              attention, sensory demands, transitions, communication, emotional
+              regulation, social expectations, academic tasks, organization, or
+              daily routines.
+            </p>
+            <p>
+              The goal of assessment is to understand this individual pattern
+              rather than compare the person to a single idea of how everyone
+              should function.
             </p>
           </Reveal>
         </div>
@@ -143,8 +172,7 @@ export default function AssessmentsPage() {
       <section className="section">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">How assessment may help</p>
-            <h2>Clarity that supports next steps.</h2>
+            <h2>How an assessment may help</h2>
           </Reveal>
           <Reveal delay={80}>
             <ul className="detail-list">
@@ -164,8 +192,7 @@ export default function AssessmentsPage() {
       <section className="section section--blue">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow eyebrow--light">A neuro-affirming approach</p>
-            <h2>Curiosity, respect, and clinical care.</h2>
+            <h2>A neuro-affirming approach</h2>
           </Reveal>
           <Reveal className="intro-copy intro-copy--light" delay={100}>
             <p>
@@ -191,9 +218,17 @@ export default function AssessmentsPage() {
 
       <section className="section section--soft">
         <div className="shell">
-          <Reveal>
-            <p className="eyebrow">Who may benefit</p>
-            <h2>Support across life stages.</h2>
+          <Reveal className="intro-copy intro-copy--narrow">
+            <h2>Who may benefit from an assessment?</h2>
+            <p>
+              We provide neuropsychological assessment services for children,
+              adolescents, adults, and older adults.
+            </p>
+            <p>
+              Assessments are individualized according to the person&apos;s
+              developmental stage, referral questions, circumstances, and
+              clinical needs.
+            </p>
           </Reveal>
           <div className="stage-grid">
             <Reveal className="stage-card">
@@ -202,9 +237,17 @@ export default function AssessmentsPage() {
                 An assessment may be considered when a child or adolescent
                 experiences persistent difficulties with learning, attention,
                 behaviour, development, emotional regulation, memory, or everyday
-                functioning. Information may be gathered from parents or
-                caregivers, educators, healthcare providers, and available school
-                or medical records.
+                functioning.
+              </p>
+              <p>
+                Information may be gathered from parents or caregivers,
+                educators, healthcare providers, and available school or medical
+                records.
+              </p>
+              <p>
+                Recommendations may help families and schools better understand
+                the child&apos;s needs and identify appropriate educational or
+                developmental supports.
               </p>
             </Reveal>
             <Reveal className="stage-card" delay={80}>
@@ -215,15 +258,23 @@ export default function AssessmentsPage() {
                 ADHD or learning differences, mental health concerns, medical
                 conditions, or a desire for greater self-understanding.
               </p>
+              <p>
+                Assessment findings may support treatment planning, workplace or
+                educational accommodations, and strategies for daily functioning.
+              </p>
             </Reveal>
             <Reveal className="stage-card" delay={160}>
               <h3>Older adults</h3>
               <p>
                 Assessment may help clarify changes in memory, attention,
-                language, reasoning, or independent functioning. Findings may
-                help guide healthcare planning, identify appropriate supports,
-                and establish a baseline for future comparison when clinically
-                appropriate.
+                language, reasoning, or independent functioning.
+              </p>
+              <p>
+                The evaluation considers possible neurological, medical,
+                psychological, developmental, and situational factors. Findings
+                may help guide healthcare planning, identify appropriate
+                supports, and establish a baseline for future comparison when
+                clinically appropriate.
               </p>
             </Reveal>
           </div>
@@ -233,12 +284,15 @@ export default function AssessmentsPage() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <p className="eyebrow">The process</p>
-            <h2>What an assessment involves.</h2>
+            <h2>What does the assessment process involve?</h2>
           </Reveal>
           <div className="timeline timeline--light">
             {assessmentSteps.map((step, index) => (
-              <Reveal key={step.number} className="timeline-row" delay={index * 50}>
+              <Reveal
+                key={step.number}
+                className="timeline-row"
+                delay={index * 50}
+              >
                 <span>{step.number}</span>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
@@ -251,8 +305,7 @@ export default function AssessmentsPage() {
       <section className="section section--soft">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Recommendations</p>
-            <h2>Individualized, not one-size-fits-all.</h2>
+            <h2>What may be included in the recommendations?</h2>
           </Reveal>
           <Reveal delay={80}>
             <p className="lead">
@@ -264,6 +317,10 @@ export default function AssessmentsPage() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <p className="intro-copy" style={{ paddingTop: "1.25rem" }}>
+              Recommendations are individualized rather than selected from a
+              standard package.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -271,8 +328,7 @@ export default function AssessmentsPage() {
       <section className="section">
         <div className="shell content-header">
           <Reveal>
-            <p className="eyebrow">Common questions</p>
-            <h2>Assessment FAQs.</h2>
+            <h2>Frequently asked questions</h2>
           </Reveal>
           <Reveal className="faq-list" delay={80}>
             {assessmentFaqs.map((faq) => (
@@ -286,9 +342,22 @@ export default function AssessmentsPage() {
       </section>
 
       <ConsultationCta
+        eyebrow=""
         title="Wondering whether an assessment is appropriate?"
-        text="You do not need to know exactly which type of assessment you require before contacting us. During a complimentary 15-minute consultation, you can briefly describe your concerns, ask questions about the process, and discuss whether an assessment may be an appropriate next step."
+        text="You do not need to know exactly which type of assessment you require before contacting us. During a complimentary 15-minute consultation, you can briefly describe your concerns, ask questions about the process, and discuss whether an assessment through our practice may be an appropriate next step."
       />
+
+      <section className="section">
+        <div className="shell intro-copy intro-copy--narrow">
+          <Reveal>
+            <p>
+              Information on this website is provided for general educational
+              purposes and does not constitute a diagnosis, psychological
+              opinion, or substitute for individualized assessment or treatment.
+            </p>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

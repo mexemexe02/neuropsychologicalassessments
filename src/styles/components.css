@@ -105,7 +105,7 @@
 
 .page-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.65fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
   gap: 7vw;
   align-items: end;
 }

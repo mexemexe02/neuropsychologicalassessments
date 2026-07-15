@@ -4,7 +4,8 @@ import { Reveal } from "./reveal";
 type PageHeroProps = {
   eyebrow: string;
   title: ReactNode;
-  intro: string;
+  // ReactNode so multi-paragraph client copy can stay exact (no merging).
+  intro: ReactNode;
   aside?: ReactNode;
   actions?: ReactNode;
   tone?: "light" | "blue";
@@ -26,7 +27,7 @@ export function PageHero({
           <h1>{title}</h1>
         </Reveal>
         <Reveal className="page-hero__intro" delay={120}>
-          <p className="lead">{intro}</p>
+          {typeof intro === "string" ? <p className="lead">{intro}</p> : intro}
           {aside}
           {actions ? <div className="hero-actions">{actions}</div> : null}
         </Reveal>

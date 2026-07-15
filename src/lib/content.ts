@@ -206,6 +206,23 @@ export const assessmentFaqs = [
   },
 ] as const;
 
+/** Concern list from Sebastian’s psychotherapy page — display first, exact wording. */
+export const therapyConcernList = [
+  "Anxiety, worry, fear, or panic",
+  "Depression, low mood, or loss of motivation",
+  "Trauma and post-traumatic stress",
+  "Grief, bereavement, and complicated loss",
+  "Stress, occupational pressure, and burnout",
+  "Anger and emotional regulation",
+  "Relationship and attachment concerns",
+  "Low self-esteem, shame, or self-criticism",
+  "Identity, meaning, and spiritual concerns",
+  "Adjustment to illness, injury, disability, or cognitive changes",
+  "Major life, family, or career transitions",
+  "Difficulty setting boundaries or communicating needs",
+] as const;
+
+/** Only the concerns Sebastian wrote expanded detail for — do not invent more. */
 export const therapyConcernCards = [
   {
     title: "Anxiety and persistent worry",
@@ -230,18 +247,6 @@ export const therapyConcernCards = [
   {
     title: "Relationships and attachment",
     text: "Past and present relationships can influence how we experience closeness, trust, rejection, conflict, and vulnerability. Therapy may help identify recurring patterns, strengthen communication, and develop healthier ways of relating to oneself and others.",
-  },
-  {
-    title: "Anger and emotional regulation",
-    text: "Therapy may support greater awareness of emotional cues, skills for managing intense feelings, and healthier responses in moments of frustration or overwhelm.",
-  },
-  {
-    title: "Self-esteem, identity, and life transitions",
-    text: "Support for questions of identity, meaning, self-worth, and major personal, family, or career transitions.",
-  },
-  {
-    title: "Adjustment to illness, injury, or cognitive changes",
-    text: "Therapy can help with adapting to medical, neurological, or functional changes while protecting dignity, relationships, and day-to-day quality of life.",
   },
 ] as const;
 
@@ -295,7 +300,7 @@ export const therapyExpectSteps = [
   },
   {
     title: "Confidentiality",
-    text: "Psychotherapy is confidential. Information is not shared without your consent except where disclosure is permitted or required by law or professional obligations. The limits of confidentiality will be reviewed before therapy begins.",
+    text: "Psychotherapy is confidential. Information is not shared without your consent except where disclosure is permitted or required by law or professional obligations. The limits of confidentiality will be reviewed before therapy begins. These may include situations involving imminent risk of serious harm, concerns about the safety of a child, requirements related to certain legal proceedings, or other circumstances established by applicable law and professional standards.",
   },
 ] as const;
 
@@ -355,7 +360,7 @@ export const educationTopics = [
   },
   {
     title: "Executive functioning",
-    text: "Executive functions are mental processes that support planning, organization, initiation, inhibition, flexible thinking, working memory, self-monitoring, and goal-directed behaviour. Executive-function difficulties can affect school, work, home responsibilities, relationships, and independent living.",
+    text: "Executive functions are mental processes that support planning, organization, initiation, inhibition, flexible thinking, working memory, self-monitoring, and goal-directed behaviour. Executive-function difficulties can affect school, work, home responsibilities, relationships, and independent living. They may occur in ADHD, autism, neurological conditions, mood disorders, trauma, sleep disruption, or other circumstances.",
   },
   {
     title: "Memory and cognitive changes",
@@ -363,23 +368,23 @@ export const educationTopics = [
   },
   {
     title: "Anxiety and cognitive functioning",
-    text: "Anxiety can interfere with concentration, working memory, processing speed, decision-making, sleep, and confidence. Assessment and therapy can help distinguish between primary cognitive difficulties and cognitive inefficiency related to emotional distress.",
+    text: "Anxiety can interfere with concentration, working memory, processing speed, decision-making, sleep, and confidence. When a person is highly anxious, mental resources may be directed toward monitoring threat or managing distress. Assessment and therapy can help distinguish between primary cognitive difficulties and cognitive inefficiency related to emotional distress.",
   },
   {
     title: "Trauma and the nervous system",
-    text: "Trauma may influence attention, memory, sleep, emotional regulation, bodily arousal, trust, and a person's sense of safety. Trauma-informed care emphasizes safety, choice, collaboration, and appropriate pacing.",
+    text: "Trauma may influence attention, memory, sleep, emotional regulation, bodily arousal, trust, and a person's sense of safety. Responses such as hypervigilance, avoidance, emotional numbing, or strong physiological reactions can be understood as adaptations to overwhelming experiences. Trauma-informed care emphasizes safety, choice, collaboration, and appropriate pacing.",
   },
   {
     title: "Screening, assessment, diagnosis, and psychotherapy",
-    text: "A screening tool identifies whether further evaluation may be warranted but does not usually establish a diagnosis. A comprehensive assessment gathers and integrates multiple sources of information. Psychotherapy is a treatment process that helps a person address emotional, behavioural, relational, or trauma-related concerns.",
+    text: "A screening tool identifies whether further evaluation may be warranted but does not usually establish a diagnosis. A comprehensive assessment gathers and integrates multiple sources of information. A diagnosis is a clinical conclusion based on established criteria and professional judgment. Psychotherapy is a treatment process that helps a person address emotional, behavioural, relational, or trauma-related concerns.",
   },
   {
     title: "Understanding an assessment report",
-    text: "An assessment report usually describes the referral question, relevant background, tests and procedures, behavioural observations, results, clinical interpretation, diagnostic impressions when applicable, and recommendations. Scores should not be read in isolation.",
+    text: "An assessment report usually describes the referral question, relevant background, tests and procedures, behavioural observations, results, clinical interpretation, diagnostic impressions when applicable, and recommendations. Scores should not be read in isolation. The overall pattern and the individual's context are more informative than any single number.",
   },
   {
     title: "Supporting a neurodivergent family member",
-    text: "Support begins with listening and learning how the individual experiences the world. Helpful approaches may include predictable routines, clear communication, sensory accommodations, visual supports, reduced shame, collaborative problem-solving, and respect for preferred language and identity.",
+    text: "Support begins with listening and learning how the individual experiences the world. Helpful approaches may include predictable routines, clear communication, sensory accommodations, visual supports, reduced shame, collaborative problem-solving, and respect for preferred language and identity. Support should be individualized rather than based on assumptions about a diagnosis.",
   },
 ] as const;
 

@@ -4,7 +4,8 @@
   }
 
   .site-header__inner {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
   }
 
   .desktop-nav,
@@ -15,6 +16,22 @@
   .menu-button {
     display: grid;
     place-items: center;
+    flex-shrink: 0;
+  }
+
+  .brand-lockup {
+    width: 100%;
+  }
+
+  .brand-lockup .brand-mark {
+    width: 2.15rem;
+    height: 2.15rem;
+    flex-shrink: 0;
+  }
+
+  .brand-lockup strong,
+  .brand-lockup small {
+    max-width: none;
   }
 
   .page-hero__grid,
@@ -23,14 +40,31 @@
   .split-grid,
   .content-header,
   .contact-layout,
-  .privacy-copy {
-    grid-template-columns: 1fr;
+  .privacy-copy,
+  .clinician,
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
+  }
+
+  .page-hero__grid > *,
+  .home-hero__intro > *,
+  .intro-grid > *,
+  .split-grid > *,
+  .content-header > *,
+  .clinician > *,
+  .site-footer__grid > * {
+    min-width: 0;
   }
 
   .page-hero__intro,
   .intro-copy {
     padding-top: 0;
+  }
+
+  .page-hero h1,
+  .home-hero h1 {
+    max-width: none;
   }
 
   .consultation-cta {
@@ -58,22 +92,23 @@
   }
 
   .timeline-row {
-    grid-template-columns: 3rem 0.7fr 1.3fr;
-    gap: 1.5rem;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem 1.25rem;
   }
 
-  .clinician {
-    grid-template-columns: 0.7fr 1.3fr;
-    gap: 3rem;
+  .timeline-row h3,
+  .timeline-row p {
+    grid-column: 2;
   }
 
   .contact-details {
     position: static;
   }
 
-  .site-footer__grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 2.5rem;
+  .site-footer__lead h2,
+  .statement,
+  .statement--left {
+    max-width: none;
   }
 }
 
@@ -83,26 +118,57 @@
     --radius-lg: 1.5rem;
   }
 
+  /* Long clinical words otherwise force horizontal scroll. */
+  h1,
+  h2,
+  h3,
+  .lead,
+  .area-item,
+  .site-footer__grid a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   h1 {
-    font-size: clamp(3.3rem, 16vw, 5.4rem);
+    font-size: clamp(2.55rem, 11vw, 4.2rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 8.5vw, 3.2rem);
   }
 
   .section {
-    padding-block: 5.5rem;
+    padding-block: 4.5rem;
+  }
+
+  .page-hero {
+    padding: 8.5rem 0 4rem;
   }
 
   .home-hero {
-    min-height: 94svh;
-    padding-top: 8.5rem;
+    min-height: auto;
+    padding-top: 7.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .home-hero::after {
     width: 68vw;
-    height: 38vh;
+    height: 28vh;
+    opacity: 0.16;
   }
 
   .home-hero__content {
+    min-height: auto;
     justify-content: flex-start;
+  }
+
+  .brand-lockup strong {
+    font-size: 0.78rem;
+  }
+
+  .brand-lockup small {
+    font-size: 0.48rem;
+    letter-spacing: 0.04em;
   }
 
   .hero-actions {
@@ -111,17 +177,28 @@
     margin-top: 1.5rem;
   }
 
+  .hero-actions .button,
+  .hero-actions .text-link {
+    width: 100%;
+    justify-content: center;
+  }
+
   .scroll-cue {
     display: none;
   }
 
   .service-plane {
-    min-height: 38rem;
-    padding: 2rem;
+    min-height: auto;
+    padding: 1.6rem;
   }
 
   .service-plane__content {
-    min-height: 34rem;
+    min-height: auto;
+    gap: 2.5rem;
+  }
+
+  .service-plane h2 {
+    max-width: none;
   }
 
   .steps,
@@ -130,43 +207,40 @@
   .reason-grid,
   .stage-grid,
   .split-concerns,
-  .clinician,
   .field-row {
     grid-template-columns: 1fr;
   }
 
   .steps {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
 
   .step,
   .step + .step {
     min-height: auto;
-    padding: 1.8rem 0;
+    padding: 1.5rem 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
   .step span {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .area-item,
   .area-item:nth-child(3n) {
-    min-height: 6rem;
+    min-height: 5rem;
     border-right: 0;
   }
 
   .timeline-row {
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
   }
 
-  .timeline-row p {
-    grid-column: 2;
-  }
-
-  .portrait-placeholder {
-    max-width: 28rem;
+  .portrait-placeholder,
+  .portrait-photo {
+    max-width: 22rem;
+    margin-inline: auto;
   }
 
   .detail-list {
@@ -174,14 +248,16 @@
   }
 
   .consultation-cta {
-    padding: 2rem;
-  }
-
-  .site-footer__grid {
-    grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
 
   .site-footer__legal {
     flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .tag-list span {
+    max-width: 100%;
+    white-space: normal;
   }
 }

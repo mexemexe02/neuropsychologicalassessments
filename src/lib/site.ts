@@ -1,4 +1,16 @@
 // Brand and contact — from Sebastian’s July 15, 2026 content package.
+
+// GitHub Pages project site lives under /neuropsychologicalassessments/.
+// next/image + static export does not always prefix public/ URLs, so use this
+// for any absolute asset path in <Image> / <img>.
+const pagesBase =
+  process.env.GITHUB_PAGES === "1" ? "/neuropsychologicalassessments" : "";
+
+export function assetPath(path: string) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${pagesBase}${normalized}`;
+}
+
 export const site = {
   name: "Centre for Neuropsychological Assessments, Psychotherapy and Counselling",
   shortName: "Centre for Neuropsychological Assessments",

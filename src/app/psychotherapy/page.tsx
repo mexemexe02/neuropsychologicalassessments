@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ConsultationCta } from "@/components/consultation-cta";
+import { ArrowUpRight } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import {
   therapyApproaches,
   therapyConcernCards,
+  therapyConcernList,
   therapyExpectSteps,
   therapyFaqs,
 } from "@/lib/content";
@@ -22,15 +25,38 @@ export default function PsychotherapyPage() {
       <PageHero
         eyebrow="Psychotherapy"
         title={<>Change can begin with being understood.</>}
-        intro="Psychotherapy offers a private and collaborative space to understand emotional difficulties, process challenging experiences, develop practical coping strategies, and work toward meaningful change. We provide evidence-based, trauma-informed psychotherapy for adults. Therapy is adapted to the client's needs, history, culture, values, strengths, and pace."
+        intro={
+          <>
+            <p className="lead">
+              Psychotherapy offers a private and collaborative space to
+              understand emotional difficulties, process challenging
+              experiences, develop practical coping strategies, and work toward
+              meaningful change.
+            </p>
+            <p>
+              We provide evidence-based, trauma-informed psychotherapy for
+              adults. Therapy is adapted to the client&apos;s needs, history,
+              culture, values, strengths, and pace.
+            </p>
+          </>
+        }
+        actions={
+          <>
+            <Link href="/contact" className="button">
+              Book a Free 15-Minute Consultation <ArrowUpRight />
+            </Link>
+            <Link href="/contact" className="text-link">
+              Ask About Psychotherapy <ArrowUpRight />
+            </Link>
+          </>
+        }
       />
 
       <section className="section">
         <div className="shell">
           <Reveal className="content-header">
             <div>
-              <p className="eyebrow">What psychotherapy can help with</p>
-              <h2>Support for complex, human experiences.</h2>
+              <h2>What can psychotherapy help with?</h2>
             </div>
             <p className="lead">
               People seek therapy for many reasons. Some are coping with a
@@ -39,9 +65,18 @@ export default function PsychotherapyPage() {
               relationships, or sense of self.
             </p>
           </Reveal>
-          <div className="reason-grid">
+          <ul className="detail-list">
+            {therapyConcernList.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <div className="reason-grid" style={{ marginTop: "3rem" }}>
             {therapyConcernCards.map((card, index) => (
-              <Reveal key={card.title} className="reason-card" delay={(index % 3) * 60}>
+              <Reveal
+                key={card.title}
+                className="reason-card"
+                delay={(index % 3) * 60}
+              >
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
               </Reveal>
@@ -54,8 +89,7 @@ export default function PsychotherapyPage() {
         <div className="shell">
           <Reveal className="content-header">
             <div>
-              <p className="eyebrow">Therapeutic approaches</p>
-              <h2>Selected and adapted to the person.</h2>
+              <h2>Therapeutic approaches</h2>
             </div>
             <p className="lead">
               No single therapy approach is appropriate for every person.
@@ -81,8 +115,7 @@ export default function PsychotherapyPage() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <p className="eyebrow">What to expect</p>
-            <h2>A clear path from first contact to ongoing care.</h2>
+            <h2>What to expect in therapy</h2>
           </Reveal>
           <div className="timeline timeline--light">
             {therapyExpectSteps.map((step, index) => (
@@ -110,8 +143,7 @@ export default function PsychotherapyPage() {
       <section className="section section--soft">
         <div className="shell content-header">
           <Reveal>
-            <p className="eyebrow">Common questions</p>
-            <h2>Psychotherapy FAQs.</h2>
+            <h2>Frequently asked questions</h2>
           </Reveal>
           <Reveal className="faq-list" delay={80}>
             {therapyFaqs.map((faq) => (
@@ -125,8 +157,8 @@ export default function PsychotherapyPage() {
       </section>
 
       <ConsultationCta
-        eyebrow="Finding the right fit matters"
-        title="Start with a conversation."
+        eyebrow=""
+        title="Begin with a conversation"
         text="A complimentary 15-minute consultation can help you ask questions, discuss what you are looking for, and consider whether psychotherapy through our practice may be an appropriate next step."
       />
     </>

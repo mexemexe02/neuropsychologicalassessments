@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ConsultationCta } from "@/components/consultation-cta";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import {
@@ -53,13 +54,11 @@ export default function HomePage() {
             </Reveal>
           </div>
         </div>
-        <span className="scroll-cue">Scroll to discover</span>
       </section>
 
       <section className="section">
         <div className="shell intro-grid">
           <Reveal>
-            <p className="eyebrow">Listening first</p>
             <h2>Understanding begins with listening.</h2>
           </Reveal>
           <Reveal className="intro-copy" delay={120}>
@@ -84,7 +83,9 @@ export default function HomePage() {
           <Reveal className="service-plane">
             <div className="service-plane__content">
               <div>
-                <p className="eyebrow eyebrow--light">01 / Assessment</p>
+                <p className="eyebrow eyebrow--light">
+                  Neuropsychological Assessment
+                </p>
                 <h2>A clearer understanding of strengths and needs.</h2>
               </div>
               <div className="service-plane__footer">
@@ -121,7 +122,7 @@ export default function HomePage() {
           <Reveal className="service-plane service-plane--light">
             <div className="service-plane__content">
               <div>
-                <p className="eyebrow">02 / Psychotherapy</p>
+                <p className="eyebrow">Psychotherapy</p>
                 <h2>A collaborative space for meaningful change.</h2>
               </div>
               <div className="service-plane__footer">
@@ -156,8 +157,7 @@ export default function HomePage() {
         <div className="shell">
           <Reveal className="content-header">
             <div>
-              <p className="eyebrow">Areas of support</p>
-              <h2>Areas we may help you explore.</h2>
+              <h2>Areas we may help you explore</h2>
             </div>
           </Reveal>
           <div className="split-concerns">
@@ -184,8 +184,7 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <p className="eyebrow">How to begin</p>
-            <h2>A simple, considered start.</h2>
+            <h2>How to begin</h2>
           </Reveal>
           <div className="steps">
             {homeBeginSteps.map((step, index) => (
@@ -221,6 +220,12 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <ConsultationCta
+        eyebrow=""
+        title="Begin with a conversation"
+        text="Not sure whether assessment or psychotherapy is right for you? A complimentary 15-minute consultation allows you to briefly explain what brings you here, ask practical questions, and learn about possible next steps."
+      />
     </>
   );
 }

@@ -11,31 +11,63 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources" },
 };
 
+const assessmentPrep = [
+  "Review the appointment date, time, location, and expected duration.",
+  "Take prescribed medications as usual unless your healthcare provider or the assessment team gives different instructions.",
+  "Bring glasses, hearing aids, mobility supports, or other items you normally use.",
+  "Try to obtain adequate sleep and eat before the appointment.",
+  "Bring a list of current medications and relevant medical information.",
+  "Bring previous assessment reports, school records, report cards, individualized education plans, or medical records when requested.",
+  "Let the practice know in advance about language, accessibility, sensory, mobility, or communication needs.",
+  "Avoid alcohol or non-prescribed substances before testing.",
+] as const;
+
+const childPrep = [
+  "Use simple and reassuring language. Explain that the appointment will involve different activities that help the clinician understand how the child learns and solves problems.",
+  "Avoid describing the assessment as an examination that must be passed.",
+  "Tell the child that some activities may feel easy and others may feel difficult.",
+  "Encourage effort without creating pressure about results.",
+  "Bring glasses, hearing devices, medications, comfort items, snacks, and relevant school information.",
+  "Share information about sensory needs, anxiety, communication preferences, or behavioural supports before the appointment.",
+] as const;
+
+const helpfulDocuments = [
+  "Referral letter, if applicable",
+  "Previous psychological, neuropsychological, psychiatric, speech-language, occupational therapy, or educational assessments",
+  "Medical or neurological reports",
+  "Medication list",
+  "School report cards and individualized education plans",
+  "Workplace or disability documentation relevant to the referral",
+  "Completed questionnaires provided by the practice",
+] as const;
+
+const therapyPrep = [
+  "Choose a private and reasonably quiet space for virtual sessions.",
+  "Check your internet connection and device before the appointment.",
+  "Have emergency contact information and your current location available for virtual care when required.",
+  "Consider writing down medications, relevant diagnoses, and major current stressors.",
+  "Tell the therapist about accessibility, communication, cultural, spiritual, or identity-related considerations that matter to you.",
+] as const;
+
 export default function ResourcesPage() {
   return (
     <>
       <PageHero
         eyebrow="Resources"
         title={<>Practical information for preparing and finding support.</>}
-        intro="Use these guides to prepare for assessment or psychotherapy, understand referral and insurance questions, and know when to seek urgent help. Full clinician-reviewed leaflets can be added as practice materials arrive."
+        intro="This page provides practical guidance for people considering an assessment or psychotherapy, along with general information about referrals, insurance, privacy, and urgent support."
       />
 
       <section className="section section--soft">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Preparing for assessment</p>
-            <h2>Before a neuropsychological assessment.</h2>
+            <h2>Preparing for a neuropsychological assessment</h2>
           </Reveal>
           <Reveal delay={80}>
             <ul className="detail-list">
-              <li>Review appointment details and arrive as scheduled</li>
-              <li>Take prescribed medications as usual unless told otherwise</li>
-              <li>Bring glasses, hearing aids, and mobility supports</li>
-              <li>Try to sleep and eat before the appointment</li>
-              <li>Bring a medication list and relevant medical information</li>
-              <li>Bring previous reports and school records when available</li>
-              <li>Let the practice know about accessibility or sensory needs</li>
-              <li>Avoid alcohol or non-prescribed substances before testing</li>
+              {assessmentPrep.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
             <p className="intro-copy" style={{ paddingTop: "1.25rem" }}>
               Testing is intended to understand how you function. You do not need
@@ -48,16 +80,14 @@ export default function ResourcesPage() {
       <section className="section">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Children and adolescents</p>
-            <h2>Preparing a child or teen.</h2>
+            <h2>Preparing a child or adolescent</h2>
           </Reveal>
-          <Reveal className="intro-copy" delay={80}>
-            <p>
-              Use simple, reassuring language. Avoid framing the appointment as
-              an “exam” that must be passed. Bring comfort items and snacks when
-              appropriate, and share sensory or anxiety information with the
-              practice beforehand.
-            </p>
+          <Reveal delay={80}>
+            <ul className="detail-list">
+              {childPrep.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </Reveal>
         </div>
       </section>
@@ -65,15 +95,13 @@ export default function ResourcesPage() {
       <section className="section section--soft">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Documents</p>
-            <h2>Information that may be helpful.</h2>
+            <h2>Documents that may be helpful</h2>
           </Reveal>
           <Reveal delay={80}>
             <ul className="detail-list">
-              <li>Previous psychological or neuropsychological assessments</li>
-              <li>Medical reports and a current medication list</li>
-              <li>School records, report cards, and IEPs</li>
-              <li>Workplace documentation when relevant</li>
+              {helpfulDocuments.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </Reveal>
         </div>
@@ -82,8 +110,7 @@ export default function ResourcesPage() {
       <section className="section">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Preparing for psychotherapy</p>
-            <h2>What helps before the first session.</h2>
+            <h2>Preparing for psychotherapy</h2>
           </Reveal>
           <Reveal className="intro-copy" delay={80}>
             <p>
@@ -93,11 +120,9 @@ export default function ResourcesPage() {
               questions you have about the therapist&apos;s approach.
             </p>
             <ul className="detail-list">
-              <li>Choose a private, reasonably quiet space for virtual sessions</li>
-              <li>Check your internet connection and device beforehand</li>
-              <li>Have emergency contact information available for virtual care when required</li>
-              <li>Consider writing down medications, relevant diagnoses, and major stressors</li>
-              <li>Tell the therapist about accessibility, cultural, spiritual, or identity considerations that matter to you</li>
+              {therapyPrep.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </Reveal>
         </div>
@@ -106,20 +131,30 @@ export default function ResourcesPage() {
       <section className="section section--soft">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow">Referrals, fees &amp; privacy</p>
-            <h2>Practical information before you begin.</h2>
+            <h2>Referrals</h2>
           </Reveal>
           <Reveal className="intro-copy" delay={80}>
-            <h3>Referrals</h3>
             <p>
               A physician&apos;s referral may not always be required to contact
               the practice. Referral requirements can depend on the service, the
               referral question, the payer, or the organization requesting an
-              assessment. Third-party referrals may involve different consent,
-              reporting, and confidentiality arrangements — these will be
-              explained before the service begins.
+              assessment.
             </p>
-            <h3>Fees and insurance</h3>
+            <p>
+              Third-party referrals may involve different consent, reporting, and
+              confidentiality arrangements. These will be explained before the
+              service begins.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell split-grid">
+          <Reveal>
+            <h2>Fees and insurance</h2>
+          </Reveal>
+          <Reveal className="intro-copy" delay={80}>
             <p>
               Fees depend on the type and complexity of the service. Expected
               fees, payment arrangements, cancellation terms, and the estimated
@@ -140,14 +175,26 @@ export default function ResourcesPage() {
               responsible for understanding their benefits and for payment of
               fees.
             </p>
-            <h3>Privacy and electronic communication</h3>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="shell split-grid">
+          <Reveal>
+            <h2>Privacy and electronic communication</h2>
+          </Reveal>
+          <Reveal className="intro-copy" delay={80}>
             <p>
               Personal health information is handled in accordance with
               applicable privacy legislation, professional standards, and practice
-              policies. Email and text messaging are convenient but may not be
-              fully secure. Please use them primarily for scheduling and
-              administrative communication, and avoid sending detailed clinical
-              or health information.
+              policies.
+            </p>
+            <p>
+              Email and text messaging are convenient but may not be fully
+              secure. Please use them primarily for scheduling and administrative
+              communication, and avoid sending detailed clinical or health
+              information.
             </p>
           </Reveal>
         </div>
@@ -156,8 +203,7 @@ export default function ResourcesPage() {
       <section className="section section--blue">
         <div className="shell split-grid">
           <Reveal>
-            <p className="eyebrow eyebrow--light">Urgent and crisis support</p>
-            <h2>This website is not an emergency service.</h2>
+            <h2>Urgent and crisis support</h2>
           </Reveal>
           <Reveal className="intro-copy intro-copy--light" delay={80}>
             <p>
@@ -182,8 +228,7 @@ export default function ResourcesPage() {
       <section className="section">
         <div className="shell content-header">
           <Reveal>
-            <p className="eyebrow">Practical questions</p>
-            <h2>Resource FAQs.</h2>
+            <h2>Frequently asked practical questions</h2>
           </Reveal>
           <Reveal className="faq-list" delay={80}>
             {resourceFaqs.map((faq) => (
@@ -199,8 +244,7 @@ export default function ResourcesPage() {
       <section className="section section--soft">
         <div className="shell">
           <Reveal>
-            <p className="eyebrow">Resource categories</p>
-            <h2>External supports we can curate over time.</h2>
+            <h2>Recommended resource categories</h2>
           </Reveal>
           <div className="tag-list" style={{ marginTop: "2rem" }}>
             {resourceCategories.map((item) => (
@@ -209,16 +253,18 @@ export default function ResourcesPage() {
           </div>
           <Reveal className="intro-copy" delay={80}>
             <p>
-              Specific external links will be reviewed with the practice before
-              publication so crisis and education resources stay accurate.
+              Only reputable, current organizations should be linked. External
+              links should be reviewed periodically to ensure that they remain
+              accurate and active.
             </p>
           </Reveal>
         </div>
       </section>
 
       <ConsultationCta
-        title="Ready to take a next step?"
-        text="Request a complimentary 15-minute consultation to ask about services, preparation, referrals, or timing."
+        eyebrow="Contact"
+        title="Book a Free 15-Minute Consultation"
+        text="Please avoid including sensitive personal or health information in email, text messages, or the initial consultation request."
       />
     </>
   );

@@ -185,3 +185,63 @@ still needs live setup (so unfinished pieces never look “broken”).
 - Privacy page is marked as client-review draft.
 - Clinician photos / logo / address still placeholders awaiting Sebastian.
 - No live address, fees, or registration numbers yet.
+
+## 2026-07-15 — Mobile layout audit + fixes
+
+### Summary
+Audited phone layout after the content rewrite; fixed horizontal overflow and a
+dev-only hydration failure that made the hamburger/menu look dead.
+
+### Findings
+- Long brand name / grids / booking panel overflowed on narrow phones → CSS
+  min-width + word-break + booking width fixes in responsive/navigation/booking.
+- Contact + privacy long email links still painted past the viewport edge →
+  wrap with `minmax(0,1fr)` + `overflow-wrap: anywhere`.
+- Local Playwright against `127.0.0.1` showed a “dead” menu/form because Next 16
+  blocked cross-origin HMR (`allowedDevOrigins`); not a production bug.
+- Stale `next dev` instances on port 3001 made diagnosis noisy.
+
+### Fixes
+- `next.config.ts` — `allowedDevOrigins: ["127.0.0.1", "localhost"]`
+- Contact/privacy email wrapping in `forms.css`
+- Prior mobile CSS already in place (header brand, grids, booking, h1/h2, menu)
+
+### Verification
+- iPhone 13 overflow sweep: all 8 routes `overflow: false`, no offenders
+- Mobile Playwright: 11/11 passed (menu, form preview, overflow, 404)
+
+### Still pending (content, not layout)
+- Logo, Dr. Sauriol photo, live booking backend, Privacy legal review
+- Deploy of these mobile fixes to GitHub Pages when Humberto asks to push
+
+## 2026-07-15 — Sebastian headshot 404 on GitHub Pages
+
+### Cause
+File was deployed and reachable at
+`/neuropsychologicalassessments/images/sebastian-jose-headshot.jpg`, but
+`<Image src="/images/...">` resolved to the repo-root URL (missing basePath).
+Coolify not required — static Pages is still fine.
+
+### Fix
+- `assetPath()` helper in `src/lib/site.ts` (uses `GITHUB_PAGES=1` base)
+- Clinicians page Image src → `assetPath("/images/sebastian-jose-headshot.jpg")`
+
+## 2026-07-15 — Copy fidelity audit vs Sebastian ODT
+
+### Source of truth
+`client-content/sebastian-content-doc.odt` (extracted txt for diffs) + brief.
+
+### Gaps found
+- Assessments hero omitted the purpose paragraph from the intro block (only
+  appeared lower / easy to miss); neurodivergence + life-stage sections were
+  abbreviated; invented marketing H2s; missing site-wide educational note.
+- Psychotherapy: invented concern-card copy; truncated confidentiality;
+  missing full concern list + hero buttons.
+- Education/Resources: truncated topic texts; paraphrased prep lists; invented
+  CTAs / section blurbs.
+- Clinicians: invented collaborative H2; missing third collab paragraph;
+  focus list drifted; EN/FR added outside ODT.
+
+### Fix
+Restored Sebastian’s wording page-by-page. Layout/chrome only; no invented
+clinical marketing lines.

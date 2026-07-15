@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const routes = [
   ["/", "Neuropsychological assessment and psychotherapy, centred on understanding."],
-  ["/assessments", "Understanding how you think, learn, remember, and function."],
+  ["/assessments", "Neuropsychological Assessments"],
   ["/clinicians", "Experienced care. A collaborative approach."],
   ["/psychotherapy", "Change can begin with being understood."],
   ["/education", "Clear information supports informed decisions."],
@@ -15,7 +15,10 @@ for (const [route, heading] of routes) {
   test(`${route} renders without overflow`, async ({ page }) => {
     const errors: string[] = [];
     page.on("console", (message) => {
-      if (message.type() === "error") errors.push(message.text());
+      if (message.type() !== "error") return;
+      // Ignore Next.js HMR websocket noise during local `next dev`.
+      if (message.text().includes("webpack-hmr")) return;
+      errors.push(message.text());
     });
 
     await page.goto(route);
@@ -50,7 +53,10 @@ test("consultation request form completes its preview flow", async ({ page }) =>
   await expect(booking).toHaveCSS("background-color", "rgb(250, 246, 240)");
   await expect(page.locator(".page-hero")).not.toHaveClass(/page-hero--blue/);
 
-  await page.getByRole("button", { name: /Psychotherapy/ }).click();
+  await page
+    .getByRole("region", { name: "Free consultation request" })
+    .getByRole("button", { name: "Psychotherapy", exact: true })
+    .click();
   await page.getByLabel("Your name").fill("Preview Client");
   await page.getByLabel("Email address").fill("preview@example.com");
   await page.getByLabel("Phone number").fill("705-555-0100");
