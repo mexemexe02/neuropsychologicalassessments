@@ -118,12 +118,7 @@
     --radius-lg: 1.5rem;
   }
 
-  /* Phones were rendering labels/buttons at ~11–12px — bump the whole scale. */
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
-
+  /* Phone readability: previous UI chrome was ~11–12px and hard to read. */
   body {
     font-size: 18px;
     line-height: 1.7;
@@ -141,7 +136,7 @@
   }
 
   h1 {
-    font-size: clamp(2.35rem, 9vw, 3.4rem);
+    font-size: clamp(2.35rem, 9.5vw, 3.4rem);
     line-height: 1.05;
   }
 
@@ -151,53 +146,82 @@
   }
 
   h3 {
-    font-size: 1.35rem;
-    line-height: 1.25;
-  }
-
-  .lead {
-    font-size: 1.125rem;
-    line-height: 1.65;
+    font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+    line-height: 1.2;
   }
 
   .eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
     margin-bottom: 1.1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
   }
 
-  p,
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+
   .intro-copy p,
+  .clinician__bio > p:not(.clinician__credentials),
+  .service-plane__footer p,
   .reason-card p,
   .stage-card p,
-  .timeline-row p,
-  .clinician__bio p,
-  .site-footer__note,
-  .site-footer__lead-copy {
+  .page-hero__intro p,
+  .faq-list details p {
     font-size: 1.05rem;
     line-height: 1.7;
+  }
+
+  .detail-list li {
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .button,
   .text-link {
     font-size: 1rem;
+  }
+
+  .button {
     min-height: 3.25rem;
   }
 
   .button--small {
-    font-size: 0.95rem;
     min-height: 3rem;
+    font-size: 0.95rem;
   }
 
-  .detail-list li,
+  .clinician__credentials,
+  .service-note,
   .contact-methods a,
+  .site-footer__note,
+  .site-footer__privacy-note,
   .site-footer__grid a,
-  .faq-list summary,
-  .faq-list p,
-  .booking-option,
-  .area-item,
+  .footer-label,
+  .step p,
+  .resource-card p,
+  .booking-details label > span,
   .tag-list span {
-    font-size: 1.02rem;
+    font-size: 0.95rem;
+  }
+
+  .step span,
+  .timeline-row > span,
+  .area-item span,
+  .resource-card span,
+  .site-footer__legal {
+    font-size: 0.8rem;
+  }
+
+  .faq-list summary {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .area-item {
+    font-size: 1.35rem;
+    min-height: 4.5rem;
+    padding: 1.15rem 0.25rem;
   }
 
   .section {
@@ -225,20 +249,14 @@
     justify-content: flex-start;
   }
 
-  /* Header brand was ~7–12px — still short, but readable. */
   .brand-lockup strong {
     font-size: 0.92rem;
     line-height: 1.2;
   }
 
   .brand-lockup small {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     letter-spacing: 0.04em;
-    line-height: 1.35;
-  }
-
-  .mobile-menu__nav > a:not(.button) {
-    font-size: clamp(1.7rem, 7vw, 2.2rem);
   }
 
   .hero-actions {
@@ -299,7 +317,6 @@
 
   .area-item,
   .area-item:nth-child(3n) {
-    min-height: 5rem;
     border-right: 0;
   }
 
@@ -329,5 +346,13 @@
   .tag-list span {
     max-width: 100%;
     white-space: normal;
+  }
+
+  .mobile-menu__nav > a:not(.button) {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .mobile-menu__nav p {
+    font-size: 0.95rem;
   }
 }

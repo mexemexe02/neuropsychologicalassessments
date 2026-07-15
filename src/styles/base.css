@@ -27,6 +27,9 @@
 html {
   scroll-behavior: smooth;
   background: var(--ivory);
+  /* Keep iOS from shrinking text in landscape / nested layouts. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
