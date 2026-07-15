@@ -1,5 +1,6 @@
 /* Match main responsive cutoff so Android desktop-mode (~980px) gets phone booking UI. */
-@media (max-width: 1100px), ((hover: none) and (pointer: coarse)) {
+@media (max-width: 1100px),
+  ((max-width: 1200px) and (hover: none) and (pointer: coarse)) {
   .contact-booking {
     width: 100%;
     max-width: 100%;

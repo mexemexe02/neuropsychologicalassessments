@@ -22,7 +22,7 @@ export function Logo({ light = false }: { light?: boolean }) {
       </svg>
       <span>
         <strong>Centre for Neuropsychological</strong>
-        <small>Assessments, Psychotherapy &amp; Counselling</small>
+        <small>Assessments, Psychotherapy and Counselling</small>
       </span>
     </Link>
   );

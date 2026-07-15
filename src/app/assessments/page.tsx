@@ -55,7 +55,7 @@ export default function AssessmentsPage() {
             <Link href="/contact" className="button">
               Book a Free 15-Minute Consultation <ArrowUpRight />
             </Link>
-            <Link href="/contact" className="text-link">
+            <Link href="/contact/#request" className="text-link">
               Ask About an Assessment <ArrowUpRight />
             </Link>
           </>

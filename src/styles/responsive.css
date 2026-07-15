@@ -3,7 +3,8 @@
  * Android “Desktop site” often reports ~980–1200px width, which used to
  * keep the tiny desktop nav visible on a real Galaxy/S24 screen.
  */
-@media (max-width: 1100px), ((hover: none) and (pointer: coarse)) {
+@media (max-width: 1100px),
+  ((max-width: 1200px) and (hover: none) and (pointer: coarse)) {
   .site-header__inner {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.75rem;
@@ -31,7 +32,8 @@
  * 1100px matches hamburger + Android desktop-mode (~980px) so the hero
  * becomes one column instead of looking like shrunk desktop.
  */
-@media (max-width: 1100px), ((hover: none) and (pointer: coarse)) {
+@media (max-width: 1100px),
+  ((max-width: 1200px) and (hover: none) and (pointer: coarse)) {
   :root {
     --shell: min(100% - 36px, 760px);
   }
@@ -127,7 +129,8 @@
  * True phone layout (single column + larger type).
  * Same 1100px cutoff as header — Android desktop-mode is ~980px.
  */
-@media (max-width: 1100px), ((hover: none) and (pointer: coarse)) {
+@media (max-width: 1100px),
+  ((max-width: 1200px) and (hover: none) and (pointer: coarse)) {
   :root {
     /* Slightly more side room, but type scales via html rem below. */
     --shell: calc(100% - 32px);

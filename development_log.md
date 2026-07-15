@@ -287,3 +287,24 @@ Hamburger used max-width 1100 (matches ~980 desktop-mode); brand/layout used
 Humberto confirmed logo enlargement was not the fix. Removed stacked/~3× brand
 overrides; logo/name back to original navigation.css sizes. Kept 1100px phone
 layout cutoff for real mobile content layout.
+
+## 2026-07-15 — Pre-handoff site audit fixes
+
+### Summary
+Audited preview site; applied clear polish fixes. Did not invent clinical copy
+or touch client-waiting items (logo, Sauriol photo, article bodies, live booking).
+
+### Changed
+- Form success: honest “Request not sent yet” (was misleading “ready to send”)
+- Privacy: draft wording (removed “template” / “Client review required”)
+- metadataBase/OG: GitHub Pages origin when `GITHUB_PAGES=1`
+- Home: removed duplicate end CTA (footer already has it); Explore → `#services`
+- Assessments/Psychotherapy secondary CTAs → `/contact/#request`
+- Education/Resources: note that title tags are forthcoming, not links
+- Resources CTA title no longer duplicates the button label
+- Logo subtitle “and” to match confirmed brand string
+- CTA defaults use Sebastian’s “Begin with a conversation” wording
+- Touch media queries capped at 1200px so large tablets keep desktop chrome
+
+### Left alone
+- Temp logo, Sauriol placeholder, education bodies, resource URLs, booking send

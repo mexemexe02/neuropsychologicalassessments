@@ -14,17 +14,16 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Privacy"
         title={<>Your information deserves careful treatment.</>}
-        intro="This draft explains the intended privacy approach for the public website. It must be reviewed and approved by the practice before launch."
+        intro="This page is a draft summary of how the public website is intended to handle information. The practice will review and approve the final wording before launch."
       />
 
       <section className="section section--soft">
         <div className="shell privacy-copy">
           <aside>
-            <strong>Client review required</strong>
+            <strong>Draft — practice review before launch</strong>
             <p>
-              This is a website-development template, not legal advice. Update
-              it after the booking platform, analytics, hosting, and clinical
-              information practices are confirmed.
+              This is not legal advice. The final privacy notice will be updated
+              once booking, hosting, and any analytics tools are confirmed.
             </p>
           </aside>
           <article>

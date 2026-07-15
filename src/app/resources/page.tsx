@@ -245,6 +245,10 @@ export default function ResourcesPage() {
         <div className="shell">
           <Reveal>
             <h2>Recommended resource categories</h2>
+            <p className="lead" style={{ marginTop: "1rem" }}>
+              Category titles are reserved for now. Approved external links will
+              be added once the practice confirms them.
+            </p>
           </Reveal>
           <div className="tag-list" style={{ marginTop: "2rem" }}>
             {resourceCategories.map((item) => (
@@ -263,7 +267,7 @@ export default function ResourcesPage() {
 
       <ConsultationCta
         eyebrow="Contact"
-        title="Book a Free 15-Minute Consultation"
+        title="Ready for a conversation?"
         text="Please avoid including sensitive personal or health information in email, text messages, or the initial consultation request."
       />
     </>

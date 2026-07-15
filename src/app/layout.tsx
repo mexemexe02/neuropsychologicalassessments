@@ -2,11 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { DemoNoticeProvider } from "@/components/demo-notice";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/lib/site";
+import { site, siteOrigin } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.domain),
+  metadataBase: new URL(`${siteOrigin}/`),
   title: {
     default: `${site.shortName} | ${site.tagline}`,
     template: `%s | ${site.shortName}`,

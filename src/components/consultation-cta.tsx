@@ -9,9 +9,9 @@ type ConsultationCtaProps = {
 };
 
 export function ConsultationCta({
-  eyebrow = "A thoughtful first step",
-  title = "Let’s clarify what you need.",
-  text = "A complimentary 15-minute consultation gives us a chance to understand your concerns and discuss the most appropriate next step.",
+  eyebrow = "Begin with a conversation",
+  title = "Not sure whether assessment or psychotherapy is right for you?",
+  text = "A complimentary 15-minute consultation allows you to briefly explain what brings you here, ask practical questions, and learn about possible next steps.",
 }: ConsultationCtaProps) {
   return (
     <section className="section section--soft">

@@ -29,6 +29,7 @@ export function ConsultationForm() {
   if (done) {
     return (
       <section
+        id="request"
         className="contact-booking"
         aria-label="Free consultation request"
       >
@@ -36,12 +37,13 @@ export function ConsultationForm() {
           <span className="form-success__icon">
             <Check />
           </span>
-          <p className="eyebrow">Consultation request</p>
-          <h2>Thank you — your request is ready to send.</h2>
+          <p className="eyebrow">Preview only</p>
+          <h2>Request not sent yet</h2>
           <p>
-            In the live practice site, this form will notify the clinic so they
-            can follow up by phone or email. Nothing was transmitted in this
-            preview.
+            This preview does not transmit or store your details. Once practice
+            messaging is connected, this form will notify the clinic for a
+            phone or email follow-up. For now, call or text 705-321-8146 or
+            email the practice directly.
           </p>
           <button
             type="button"
@@ -59,7 +61,11 @@ export function ConsultationForm() {
   }
 
   return (
-    <section className="contact-booking" aria-label="Free consultation request">
+    <section
+      id="request"
+      className="contact-booking"
+      aria-label="Free consultation request"
+    >
       <header className="booking-header">
         <div>
           <p className="eyebrow">Free 15-minute consultation</p>

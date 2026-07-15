@@ -57,6 +57,10 @@ export default function EducationPage() {
         <div className="shell">
           <Reveal>
             <h2>Suggested educational article links</h2>
+            <p className="lead" style={{ marginTop: "1rem" }}>
+              Titles are reserved for upcoming articles. Full pieces and links
+              will be published as the education program is developed.
+            </p>
           </Reveal>
           <div className="tag-list" style={{ marginTop: "1.5rem" }}>
             {educationArticlePlaceholders.map((title) => (

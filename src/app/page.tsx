@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ConsultationCta } from "@/components/consultation-cta";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import {
@@ -48,7 +47,7 @@ export default function HomePage() {
               <Link href="/contact" className="button">
                 Book a Free 15-Minute Consultation <ArrowUpRight />
               </Link>
-              <Link href="/assessments" className="text-link">
+              <Link href="/#services" className="text-link">
                 Explore Our Services <ArrowRight />
               </Link>
             </Reveal>
@@ -78,7 +77,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--flush-top">
+      <section id="services" className="section section--flush-top">
         <div className="shell">
           <Reveal className="service-plane">
             <div className="service-plane__content">
@@ -221,11 +220,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ConsultationCta
-        eyebrow=""
-        title="Begin with a conversation"
-        text="Not sure whether assessment or psychotherapy is right for you? A complimentary 15-minute consultation allows you to briefly explain what brings you here, ask practical questions, and learn about possible next steps."
-      />
     </>
   );
 }
