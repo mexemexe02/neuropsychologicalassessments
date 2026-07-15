@@ -118,6 +118,17 @@
     --radius-lg: 1.5rem;
   }
 
+  /* Phones were rendering labels/buttons at ~11–12px — bump the whole scale. */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
   /* Long clinical words otherwise force horizontal scroll. */
   h1,
   h2,
@@ -130,11 +141,63 @@
   }
 
   h1 {
-    font-size: clamp(2.55rem, 11vw, 4.2rem);
+    font-size: clamp(2.35rem, 9vw, 3.4rem);
+    line-height: 1.05;
   }
 
   h2 {
-    font-size: clamp(2rem, 8.5vw, 3.2rem);
+    font-size: clamp(1.85rem, 7.5vw, 2.6rem);
+    line-height: 1.12;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.1rem;
+  }
+
+  p,
+  .intro-copy p,
+  .reason-card p,
+  .stage-card p,
+  .timeline-row p,
+  .clinician__bio p,
+  .site-footer__note,
+  .site-footer__lead-copy {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .button,
+  .text-link {
+    font-size: 1rem;
+    min-height: 3.25rem;
+  }
+
+  .button--small {
+    font-size: 0.95rem;
+    min-height: 3rem;
+  }
+
+  .detail-list li,
+  .contact-methods a,
+  .site-footer__grid a,
+  .faq-list summary,
+  .faq-list p,
+  .booking-option,
+  .area-item,
+  .tag-list span {
+    font-size: 1.02rem;
   }
 
   .section {
@@ -162,13 +225,20 @@
     justify-content: flex-start;
   }
 
+  /* Header brand was ~7–12px — still short, but readable. */
   .brand-lockup strong {
-    font-size: 0.78rem;
+    font-size: 0.92rem;
+    line-height: 1.2;
   }
 
   .brand-lockup small {
-    font-size: 0.48rem;
+    font-size: 0.68rem;
     letter-spacing: 0.04em;
+    line-height: 1.35;
+  }
+
+  .mobile-menu__nav > a:not(.button) {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
   }
 
   .hero-actions {
