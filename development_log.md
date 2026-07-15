@@ -248,3 +248,24 @@ Coolify not required — static Pages is still fine.
 ### Fix
 Restored Sebastian’s wording page-by-page. Layout/chrome only; no invented
 clinical marketing lines.
+
+## 2026-07-15 — Pricing email draft for Sebastian
+
+### Summary
+Drafted status + pricing email ($750 build + $45/mo care). Not sent — awaiting Humberto approval.
+
+### Email / files check
+- No Gmail inbox access from this agent session
+- Downloads: no new logo or Dr Sauriol photo since July 15 AM package
+
+### Draft
+- `drafts/email-sebastian-pricing-and-status.md`
+
+## 2026-07-15 — Phone logo / name 3×
+
+### Summary
+Header brand was still too small on phone. Stacked logo + name so a true
+~3× (mark 7.35rem, strong 2.76rem, small 1.56rem) fits without horizontal overflow.
+
+### Files Changed
+- `src/styles/responsive.css` — stacked phone brand lockup + hero/menu top padding

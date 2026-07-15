@@ -27,56 +27,72 @@
 }
 
 /*
- * Phone header brand ~3× larger (touch devices + narrow screens).
- * Kept out of the wider tablet breakpoint so desktops don’t get a huge logo.
+ * Phone header: stack logo + name so we can go ~3× larger without clipping.
+ * (Side-by-side at true 3× overflowed the S24 width.)
  */
 @media (max-width: 640px), ((hover: none) and (pointer: coarse)) {
-  .brand-lockup {
-    gap: 0.85rem;
-    align-items: center;
+  .site-header__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    min-height: 0;
+    padding-block: 0.85rem;
+    gap: 0.5rem 0.75rem;
   }
 
+  .brand-lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Desktop defaults: mark 2.45rem / strong 0.92rem / small 0.52rem → ×3 */
   .brand-lockup .brand-mark {
-    width: 7.2rem;
-    height: 7.2rem;
+    width: 7.35rem;
+    height: 7.35rem;
     flex-shrink: 0;
   }
 
+  .brand-lockup span {
+    min-width: 0;
+    width: 100%;
+  }
+
   .brand-lockup strong {
-    font-size: 3rem;
-    line-height: 1.1;
+    font-size: 2.76rem;
+    line-height: 1.12;
     max-width: none;
+    overflow-wrap: anywhere;
   }
 
   .brand-lockup small {
-    margin-top: 0.35rem;
-    font-size: 2.1rem;
+    margin-top: 0.3rem;
+    font-size: 1.56rem;
     letter-spacing: 0.02em;
-    line-height: 1.25;
+    line-height: 1.3;
     max-width: none;
-  }
-
-  .site-header__inner {
-    min-height: 8.5rem;
-    padding-block: 0.75rem;
-    align-items: center;
+    overflow-wrap: anywhere;
+    text-transform: uppercase;
   }
 
   .menu-button {
     width: 3.4rem;
     height: 3.4rem;
+    margin-top: 0.35rem;
   }
 
   .mobile-menu__nav {
-    padding-top: 11rem;
+    padding-top: 16rem;
   }
 
   .page-hero {
-    padding-top: 12.5rem;
+    padding-top: 15rem;
   }
 
   .home-hero {
-    padding-top: 11.5rem;
+    padding-top: 14.5rem;
   }
 }
 
