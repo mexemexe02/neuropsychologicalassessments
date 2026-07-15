@@ -51,6 +51,22 @@
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.timeline--light {
+  border-top-color: var(--line);
+}
+
+.timeline--light .timeline-row {
+  border-bottom-color: var(--line);
+}
+
+.timeline--light .timeline-row > span {
+  color: var(--blue);
+}
+
+.timeline--light .timeline-row p {
+  color: var(--ink-soft);
+}
+
 .timeline-row {
   display: grid;
   grid-template-columns: 4rem 0.7fr 1.3fr;
@@ -60,7 +76,7 @@
 }
 
 .timeline-row > span {
-  color: #8eaaad;
+  color: #e2d3c0;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -73,7 +89,7 @@
 .timeline-row p {
   max-width: 40rem;
   margin-bottom: 0;
-  color: #bdccce;
+  color: #ded1c2;
 }
 
 .statement {
@@ -87,6 +103,64 @@
   text-wrap: balance;
 }
 
+.statement--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.reason-grid,
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-top: 3rem;
+}
+
+.reason-card,
+.stage-card {
+  padding: 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.reason-card h3,
+.stage-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
+.reason-card p,
+.stage-card p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.intro-copy--narrow {
+  max-width: 48rem;
+  padding-top: 0;
+}
+
+.intro-copy--light p {
+  color: #ded1c2;
+}
+
+.portrait-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--stone);
+}
+
+.portrait-photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
 .clinician {
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
@@ -94,6 +168,10 @@
   align-items: start;
   padding-block: clamp(4rem, 8vw, 7rem);
   border-top: 1px solid var(--line);
+}
+
+.clinician-closing {
+  padding-top: 3rem;
 }
 
 .portrait-placeholder {
@@ -109,7 +187,7 @@
   color: var(--paper);
   background:
     radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.34), transparent 25%),
-    linear-gradient(145deg, #6d898d, #254954);
+    linear-gradient(145deg, #c4a882, #4a3f35);
   cursor: pointer;
   font: inherit;
   text-align: center;

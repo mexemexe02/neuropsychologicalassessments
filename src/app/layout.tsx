@@ -8,10 +8,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: "Neuropsychological Assessments | Assessment & Psychotherapy",
-    template: "%s | Neuropsychological Assessments",
+    default: `${site.shortName} | ${site.tagline}`,
+    template: `%s | ${site.shortName}`,
   },
-  description: site.tagline,
+  description: site.description,
   applicationName: site.name,
   alternates: { canonical: "/" },
   openGraph: {
@@ -19,20 +19,19 @@ export const metadata: Metadata = {
     locale: "en_CA",
     siteName: site.name,
     title: site.name,
-    description:
-      "Neuropsychological assessments and psychotherapy for individuals ages 4 to 90. Book a free 15-minute consultation.",
+    description: site.description,
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.tagline,
+    title: site.shortName,
+    description: site.description,
     images: ["/og-image.svg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f6f2",
+  themeColor: "#f2ebe0",
   colorScheme: "light",
 };
 
@@ -45,7 +44,9 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         <DemoNoticeProvider>
-          <a className="skip-link" href="#main-content">Skip to content</a>
+          <a className="skip-link" href="#main-content">
+            Skip to content
+          </a>
           <SiteHeader />
           <main id="main-content">{children}</main>
           <SiteFooter />

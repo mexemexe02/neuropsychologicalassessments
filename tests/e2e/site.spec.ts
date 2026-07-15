@@ -1,11 +1,12 @@
 import { expect, test } from "@playwright/test";
 
 const routes = [
-  ["/", "Clarity for what comes next."],
-  ["/assessments", "Insight, built from evidence."],
+  ["/", "Neuropsychological assessment and psychotherapy, centred on understanding."],
+  ["/assessments", "Understanding how you think, learn, remember, and function."],
+  ["/clinicians", "Experienced care. A collaborative approach."],
   ["/psychotherapy", "Change can begin with being understood."],
-  ["/clinicians", "Expertise, with humanity at its centre."],
-  ["/resources", "Clear information makes care easier to navigate."],
+  ["/education", "Clear information supports informed decisions."],
+  ["/resources", "Practical information for preparing and finding support."],
   ["/contact", "Begin with a brief conversation."],
   ["/privacy", "Your information deserves careful treatment."],
 ] as const;
@@ -37,40 +38,34 @@ test("mobile menu reveals all primary destinations", async ({ page }, testInfo) 
   const mobileNav = page.getByRole("navigation", { name: "Mobile navigation" });
   await expect(mobileNav).toBeVisible();
   await expect(mobileNav.getByRole("link", { name: /Assessments/ })).toBeVisible();
+  await expect(mobileNav.getByRole("link", { name: /Education/ })).toBeVisible();
   await mobileNav.getByRole("link", { name: /Clinicians/ }).click();
   await expect(page).toHaveURL(/\/clinicians\/?$/);
 });
 
-test("consultation calendar completes its responsive preview flow", async ({ page }) => {
+test("consultation request form completes its preview flow", async ({ page }) => {
   await page.goto("/contact");
 
-  const booking = page.getByRole("region", { name: "Free consultation booking" });
-  await expect(booking).toHaveCSS("background-color", "rgb(255, 254, 250)");
+  const booking = page.getByRole("region", { name: "Free consultation request" });
+  await expect(booking).toHaveCSS("background-color", "rgb(250, 246, 240)");
   await expect(page.locator(".page-hero")).not.toHaveClass(/page-hero--blue/);
 
   await page.getByRole("button", { name: /Psychotherapy/ }).click();
-  await page.getByRole("button", { name: /Video call/ }).click();
-  await page.getByRole("button", { name: "Continue to date and time" }).click();
-
-  await expect(page.getByText("Choose a date")).toBeVisible();
-  await page.locator(".booking-date").first().click();
-  await page.getByRole("button", { name: "10:30 AM" }).click();
-  await page.getByRole("button", { name: "Continue to your details" }).click();
-
   await page.getByLabel("Your name").fill("Preview Client");
   await page.getByLabel("Email address").fill("preview@example.com");
   await page.getByLabel("Phone number").fill("705-555-0100");
-  await page.getByRole("button", { name: "Preview booking confirmation" }).click();
+  await page.getByRole("button", { name: "Submit consultation request" }).click();
 
-  await expect(page.getByRole("dialog", { name: /Online booking isn’t connected yet/i })).toBeVisible();
-  await expect(page.getByRole("dialog")).toContainText("Your details were not sent or stored.");
+  await expect(
+    page.getByRole("dialog", { name: /Consultation requests aren’t sent yet/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("dialog")).toContainText(
+    "Your details were not sent or stored",
+  );
   await page.getByRole("button", { name: "Continue browsing" }).click();
 
   await expect(page.getByRole("status")).toContainText(
-    "Your consultation time is ready.",
-  );
-  await expect(page.getByRole("status")).toContainText(
-    "No information was sent or stored.",
+    "Thank you — your request is ready to send.",
   );
 });
 

@@ -149,6 +149,36 @@ still needs live setup (so unfinished pieces never look “broken”).
 - Clinician portrait placeholders open photo-forthcoming notice.
 - GitHub Pages workflow (`GITHUB_PAGES=1` basePath).
 - Deploy target: `https://mexemexe02.github.io/neuropsychologicalassessments/`
+
+### Deploy notes
+
+- GitHub Pages is fine for this **static export** preview (no Node server needed).
+- First Actions run failed on `npm ci` lock sync; switched to `npm install`.
+- Second run built OK but deploy blocked until `master` was allowed on the
+  `github-pages` environment (default only had `main`).
+- Coolify (or custom domain on Pages) comes later for production / booking API.
+
+## 2026-07-15 — Sebastian content package rewrite
+
+### Source
+
+- `sebastian-content-brief.md`
+- `client-content/sebastian-content-doc.odt`
+- Headshot: `public/images/sebastian-jose-headshot.jpg`
+
+### Changes
+
+- Brand → **Centre for Neuropsychological Assessments, Psychotherapy and Counselling**
+- Beige background + French beige accents/buttons
+- Nav: Home | Assessments | Clinicians | Psychotherapy | Education | Resources
+- Header CTA only for Free 15-Minute Consultation
+- Replaced numerical ages with children / adolescents / adults / older adults
+- Rewrote Home, Assessments, Psychotherapy, Resources from his copy
+- New Education page (topic placeholders; programs later)
+- Clinicians: Sebastian photo live; Dr. Sauriol monogram until hers arrives
+- Footer + address: 34 County Road, Tiny, Ontario L0L 2J0
+- Booking → Option A consult request form (no calendar)
+
 ### Known / not bugs (demo limits)
 
 - Booking is preview-only (no send/store) — intentional until Jane/backend.

@@ -17,8 +17,6 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const normalizedPath = normalizePath(pathname);
-  // Psychotherapy is the only dark-hero route; 404 uses a light hero for nav contrast.
-  const hasDarkHero = normalizedPath === "/psychotherapy";
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 18);
@@ -34,16 +32,14 @@ export function SiteHeader() {
     };
   }, [isOpen]);
 
-  const useLightChrome = (hasDarkHero && !isScrolled) || isOpen;
-
   return (
     <header
       className={`site-header ${isScrolled ? "is-scrolled" : ""} ${
-        hasDarkHero ? "on-dark" : ""
-      } ${isOpen ? "menu-open" : ""}`}
+        isOpen ? "menu-open" : ""
+      }`}
     >
       <div className="shell site-header__inner">
-        <Logo light={useLightChrome} />
+        <Logo light={isOpen} />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
             <Link
@@ -59,8 +55,9 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+        {/* Consultation is header CTA only — not a primary nav item. */}
         <Link href="/contact" className="button button--small desktop-book">
-          Free consultation <ArrowUpRight />
+          Free 15-Minute Consultation <ArrowUpRight />
         </Link>
         <button
           className="menu-button"
@@ -91,7 +88,7 @@ export function SiteHeader() {
             className="button"
             onClick={() => setIsOpen(false)}
           >
-            Book a free consultation <ArrowUpRight />
+            Free 15-Minute Consultation <ArrowUpRight />
           </Link>
           <p>Thoughtful care. Clear next steps.</p>
         </nav>

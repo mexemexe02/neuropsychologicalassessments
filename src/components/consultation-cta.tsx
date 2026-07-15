@@ -24,7 +24,7 @@ export function ConsultationCta({
           <div>
             <p>{text}</p>
             <Link href="/contact" className="button">
-              Book a free consultation <ArrowUpRight />
+              Book a Free 15-Minute Consultation <ArrowUpRight />
             </Link>
           </div>
         </Reveal>

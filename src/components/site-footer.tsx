@@ -9,9 +9,14 @@ export function SiteFooter() {
       <div className="shell">
         <div className="site-footer__lead">
           <p className="eyebrow eyebrow--light">Begin with a conversation</p>
-          <h2>Not sure what kind of support is right for you?</h2>
+          <h2>Not sure whether assessment or psychotherapy is right for you?</h2>
+          <p className="site-footer__lead-copy">
+            A complimentary 15-minute consultation allows you to briefly explain
+            what brings you here, ask practical questions, and learn about
+            possible next steps.
+          </p>
           <Link href="/contact" className="text-link text-link--light">
-            Book a free 15-minute consultation <ArrowUpRight />
+            Book a Free 15-Minute Consultation <ArrowUpRight />
           </Link>
         </div>
 
@@ -19,7 +24,13 @@ export function SiteFooter() {
           <div>
             <Logo light />
             <p className="site-footer__note">
-              {site.tagline}.
+              Neuropsychological assessments for children through older adulthood
+              and evidence-based psychotherapy for adults.
+            </p>
+            <p className="site-footer__note">
+              {site.addressLine1}
+              <br />
+              {site.addressLine2}
             </p>
           </div>
           <nav aria-label="Footer navigation">
@@ -33,17 +44,21 @@ export function SiteFooter() {
           <div>
             <p className="footer-label">Connect</p>
             <a href={site.phoneHref}>
-              <Phone /> {site.phone}
+              <Phone /> Phone or text {site.phone}
             </a>
             <a href={`mailto:${site.email}`}>
-              <Mail /> Email the practice
+              <Mail /> {site.email}
             </a>
             <Link href="/contact">Book a consultation</Link>
+            <p className="site-footer__privacy-note">
+              Please avoid including sensitive personal or health information in
+              email or text messages.
+            </p>
           </div>
         </div>
 
         <div className="site-footer__legal">
-          <span>© {new Date().getFullYear()} {site.name}</span>
+          <span>© {new Date().getFullYear()} {site.shortName}</span>
           <Link href="/privacy">Privacy</Link>
           <span>Website preview</span>
         </div>

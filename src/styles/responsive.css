@@ -43,7 +43,9 @@
   }
 
   .area-grid,
-  .resource-grid {
+  .resource-grid,
+  .reason-grid,
+  .stage-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -125,6 +127,9 @@
   .steps,
   .area-grid,
   .resource-grid,
+  .reason-grid,
+  .stage-grid,
+  .split-concerns,
   .clinician,
   .field-row {
     grid-template-columns: 1fr;

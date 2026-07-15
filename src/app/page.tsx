@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
+import {
+  homeAssessmentConcerns,
+  homeBeginSteps,
+  homeTherapyConcerns,
+} from "@/lib/content";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Neuropsychological Assessments | Assessment & Psychotherapy",
+    absolute: `${site.shortName} | Thoughtful care. Clear next steps.`,
   },
-  description:
-    "Neuropsychological assessment and psychotherapy for individuals ages 4 to 90. Free 15-minute consultation available.",
+  description: site.description,
   alternates: { canonical: "/" },
 };
-
-const steps = [
-  ["01", "Free consultation", "Tell us what brings you here and ask questions about our services."],
-  ["02", "A clear next step", "We’ll help determine whether assessment or psychotherapy fits your needs."],
-  ["03", "Care, shaped around you", "Your experience is individualized, collaborative, and grounded in evidence."],
-];
 
 export default function HomePage() {
   return (
@@ -24,22 +23,32 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="shell home-hero__content">
           <Reveal>
-            <p className="eyebrow">Neuropsychological Assessments</p>
-            <h1>Clarity for what comes next.</h1>
+            <p className="eyebrow">{site.tagline}</p>
+            <h1>
+              Neuropsychological assessment and psychotherapy, centred on
+              understanding.
+            </h1>
           </Reveal>
           <div className="home-hero__intro">
             <Reveal delay={120}>
               <p className="lead">
-                Neuropsychological assessment and psychotherapy for individuals
-                ages 4 to 90 — clear, professional, and easy to navigate.
+                We provide comprehensive neuropsychological assessments for
+                children, adolescents, adults, and older adults, as well as
+                evidence-based psychotherapy for adults.
               </p>
+              <p className="lead">
+                Our approach combines careful listening, clinical expertise, and
+                individualized recommendations to help you better understand your
+                concerns and determine meaningful next steps.
+              </p>
+              <p className="service-note">{site.serviceNote}</p>
             </Reveal>
             <Reveal className="hero-actions" delay={220}>
               <Link href="/contact" className="button">
-                Free 15-minute consultation <ArrowUpRight />
+                Book a Free 15-Minute Consultation <ArrowUpRight />
               </Link>
               <Link href="/assessments" className="text-link">
-                Explore our services <ArrowRight />
+                Explore Our Services <ArrowRight />
               </Link>
             </Reveal>
           </div>
@@ -50,19 +59,21 @@ export default function HomePage() {
       <section className="section">
         <div className="shell intro-grid">
           <Reveal>
-            <p className="eyebrow">Ages 4 to 90</p>
+            <p className="eyebrow">Listening first</p>
             <h2>Understanding begins with listening.</h2>
           </Reveal>
           <Reveal className="intro-copy" delay={120}>
             <p>
-              We provide neuropsychological assessment and psychotherapy services
-              for individuals between the ages of 4 and 90.
+              People seek support for many different reasons. You may be
+              concerned about attention, learning, memory, emotional wellbeing,
+              behaviour, trauma, or a change in everyday functioning. You may
+              also be looking for psychotherapy to help you manage distress,
+              understand difficult experiences, and move forward with greater
+              confidence.
             </p>
             <p>
-              Assessments may address legal, medical, cognitive, learning,
-              attention, memory, developmental, emotional, and behavioural
-              concerns. Psychotherapy may support anxiety, depression, trauma,
-              PTSD, stress, burnout, grief, relationship difficulties, and more.
+              We begin by listening carefully to your concerns and helping you
+              identify the service that best fits your needs.
             </p>
           </Reveal>
         </div>
@@ -74,16 +85,30 @@ export default function HomePage() {
             <div className="service-plane__content">
               <div>
                 <p className="eyebrow eyebrow--light">01 / Assessment</p>
-                <h2>A clearer picture.</h2>
+                <h2>A clearer understanding of strengths and needs.</h2>
               </div>
               <div className="service-plane__footer">
-                <p>
-                  A comprehensive neuropsychological assessment may include
-                  clinical interviews, standardized testing, record reviews,
-                  questionnaires, recommendations, and a written report.
-                </p>
+                <div>
+                  <p>
+                    A neuropsychological assessment provides a detailed
+                    understanding of how an individual thinks, learns, remembers,
+                    processes information, regulates emotions, and manages
+                    everyday demands.
+                  </p>
+                  <p>
+                    Depending on the referral question, the assessment may
+                    include clinical interviews, standardized testing,
+                    questionnaires, review of relevant records, feedback,
+                    individualized recommendations, and a comprehensive written
+                    report.
+                  </p>
+                  <p>
+                    Assessments are available for children, adolescents, adults,
+                    and older adults.
+                  </p>
+                </div>
                 <Link href="/assessments" className="text-link text-link--light">
-                  Explore assessments <ArrowUpRight />
+                  Learn About Assessments <ArrowUpRight />
                 </Link>
               </div>
             </div>
@@ -97,16 +122,29 @@ export default function HomePage() {
             <div className="service-plane__content">
               <div>
                 <p className="eyebrow">02 / Psychotherapy</p>
-                <h2>Space to move forward.</h2>
+                <h2>A collaborative space for meaningful change.</h2>
               </div>
               <div className="service-plane__footer">
-                <p>
-                  Evidence-based psychotherapy offers a collaborative space to
-                  understand difficult experiences, build new skills, and create
-                  meaningful change.
-                </p>
+                <div>
+                  <p>
+                    Psychotherapy provides a private and supportive space to
+                    understand emotional difficulties, develop practical coping
+                    strategies, and work toward meaningful personal goals.
+                  </p>
+                  <p>
+                    We provide evidence-based psychotherapy for adults
+                    experiencing concerns such as anxiety, depression, trauma,
+                    post-traumatic stress, grief, stress, burnout, emotional
+                    regulation difficulties, relationship concerns, and major
+                    life transitions.
+                  </p>
+                  <p>
+                    Therapy is individualized according to your needs, history,
+                    culture, values, and pace.
+                  </p>
+                </div>
                 <Link href="/psychotherapy" className="text-link">
-                  Explore psychotherapy <ArrowUpRight />
+                  Learn About Psychotherapy <ArrowUpRight />
                 </Link>
               </div>
             </div>
@@ -116,28 +154,72 @@ export default function HomePage() {
 
       <section className="section section--soft">
         <div className="shell">
+          <Reveal className="content-header">
+            <div>
+              <p className="eyebrow">Areas of support</p>
+              <h2>Areas we may help you explore.</h2>
+            </div>
+          </Reveal>
+          <div className="split-concerns">
+            <Reveal>
+              <h3>Assessment concerns</h3>
+              <ul className="detail-list">
+                {homeAssessmentConcerns.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal delay={100}>
+              <h3>Psychotherapy concerns</h3>
+              <ul className="detail-list">
+                {homeTherapyConcerns.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
           <Reveal>
             <p className="eyebrow">How to begin</p>
             <h2>A simple, considered start.</h2>
           </Reveal>
           <div className="steps">
-            {steps.map(([number, title, text], index) => (
-              <Reveal key={number} className="step" delay={index * 90}>
-                <span>{number}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
+            {homeBeginSteps.map((step, index) => (
+              <Reveal key={step.number} className="step" delay={index * 90}>
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <Reveal className="shell">
-          <p className="statement">
-            Care can be rigorous and compassionate at the same time.
-          </p>
-        </Reveal>
+      <section className="section section--soft">
+        <div className="shell split-grid">
+          <Reveal>
+            <p className="statement statement--left">
+              Care can be both rigorous and compassionate.
+            </p>
+          </Reveal>
+          <Reveal className="intro-copy" delay={100}>
+            <p>
+              We believe that effective care begins with careful listening. Our
+              goal is to provide services that are professional,
+              evidence-informed, respectful, and understandable.
+            </p>
+            <p>
+              Whether you are seeking diagnostic clarity, practical
+              recommendations, emotional support, or a better understanding of
+              yourself or a family member, we aim to make the process as clear
+              and comfortable as possible.
+            </p>
+          </Reveal>
+        </div>
       </section>
     </>
   );

@@ -21,8 +21,8 @@ export function Logo({ light = false }: { light?: boolean }) {
         <circle cx="17" cy="19" r="1.2" className="brand-mark__dot" />
       </svg>
       <span>
-        <strong>Neuropsychological</strong>
-        <small>Assessments</small>
+        <strong>Centre for Neuropsychological</strong>
+        <small>Assessments, Psychotherapy &amp; Counselling</small>
       </span>
     </Link>
   );

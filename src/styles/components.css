@@ -16,6 +16,7 @@
   transition:
     color 220ms ease,
     background 220ms ease,
+    border-color 220ms ease,
     transform 220ms ease;
 }
 
@@ -25,9 +26,16 @@
 }
 
 .button:hover {
+  border-color: var(--french-beige);
   color: var(--blue-deep);
-  background: transparent;
+  background: var(--french-beige);
   transform: translateY(-2px);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
 }
 
 .button:hover svg {
@@ -136,8 +144,8 @@
 
 .site-footer {
   padding: clamp(6rem, 11vw, 10rem) 0 1.5rem;
-  color: #e8eeee;
-  background: #102b34;
+  color: #f3ebe1;
+  background: #3d342c;
 }
 
 .site-footer__lead {
@@ -146,8 +154,15 @@
 }
 
 .site-footer__lead h2 {
-  max-width: 12ch;
-  margin-bottom: 2rem;
+  max-width: 18ch;
+  margin-bottom: 1.4rem;
+}
+
+.site-footer__lead-copy {
+  max-width: 40rem;
+  margin-bottom: 1.8rem;
+  color: #d8cbbd;
+  font-size: 1.05rem;
 }
 
 .site-footer__grid {
@@ -170,7 +185,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #bdc9ca;
+  color: #d4c6b6;
   font-size: 0.82rem;
   transition: color 180ms ease;
 }
@@ -184,10 +199,18 @@
 }
 
 .site-footer__note {
-  max-width: 22rem;
+  max-width: 24rem;
   margin-top: 1.2rem;
-  color: #93a7aa;
+  color: #c4b5a4;
   font-size: 0.83rem;
+}
+
+.site-footer__privacy-note {
+  max-width: 22rem;
+  margin-top: 0.6rem;
+  color: #b7a898;
+  font-size: 0.74rem;
+  line-height: 1.45;
 }
 
 .footer-label {
@@ -204,6 +227,6 @@
   gap: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #83989b;
+  color: #b7a898;
   font-size: 0.67rem;
 }

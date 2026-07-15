@@ -2,8 +2,8 @@
 
 export const demoNotices = {
   booking: {
-    title: "Online booking isn’t connected yet",
-    body: "This calendar is a working preview of the consultation flow. Your details were not sent or stored. Once a booking system is set up, this step will confirm real appointments and send calendar details.",
+    title: "Consultation requests aren’t sent yet",
+    body: "This is a request form (Option A): you will be contacted by phone or email once the practice messaging is connected. Your details were not sent or stored in this preview. For now, call or text 705-321-8146 or email the practice directly.",
   },
   resources: {
     title: "Resource guides aren’t published yet",

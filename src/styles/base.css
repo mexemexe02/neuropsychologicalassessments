@@ -1,17 +1,19 @@
 :root {
   --font-body: "Manrope Variable";
   --font-display: "Newsreader Variable";
-  --ink: #16242a;
-  --ink-soft: #536267;
-  --blue: #365d6b;
-  --blue-deep: #18343e;
-  --blue-light: #dce8e9;
-  --sage: #aebbb1;
-  --ivory: #f7f6f2;
-  --paper: #fffefa;
-  --stone: #e8e5de;
-  --line: rgba(22, 36, 42, 0.14);
-  --shadow: 0 30px 80px rgba(35, 54, 60, 0.12);
+  /* Beige palette from Sebastian’s brief (beige bg + French beige accents). */
+  --ink: #2c2620;
+  --ink-soft: #5c534a;
+  --blue: #b89a7a;
+  --blue-deep: #4a3f35;
+  --blue-light: #e8dfd2;
+  --sage: #c4b5a0;
+  --ivory: #f2ebe0;
+  --paper: #faf6f0;
+  --stone: #e6ddd0;
+  --french-beige: #c4a882;
+  --line: rgba(44, 38, 32, 0.14);
+  --shadow: 0 30px 80px rgba(74, 63, 53, 0.12);
   --radius-sm: 0.85rem;
   --radius-md: 1.5rem;
   --radius-lg: 2.25rem;
@@ -39,7 +41,7 @@ body {
 
 body::selection {
   color: var(--paper);
-  background: var(--blue);
+  background: var(--blue-deep);
 }
 
 main {
@@ -86,18 +88,18 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.6rem, 8vw, 7.5rem);
-  line-height: 0.92;
+  font-size: clamp(3.2rem, 7vw, 6.4rem);
+  line-height: 0.94;
 }
 
 h2 {
-  font-size: clamp(2.6rem, 5.2vw, 5.2rem);
-  line-height: 1;
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+  line-height: 1.02;
 }
 
 h3 {
-  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
-  line-height: 1.08;
+  font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+  line-height: 1.1;
 }
 
 .shell {
@@ -106,7 +108,7 @@ h3 {
 }
 
 .section {
-  padding-block: clamp(6.5rem, 12vw, 11rem);
+  padding-block: clamp(5.5rem, 11vw, 9.5rem);
 }
 
 .section--soft {
@@ -143,12 +145,12 @@ h3 {
 }
 
 .eyebrow--light {
-  color: #b8d2d4;
+  color: #e2d3c0;
 }
 
 .lead {
   color: var(--ink-soft);
-  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
   line-height: 1.65;
 }
 
@@ -169,7 +171,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: 3px solid #6f98a4;
+  outline: 3px solid var(--french-beige);
   outline-offset: 4px;
 }
 

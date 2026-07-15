@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Book a Free Consultation",
   description:
-    "Request a complimentary 15-minute consultation with Neuropsychological Assessments, or contact the practice by phone, text, or email.",
+    "Request a complimentary 15-minute consultation. The practice will follow up by phone or email.",
   alternates: { canonical: "/contact" },
 };
 
@@ -18,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Book / contact"
         title={<>Begin with a brief conversation.</>}
-        intro="A complimentary 15-minute consultation gives you space to share what you are looking for, ask practical questions, and consider the most appropriate next step."
+        intro="A complimentary 15-minute consultation gives you space to share what you are looking for, ask practical questions, and consider the most appropriate next step. After you submit a request, the practice follows up by phone or email."
       />
 
       <section className="section">
@@ -33,13 +33,27 @@ export default function ContactPage() {
             <div className="contact-methods">
               <a href={site.phoneHref}>
                 <Phone />
-                <span>Phone or text<br />{site.phone}</span>
+                <span>
+                  Phone or text
+                  <br />
+                  {site.phone}
+                </span>
               </a>
               <a href={`mailto:${site.email}`}>
                 <Mail />
-                <span>Email<br />{site.email}</span>
+                <span>
+                  Email
+                  <br />
+                  {site.email}
+                </span>
               </a>
             </div>
+            <p className="contact-address">
+              {site.addressLine1}
+              <br />
+              {site.addressLine2}
+            </p>
+            <p className="service-note">{site.serviceNote}</p>
           </Reveal>
           <Reveal delay={120}>
             <ConsultationForm />
@@ -61,7 +75,8 @@ export default function ContactPage() {
             </p>
             <p>
               The consultation is not an assessment or therapy session, and
-              there is no obligation to proceed.
+              there is no obligation to proceed. Submitting a request does not
+              establish a clinician–client relationship.
             </p>
           </Reveal>
         </div>

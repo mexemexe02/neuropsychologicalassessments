@@ -6,6 +6,7 @@ type PageHeroProps = {
   title: ReactNode;
   intro: string;
   aside?: ReactNode;
+  actions?: ReactNode;
   tone?: "light" | "blue";
 };
 
@@ -14,6 +15,7 @@ export function PageHero({
   title,
   intro,
   aside,
+  actions,
   tone = "light",
 }: PageHeroProps) {
   return (
@@ -26,6 +28,7 @@ export function PageHero({
         <Reveal className="page-hero__intro" delay={120}>
           <p className="lead">{intro}</p>
           {aside}
+          {actions ? <div className="hero-actions">{actions}</div> : null}
         </Reveal>
       </div>
     </section>
