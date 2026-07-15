@@ -280,3 +280,10 @@ Hamburger used max-width 1100 (matches ~980 desktop-mode); brand/layout used
 ### Files Changed
 - `src/styles/responsive.css`
 - `src/styles/booking-responsive.css`
+
+## 2026-07-15 — Revert phone logo 3×
+
+### Summary
+Humberto confirmed logo enlargement was not the fix. Removed stacked/~3× brand
+overrides; logo/name back to original navigation.css sizes. Kept 1100px phone
+layout cutoff for real mobile content layout.
