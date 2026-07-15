@@ -114,13 +114,22 @@
 
 @media (max-width: 640px) {
   :root {
-    --shell: calc(100% - 28px);
+    /* Slightly more side room, but type scales via html rem below. */
+    --shell: calc(100% - 32px);
     --radius-lg: 1.5rem;
   }
 
-  /* Phone readability: previous UI chrome was ~11–12px and hard to read. */
-  body {
+  /*
+   * Phone readability fix:
+   * rem units follow the html root (not body). Raising html to 18px
+   * scales body copy, buttons, lists, and spacing together.
+   */
+  html {
     font-size: 18px;
+  }
+
+  body {
+    font-size: 1rem;
     line-height: 1.7;
   }
 
@@ -151,16 +160,12 @@
   }
 
   .eyebrow {
-    margin-bottom: 1.1rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
   }
 
-  .lead {
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-
+  .lead,
   .intro-copy p,
   .clinician__bio > p:not(.clinician__credentials),
   .service-plane__footer p,
@@ -179,16 +184,22 @@
 
   .button,
   .text-link {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .button {
-    min-height: 3.25rem;
+    min-height: 3.35rem;
+    padding-inline: 1.2rem;
   }
 
   .button--small {
     min-height: 3rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .menu-button {
+    width: 3rem;
+    height: 3rem;
   }
 
   .clinician__credentials,
@@ -210,16 +221,16 @@
   .area-item span,
   .resource-card span,
   .site-footer__legal {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .faq-list summary {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     line-height: 1.3;
   }
 
   .area-item {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     min-height: 4.5rem;
     padding: 1.15rem 0.25rem;
   }
@@ -249,14 +260,28 @@
     justify-content: flex-start;
   }
 
+  .brand-lockup {
+    gap: 0.65rem;
+  }
+
+  .brand-lockup .brand-mark {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
   .brand-lockup strong {
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.2;
   }
 
   .brand-lockup small {
-    font-size: 0.62rem;
-    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+  }
+
+  .site-header__inner {
+    min-height: 4.5rem;
   }
 
   .hero-actions {
