@@ -223,8 +223,11 @@ File was deployed and reachable at
 Coolify not required — static Pages is still fine.
 
 ### Fix
-- `assetPath()` helper in `src/lib/site.ts` (uses `GITHUB_PAGES=1` base)
-- Clinicians page Image src → `assetPath("/images/sebastian-jose-headshot.jpg")`
+- First attempt: `assetPath()` — still not enough until deploy
+- Final: static-import `@/assets/sebastian-jose-headshot.jpg` with `fill`
+  so Pages basePath/assetPrefix apply automatically
+- Deployed commit `a24388a`; live img returns 200 JPEG under
+  `/neuropsychologicalassessments/_next/static/media/...`
 
 ## 2026-07-15 — Copy fidelity audit vs Sebastian ODT
 
