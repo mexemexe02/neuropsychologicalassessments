@@ -273,9 +273,9 @@ Header brand was still too small on phone. Stacked logo + name so a true
 ## 2026-07-15 — Force real phone layout on S24 desktop-mode
 
 ### Summary
-S24 was showing full desktop width (not shrunk mobile). Most phone CSS only
-used max-width 640/960; Android “Desktop site” reports ~980px so grids stayed
-desktop. Extended 640/960 breakpoints with coarse-pointer + max-width 1200px.
+S24 screenshot showed tiny side-by-side logo + desktop hero (CTA on right).
+Hamburger used max-width 1100 (matches ~980 desktop-mode); brand/layout used
+640/960 so they never ran. Raised brand + phone layout to 1100px cutoff.
 
 ### Files Changed
 - `src/styles/responsive.css`
