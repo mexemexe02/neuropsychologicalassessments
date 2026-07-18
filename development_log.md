@@ -308,3 +308,39 @@ or touch client-waiting items (logo, Sauriol photo, article bodies, live booking
 
 ### Left alone
 - Temp logo, Sauriol placeholder, education bodies, resource URLs, booking send
+
+## 2026-07-18 — Sebastian reply: logo, Sauriol photo, shorter name, EN/FR
+
+### Summary
+Sebastian sent logo + Dr. Sauriol headshot, accepted shorter brand name, asked for
+English/French option, confirmed monthly care, and wants to discuss go-live/visibility.
+
+### Client decisions
+- Brand → **Centre for Neuropsychology and Psychotherapy** (Humberto’s suggestion)
+- Logo → brain-tree mark only (not full CETSM wordmark / French text block)
+- EN/FR language choice on the site (Sylvie is French)
+- Education can iterate after go-live
+- Keep **$45/mo** care; invoice vs cash asked
+- Prefers a short chat (Kumon / online / phone) about going live + visibility
+
+### Changes
+- Cropped brain-tree from `public/images/logo-cetsm.jpg` → `src/assets/logo-brain-tree.png`
+- Header uses raster brain-tree mark + shorter name lockup
+- Clinicians: Dr. Sauriol headshot + bilingual services note
+- Language toggle (EN/FR) for nav/CTA/footer chrome; FR notice that clinical bodies
+  stay English until Sylvie supplies French copy
+- Draft reply: `drafts/email-sebastian-reply-logo-and-next-steps.md` (not sent)
+
+### Files Changed
+- `src/components/logo.tsx`, `site-header.tsx`, `site-footer.tsx`, `language-toggle.tsx`, `skip-link.tsx`
+- `src/lib/site.ts`, `src/lib/i18n.tsx`
+- `src/app/clinicians/page.tsx`, `src/app/layout.tsx`
+- `src/styles/navigation.css`, `src/styles/content.css`, `src/styles/responsive.css`
+- `src/assets/logo-brain-tree.png`, `src/assets/dr-sylvie-sauriol-headshot.png`
+- `scripts/crop-logo-mark.py`
+
+### Blockers / Notes
+- Full French clinical page translation still waiting on Sylvie/Education review
+- Invoice for $750 still to be issued by Humberto
+- Custom domain / Coolify only after go-live chat confirmation
+- Reply email drafted — do not send until Humberto approves

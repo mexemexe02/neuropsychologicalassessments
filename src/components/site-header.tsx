@@ -4,7 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Close, Menu } from "./icons";
+import { LanguageToggle } from "./language-toggle";
 import { Logo } from "./logo";
+import { useLanguage } from "@/lib/i18n";
 import { navItems } from "@/lib/site";
 
 // next.config uses trailingSlash: true — always compare without a trailing slash.
@@ -14,6 +16,7 @@ function normalizePath(pathname: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const { t, navLabel, locale } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const normalizedPath = normalizePath(pathname);
@@ -55,18 +58,21 @@ export function SiteHeader() {
                   : undefined
               }
             >
-              {item.label}
+              {navLabel(item.id)}
             </Link>
           ))}
         </nav>
-        {/* Consultation is header CTA only — not a primary nav item. */}
-        <Link href="/contact" className="button button--small desktop-book">
-          Free 15-Minute Consultation <ArrowUpRight />
-        </Link>
+        <div className="site-header__actions">
+          <LanguageToggle />
+          {/* Consultation is header CTA only — not a primary nav item. */}
+          <Link href="/contact" className="button button--small desktop-book">
+            {t.consultationCta} <ArrowUpRight />
+          </Link>
+        </div>
         <button
           className="menu-button"
           type="button"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-label={isOpen ? t.closeMenu : t.openMenu}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}
         >
@@ -83,20 +89,32 @@ export function SiteHeader() {
               onClick={() => setIsOpen(false)}
             >
               <span>0{index + 1}</span>
-              {item.label}
+              {navLabel(item.id)}
               <ArrowUpRight />
             </Link>
           ))}
+          <div className="mobile-menu__lang">
+            <LanguageToggle />
+          </div>
           <Link
             href="/contact"
             className="button"
             onClick={() => setIsOpen(false)}
           >
-            Free 15-Minute Consultation <ArrowUpRight />
+            {t.consultationCta} <ArrowUpRight />
           </Link>
-          <p>Thoughtful care. Clear next steps.</p>
+          <p>{t.tagline}</p>
         </nav>
       </div>
+
+      {/* FR chrome is live; clinical bodies stay English until Sylvie supplies FR copy. */}
+      {locale === "fr" && !isOpen ? (
+        <div className="locale-notice" role="status">
+          <div className="shell">
+            <p>{t.frContentNotice}</p>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }

@@ -19,10 +19,14 @@ export const siteOrigin =
     : "https://www.neuropsychologicalassessments.com";
 
 export const site = {
-  name: "Centre for Neuropsychological Assessments, Psychotherapy and Counselling",
-  shortName: "Centre for Neuropsychological Assessments",
-  tagline:
-    "Thoughtful care. Clear next steps.",
+  // Public brand — confirmed with Sebastian (Jul 2026): shorter header name.
+  // Domain stays neuropsychologicalassessments.com for search visibility.
+  name: "Centre for Neuropsychology and Psychotherapy",
+  shortName: "Centre for Neuropsychology and Psychotherapy",
+  // Longer descriptor for footer / SEO context (not the header lockup).
+  longDescriptor:
+    "Neuropsychological assessments for children through older adulthood and evidence-based psychotherapy for adults.",
+  tagline: "Thoughtful care. Clear next steps.",
   description:
     "Neuropsychological assessments for children through older adulthood and evidence-based psychotherapy for adults.",
   domain: siteOrigin,
@@ -36,11 +40,12 @@ export const site = {
 } as const;
 
 // Home is listed in nav per Sebastian’s brief; logo also links home.
+// Labels are English defaults; LanguageProvider overlays French chrome labels.
 export const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Assessments", href: "/assessments" },
-  { label: "Clinicians", href: "/clinicians" },
-  { label: "Psychotherapy", href: "/psychotherapy" },
-  { label: "Education", href: "/education" },
-  { label: "Resources", href: "/resources" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "assessments", label: "Assessments", href: "/assessments" },
+  { id: "clinicians", label: "Clinicians", href: "/clinicians" },
+  { id: "psychotherapy", label: "Psychotherapy", href: "/psychotherapy" },
+  { id: "education", label: "Education", href: "/education" },
+  { id: "resources", label: "Resources", href: "/resources" },
 ] as const;

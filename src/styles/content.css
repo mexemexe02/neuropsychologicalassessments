@@ -230,6 +230,14 @@
   font-weight: 800;
 }
 
+.clinician__languages {
+  margin: -0.35rem 0 1.35rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .clinician__bio > p:not(.clinician__credentials) {
   max-width: 44rem;
   color: var(--ink-soft);

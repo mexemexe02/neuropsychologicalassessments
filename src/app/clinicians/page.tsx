@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ConsultationCta } from "@/components/consultation-cta";
 import { PageHero } from "@/components/page-hero";
-import { PortraitPlaceholder } from "@/components/portrait-placeholder";
 import { Reveal } from "@/components/reveal";
-// Static import so GitHub Pages basePath/assetPrefix is applied automatically.
+// Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
+import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
 import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
 
 export const metadata: Metadata = {
@@ -66,11 +66,23 @@ export default function CliniciansPage() {
         <div className="shell">
           <article className="clinician">
             <Reveal>
-              {/* TEMP: Replace with Dr. Sauriol’s approved headshot when it arrives. */}
-              <PortraitPlaceholder initials="SS" />
+              <div className="portrait-photo">
+                <Image
+                  src={sauriolHeadshot}
+                  alt="Dr. Sylvie Sauriol, Psy.D. Neuropsychologist"
+                  fill
+                  sizes="(max-width: 960px) min(90vw, 22rem), 28vw"
+                  className="portrait-photo__img"
+                  priority
+                />
+              </div>
             </Reveal>
             <Reveal className="clinician__bio" delay={100}>
               <h2>Dr. Sylvie Sauriol, Psy.D. Neuropsychologist</h2>
+              <p className="clinician__languages">
+                Services available in English and French / Services offerts en
+                anglais et en français
+              </p>
               <p>
                 Dr. Sylvie Sauriol is a psychologist with 20 years of experience
                 in neuropsychological assessment. Her work focuses on

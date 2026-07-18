@@ -116,19 +116,12 @@
   color: #b8c8c9;
 }
 
+/* Brain-tree practice mark (raster) — replaces the temporary SVG wordmark. */
 .brand-mark {
-  width: 2.45rem;
-  height: 2.45rem;
-  overflow: visible;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-width: 1.25;
-}
-
-.brand-mark__dot {
-  fill: currentColor;
-  stroke: none;
+  width: 2.55rem;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .desktop-nav {
@@ -137,6 +130,84 @@
   align-items: center;
   justify-content: center;
   gap: 1.15rem 1.45rem;
+}
+
+.site-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 0.65rem 0.85rem;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.lang-toggle__btn {
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.lang-toggle__btn.is-active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-header.on-dark:not(.is-scrolled) .lang-toggle {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.site-header.on-dark:not(.is-scrolled) .lang-toggle__btn {
+  color: #e8ddd0;
+}
+
+.site-header.on-dark:not(.is-scrolled) .lang-toggle__btn.is-active {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.locale-notice {
+  border-top: 1px solid var(--line);
+  background: #efe4d4;
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.locale-notice .shell {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.locale-notice p {
+  margin: 0;
+  max-width: 52rem;
+}
+
+.site-header.is-scrolled .locale-notice {
+  border-top-color: transparent;
+}
+
+.mobile-menu__lang {
+  margin: 0.35rem 0 0.75rem;
 }
 
 .desktop-nav a {

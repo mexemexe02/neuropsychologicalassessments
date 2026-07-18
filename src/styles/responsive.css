@@ -11,7 +11,7 @@
   }
 
   .desktop-nav,
-  .desktop-book {
+  .site-header__actions {
     display: none !important;
   }
 

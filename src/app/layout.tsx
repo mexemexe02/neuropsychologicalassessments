@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { DemoNoticeProvider } from "@/components/demo-notice";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SkipLink } from "@/components/skip-link";
+import { LanguageProvider } from "@/lib/i18n";
 import { site, siteOrigin } from "@/lib/site";
 import "./globals.css";
 
@@ -45,14 +47,14 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <DemoNoticeProvider>
-          <a className="skip-link" href="#main-content">
-            Skip to content
-          </a>
-          <SiteHeader />
-          <main id="main-content">{children}</main>
-          <SiteFooter />
-        </DemoNoticeProvider>
+        <LanguageProvider>
+          <DemoNoticeProvider>
+            <SkipLink />
+            <SiteHeader />
+            <main id="main-content">{children}</main>
+            <SiteFooter />
+          </DemoNoticeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
