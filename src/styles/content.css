@@ -1,6 +1,6 @@
 .content-header {
   display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
   gap: 8vw;
   margin-bottom: 5rem;
 }
@@ -15,6 +15,24 @@
 
 .content-header .lead {
   max-width: 45rem;
+}
+
+/* Full-width feature headings — for long titles that must not use the 11ch header grid. */
+.feature-block {
+  max-width: 46rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-block h2 {
+  max-width: none;
+  margin-bottom: 1rem;
+  /* Global h2 line-height (~1.02) overlaps descenders when titles wrap on large screens. */
+  line-height: 1.2;
+}
+
+.feature-block .lead {
+  max-width: 40rem;
+  margin-bottom: 0;
 }
 
 .area-grid {

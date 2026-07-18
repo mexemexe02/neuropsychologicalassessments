@@ -53,20 +53,20 @@ export default function PsychotherapyPage() {
         }
       />
 
-      {/* Featured focus area — Sebastian Jul 18 email; keep wording exact. */}
+      {/* Featured focus area — Sebastian Jul 18 email; keep wording exact.
+          Not using .content-header: that grid caps h2 at 11ch and overlaps
+          long titles with the adjacent lead column. */}
       <section
         id="men-sexual-abuse"
         className="section section--soft"
         aria-labelledby="men-sexual-abuse-heading"
       >
         <div className="shell">
-          <Reveal className="content-header">
-            <div>
-              <p className="eyebrow">{therapyMenSexualAbuse.eyebrow}</p>
-              <h2 id="men-sexual-abuse-heading">
-                {therapyMenSexualAbuse.title}
-              </h2>
-            </div>
+          <Reveal className="feature-block">
+            <p className="eyebrow">{therapyMenSexualAbuse.eyebrow}</p>
+            <h2 id="men-sexual-abuse-heading">
+              {therapyMenSexualAbuse.title}
+            </h2>
             <p className="lead">
               We provide specialized treatment for men with a history of sexual
               abuse.
