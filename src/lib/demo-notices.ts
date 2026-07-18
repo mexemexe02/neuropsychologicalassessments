@@ -9,8 +9,4 @@ export const demoNotices = {
     title: "Resource guides aren’t published yet",
     body: "These topic cards show where education and leaflets will live. Full clinician-reviewed guides and downloadable PDFs will be added once the practice materials are ready.",
   },
-  portraits: {
-    title: "Professional photos aren’t uploaded yet",
-    body: "Clinician portraits are placeholders until approved headshots are provided. Bios and credentials on this page already reflect the practice information on file.",
-  },
 } as const;

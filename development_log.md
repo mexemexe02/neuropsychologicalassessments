@@ -362,3 +362,30 @@ treatment for men with a history of sexual abuse. Added his copy verbatim.
 - `src/app/psychotherapy/page.tsx`
 - `src/app/page.tsx`
 - `drafts/email-sebastian-reply-logo-and-next-steps.md`
+
+## 2026-07-18 — Full site audit vs Sebastian requests
+
+### Verdict
+Required client items from emails #1–#2 are in place on source + live Pages.
+Lint/build pass. Deploy Actions succeeded for both Jul 18 pushes.
+
+### PASS (confirmed live)
+- Brand: Centre for Neuropsychology and Psychotherapy
+- Brain-tree logo only; Sauriol + Sebastian headshots; EN/FR services note
+- Nav order + Free 15-Minute Consultation header CTA (not a nav item)
+- Address Tiny / phone; EN/FR chrome toggle on live HTML
+- Men’s sexual-abuse Psychotherapy section + home mention
+- Form Option A preview (“Request not sent yet”)
+- Education/Resources intentionally incomplete pending Sylvie materials
+
+### Fixed during audit
+- Home “Learn About Psychotherapy” no longer deep-linked only to #men-sexual-abuse; separate link added
+- Removed stale portraits demo notice + unused PortraitPlaceholder
+- i18n localStorage hydrate lint (startTransition)
+
+### Still waiting (not blockers for preview; needed before true go-live)
+- Full French clinical page bodies (Sylvie)
+- Education article bodies + resource org URLs
+- Live form send / booking backend
+- Privacy legal review; invoice; go-live/domain chat
+- Custom domain / Coolify after yes

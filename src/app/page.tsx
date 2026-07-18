@@ -144,8 +144,16 @@ export default function HomePage() {
                     culture, values, and pace.
                   </p>
                 </div>
-                <Link href="/psychotherapy/#men-sexual-abuse" className="text-link">
+                <Link href="/psychotherapy" className="text-link">
                   Learn About Psychotherapy <ArrowUpRight />
+                </Link>
+                <Link
+                  href="/psychotherapy/#men-sexual-abuse"
+                  className="text-link"
+                  style={{ marginTop: "0.75rem" }}
+                >
+                  Counselling for men with a history of sexual abuse{" "}
+                  <ArrowUpRight />
                 </Link>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  startTransition,
   useCallback,
   useContext,
   useEffect,
@@ -99,7 +100,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === "en" || saved === "fr") setLocaleState(saved);
+      // Defer so hydration stays English-first; then apply saved preference.
+      if (saved === "en" || saved === "fr") {
+        startTransition(() => setLocaleState(saved));
+      }
     } catch {
       // Ignore private-mode / blocked storage.
     }
@@ -124,7 +128,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLocale,
       t: ui[locale],
       navLabel: (id) =>
-        locale === "fr" ? navFr[id] : (navItems.find((n) => n.id === id)?.label ?? id),
+        locale === "fr"
+          ? navFr[id]
+          : (navItems.find((n) => n.id === id)?.label ?? id),
     }),
     [locale, setLocale],
   );
