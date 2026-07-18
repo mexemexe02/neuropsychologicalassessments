@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ConsultationCta } from "@/components/consultation-cta";
 import { ArrowUpRight } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
+import { PsychotherapyTopicNav } from "@/components/psychotherapy-topic-nav";
 import { Reveal } from "@/components/reveal";
 import {
   therapyApproaches,
@@ -12,11 +13,12 @@ import {
   therapyFaqs,
   therapyMenSexualAbuse,
 } from "@/lib/content";
+import { therapyAddictionSelfEsteem } from "@/lib/content-sebastian-july18";
 
 export const metadata: Metadata = {
   title: "Psychotherapy",
   description:
-    "Evidence-based, trauma-informed psychotherapy for adults — including specialized counselling for men with a history of sexual abuse.",
+    "Evidence-based, trauma-informed psychotherapy for adults — including specialized counselling for men with a history of sexual abuse, and support for addiction and self-esteem.",
   alternates: { canonical: "/psychotherapy" },
 };
 
@@ -53,12 +55,49 @@ export default function PsychotherapyPage() {
         }
       />
 
-      {/* Featured focus area — Sebastian Jul 18 email; keep wording exact.
+      <PsychotherapyTopicNav active="overview" />
+
+      {/* Featured focus areas — Sebastian Jul 18 emails; keep wording exact.
           Not using .content-header: that grid caps h2 at 11ch and overlaps
           long titles with the adjacent lead column. */}
+      <section className="section section--soft">
+        <div className="shell">
+          <Reveal className="feature-block">
+            <h2>Specialized psychotherapy focus areas</h2>
+          </Reveal>
+          <div className="reason-grid">
+            <Reveal className="reason-card">
+              <h3>{therapyAddictionSelfEsteem.title}</h3>
+              <p>{therapyAddictionSelfEsteem.intro[0]}</p>
+              <Link
+                href="/psychotherapy/addiction-and-self-esteem"
+                className="text-link"
+                style={{ marginTop: "1rem" }}
+              >
+                Addiction and Self-Esteem <ArrowUpRight />
+              </Link>
+            </Reveal>
+            <Reveal className="reason-card" delay={80}>
+              <h3>{therapyMenSexualAbuse.title}</h3>
+              <p>
+                We provide specialized treatment for men with a history of
+                sexual abuse.
+              </p>
+              <Link
+                href="/psychotherapy/#men-sexual-abuse"
+                className="text-link"
+                style={{ marginTop: "1rem" }}
+              >
+                Read this focus area <ArrowUpRight />
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section
         id="men-sexual-abuse"
-        className="section section--soft"
+        className="section"
         aria-labelledby="men-sexual-abuse-heading"
       >
         <div className="shell">

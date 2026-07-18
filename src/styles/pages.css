@@ -2,25 +2,37 @@
   position: relative;
   min-height: 100svh;
   padding: clamp(9rem, 16vw, 13rem) 0 4rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Nature video loop — sunlight through trees (Pexels, brain-tree brand fit). */
+.home-hero__video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 86% 22%, rgba(196, 168, 130, 0.28), transparent 28%),
-    linear-gradient(135deg, #f2ebe0 42%, #e8dfd2 100%);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(255, 255, 255, 0.72) 42%,
+      rgba(255, 255, 255, 0.9) 100%
+    );
 }
 
 .home-hero::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 42vw;
-  height: 58vh;
-  border-radius: 55% 0 0;
-  background:
-    linear-gradient(140deg, transparent 0 35%, rgba(255, 255, 255, 0.55) 35.2% 36%, transparent 36.2%),
-    radial-gradient(ellipse at 35% 75%, #c4a882 0 4%, transparent 4.5%),
-    linear-gradient(150deg, #e0d3c2, #b89a7a);
-  content: "";
-  opacity: 0.22;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  display: none;
 }
 
 .service-note {
@@ -114,14 +126,16 @@
   min-height: 78vh;
   padding: clamp(4rem, 9vw, 8rem);
   overflow: hidden;
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  color: var(--paper);
-  background: var(--blue-deep);
+  color: var(--ink);
+  background: #f7f6f3;
+  box-shadow: var(--shadow);
 }
 
 .service-plane--light {
   color: var(--ink);
-  background: #e8dfd2;
+  background: #ffffff;
 }
 
 .service-plane::after {
@@ -130,14 +144,14 @@
   bottom: -28%;
   width: 55%;
   aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(154, 171, 150, 0.35);
   border-radius: 48% 52% 42% 58%;
   content: "";
   transform: rotate(-18deg);
 }
 
 .service-plane--light::after {
-  border-color: rgba(24, 52, 62, 0.2);
+  border-color: rgba(138, 122, 104, 0.22);
 }
 
 .service-plane__content {
@@ -163,7 +177,7 @@
 .service-plane__footer p {
   max-width: 36rem;
   margin-bottom: 1rem;
-  color: #ded1c2;
+  color: var(--ink-soft);
 }
 
 .service-plane__footer p:last-of-type {

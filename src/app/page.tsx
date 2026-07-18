@@ -7,7 +7,7 @@ import {
   homeBeginSteps,
   homeTherapyConcerns,
 } from "@/lib/content";
-import { site } from "@/lib/site";
+import { assetPath, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -21,6 +21,19 @@ export default function HomePage() {
   return (
     <>
       <section className="home-hero">
+        {/* Nature loop — calm sunlight through trees (Pexels). Poster keeps first paint light. */}
+        <video
+          className="home-hero__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={assetPath("/images/hero-forest-poster.jpg")}
+          aria-hidden="true"
+        >
+          <source src={assetPath("/videos/hero-forest.mp4")} type="video/mp4" />
+        </video>
+        <div className="home-hero__veil" aria-hidden="true" />
         <div className="shell home-hero__content">
           <Reveal>
             <p className="eyebrow">{site.tagline}</p>

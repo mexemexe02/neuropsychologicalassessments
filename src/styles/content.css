@@ -97,9 +97,10 @@
   font-weight: 800;
 }
 
+/* V2: timeline defaults are light (section--blue is no longer dark). */
 .timeline {
   margin-top: 4.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid var(--line);
 }
 
 .timeline--light {
@@ -123,11 +124,11 @@
   grid-template-columns: 4rem 0.7fr 1.3fr;
   gap: 3rem;
   padding-block: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid var(--line);
 }
 
 .timeline-row > span {
-  color: #e2d3c0;
+  color: var(--blue);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -140,7 +141,7 @@
 .timeline-row p {
   max-width: 40rem;
   margin-bottom: 0;
-  color: #ded1c2;
+  color: var(--ink-soft);
 }
 
 .statement {
@@ -172,7 +173,15 @@
   padding: 1.6rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  background: var(--paper);
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.reason-card:hover,
+.stage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(26, 26, 26, 0.08);
 }
 
 .reason-card h3,
@@ -194,7 +203,7 @@
 }
 
 .intro-copy--light p {
-  color: #ded1c2;
+  color: var(--ink-soft);
 }
 
 .portrait-photo {

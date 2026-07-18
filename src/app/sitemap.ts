@@ -10,6 +10,7 @@ const routes = [
   "/assessments/medico-legal",
   "/clinicians",
   "/psychotherapy",
+  "/psychotherapy/addiction-and-self-esteem",
   "/education",
   "/education/traumatic-brain-injury",
   "/resources",

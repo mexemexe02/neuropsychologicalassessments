@@ -7,11 +7,23 @@ import { ArrowUpRight, Close, Menu } from "./icons";
 import { LanguageToggle } from "./language-toggle";
 import { Logo } from "./logo";
 import { useLanguage } from "@/lib/i18n";
-import { navItems } from "@/lib/site";
+import { navItems, type NavItem } from "@/lib/site";
 
 // next.config uses trailingSlash: true — always compare without a trailing slash.
 function normalizePath(pathname: string) {
   return pathname.replace(/\/$/, "") || "/";
+}
+
+function pathMatches(pathname: string, href: string) {
+  const path = normalizePath(pathname);
+  const target = normalizePath(href.split("#")[0] || "/");
+  if (target === "/") return path === "/";
+  return path === target || path.startsWith(`${target}/`);
+}
+
+function itemIsActive(pathname: string, item: NavItem) {
+  if (pathMatches(pathname, item.href)) return true;
+  return item.children?.some((child) => pathMatches(pathname, child.href)) ?? false;
 }
 
 export function SiteHeader() {
@@ -19,7 +31,8 @@ export function SiteHeader() {
   const { t, navLabel, locale } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const normalizedPath = normalizePath(pathname);
+  // Mobile accordion: which parent with children is expanded.
+  const [mobileOpenId, setMobileOpenId] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 18);
@@ -39,6 +52,12 @@ export function SiteHeader() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    // Close mobile menu when the route changes.
+    setIsOpen(false);
+    setMobileOpenId(null);
+  }, [pathname]);
+
   return (
     <header
       className={`site-header ${isScrolled ? "is-scrolled" : ""} ${
@@ -48,19 +67,55 @@ export function SiteHeader() {
       <div className="shell site-header__inner">
         <Logo light={isOpen} />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={
-                normalizedPath === normalizePath(item.href)
-                  ? "page"
-                  : undefined
-              }
-            >
-              {navLabel(item.id)}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const active = itemIsActive(pathname, item);
+            if (!item.children?.length) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={
+                    normalizePath(pathname) === normalizePath(item.href)
+                      ? "page"
+                      : undefined
+                  }
+                >
+                  {navLabel(item.id)}
+                </Link>
+              );
+            }
+
+            // Hover / focus-within flyout — selectable tabs under parent.
+            return (
+              <div
+                key={item.href}
+                className={`nav-dropdown ${active ? "is-active" : ""}`}
+              >
+                <Link
+                  href={item.href}
+                  className="nav-dropdown__trigger"
+                  aria-haspopup="true"
+                  aria-current={active ? "page" : undefined}
+                >
+                  {navLabel(item.id)}
+                </Link>
+                <div className="nav-dropdown__panel" role="menu">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.id}
+                      href={child.href}
+                      role="menuitem"
+                      aria-current={
+                        pathMatches(pathname, child.href) ? "page" : undefined
+                      }
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </nav>
         <div className="site-header__actions">
           <LanguageToggle />
@@ -82,17 +137,54 @@ export function SiteHeader() {
 
       <div className={`mobile-menu ${isOpen ? "is-open" : ""}`}>
         <nav className="shell mobile-menu__nav" aria-label="Mobile navigation">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-            >
-              <span>0{index + 1}</span>
-              {navLabel(item.id)}
-              <ArrowUpRight />
-            </Link>
-          ))}
+          {navItems.map((item, index) => {
+            if (!item.children?.length) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span>0{index + 1}</span>
+                  {navLabel(item.id)}
+                  <ArrowUpRight />
+                </Link>
+              );
+            }
+
+            const expanded = mobileOpenId === item.id;
+            return (
+              <div key={item.href} className="mobile-nav-group">
+                <button
+                  type="button"
+                  className="mobile-nav-group__toggle"
+                  aria-expanded={expanded}
+                  onClick={() =>
+                    setMobileOpenId((id) => (id === item.id ? null : item.id))
+                  }
+                >
+                  <span>0{index + 1}</span>
+                  {navLabel(item.id)}
+                  <span className="mobile-nav-group__chevron" aria-hidden>
+                    {expanded ? "−" : "+"}
+                  </span>
+                </button>
+                {expanded ? (
+                  <div className="mobile-nav-group__children">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.id}
+                        href={child.href}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
           <div className="mobile-menu__lang">
             <LanguageToggle />
           </div>

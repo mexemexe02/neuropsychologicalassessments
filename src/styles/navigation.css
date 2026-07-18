@@ -13,7 +13,7 @@
 
 .site-header.is-scrolled {
   border-color: var(--line);
-  background: rgba(242, 235, 224, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(18px) saturate(140%);
 }
 
@@ -186,7 +186,7 @@
 
 .locale-notice {
   border-top: 1px solid var(--line);
-  background: #efe4d4;
+  background: #f5f5f5;
   color: var(--ink);
   font-size: 0.85rem;
   line-height: 1.4;
@@ -210,18 +210,21 @@
   margin: 0.35rem 0 0.75rem;
 }
 
-.desktop-nav a {
+.desktop-nav a,
+.desktop-nav .nav-dropdown__trigger {
   position: relative;
   font-size: 0.72rem;
   font-weight: 650;
   letter-spacing: -0.01em;
 }
 
-.desktop-nav a[aria-current="page"] {
+.desktop-nav a[aria-current="page"],
+.desktop-nav .nav-dropdown.is-active > .nav-dropdown__trigger {
   color: var(--blue-deep);
 }
 
-.desktop-nav a::after {
+.desktop-nav > a::after,
+.desktop-nav .nav-dropdown__trigger::after {
   position: absolute;
   right: 0;
   bottom: -0.42rem;
@@ -233,9 +236,113 @@
   transition: transform 200ms ease;
 }
 
-.desktop-nav a:hover::after,
-.desktop-nav a[aria-current="page"]::after {
+.desktop-nav > a:hover::after,
+.desktop-nav > a[aria-current="page"]::after,
+.desktop-nav .nav-dropdown:hover > .nav-dropdown__trigger::after,
+.desktop-nav .nav-dropdown.is-active > .nav-dropdown__trigger::after,
+.desktop-nav .nav-dropdown:focus-within > .nav-dropdown__trigger::after {
   transform: scaleX(1);
+}
+
+/* Desktop flyout — selectable sub-pages under Assessments / Psychotherapy / Education. */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown__panel {
+  position: absolute;
+  top: calc(100% + 0.85rem);
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  gap: 0.15rem;
+  min-width: 14.5rem;
+  padding: 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 0s linear 160ms;
+}
+
+.nav-dropdown:hover .nav-dropdown__panel,
+.nav-dropdown:focus-within .nav-dropdown__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}
+
+.nav-dropdown__panel a {
+  display: block;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.55rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.nav-dropdown__panel a:hover,
+.nav-dropdown__panel a[aria-current="page"] {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.mobile-nav-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.mobile-nav-group__toggle {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-block: 0.85rem;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.55rem, 6.5vw, 2.6rem);
+  line-height: 1.05;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-group__toggle span:first-child {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.65rem;
+}
+
+.mobile-nav-group__chevron {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.mobile-nav-group__children {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0 0 1rem 2.5rem;
+}
+
+.mobile-nav-group__children a {
+  color: #e8ddd0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .desktop-book {

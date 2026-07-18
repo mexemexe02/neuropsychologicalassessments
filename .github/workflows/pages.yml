@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [master, main]
+    branches: [master, main, version-2]
   workflow_dispatch:
 
 permissions:
@@ -18,19 +18,48 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout master (V1 beige)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+
       - run: npm install
-      - name: Build static site for project Pages URL
+
+      - name: Build V1 (root preview)
         env:
           GITHUB_PAGES: "1"
         run: npm run build
+
+      - name: Stage V1 into combined site
+        run: |
+          mkdir -p site
+          cp -R out/. site/
+
+      - name: Checkout version-2 (V2 white)
+        uses: actions/checkout@v4
+        with:
+          ref: version-2
+          path: v2-src
+
+      - name: Install and build V2 under /v2/
+        working-directory: v2-src
+        env:
+          GITHUB_PAGES: "1"
+          PAGES_BASE_PATH: "/neuropsychologicalassessments/v2"
+        run: |
+          npm install
+          npm run build
+          mkdir -p ../site/v2
+          cp -R out/. ../site/v2/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: site
 
   deploy:
     needs: build

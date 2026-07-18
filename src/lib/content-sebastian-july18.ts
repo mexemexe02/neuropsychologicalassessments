@@ -211,3 +211,149 @@ export const educationTbi = {
     },
   ],
 } as const;
+
+/**
+ * Jul 18, 2026 evening email (“Website - more data.”) — exact client wording.
+ * Separate Psychotherapy tab / page: Addiction and Self-Esteem.
+ */
+export const therapyAddictionSelfEsteem = {
+  eyebrow: "Psychotherapy",
+  title: "Addiction and Self-Esteem",
+  intro: [
+    "Addiction and self-esteem are often closely connected. Some individuals use alcohol, substances, gambling, pornography, food, shopping, gaming, or other repetitive behaviours to cope with emotional pain, stress, loneliness, trauma, shame, or feelings of inadequacy.",
+    "These behaviours may provide temporary relief, but over time they can contribute to further distress, relationship difficulties, reduced confidence, and a growing sense of losing control.",
+    "Low self-esteem may develop through experiences such as criticism, rejection, bullying, abuse, neglect, academic or workplace struggles, relationship difficulties, or repeated feelings of failure. When a person holds negative beliefs about themselves, addictive behaviours may become a way of escaping painful thoughts and emotions.",
+    "At the same time, the consequences of addiction can intensify shame, guilt, secrecy, and self-criticism, creating a difficult cycle.",
+  ],
+  signsHeading: "Signs That Support May Be Helpful",
+  signsLead:
+    "An individual may benefit from counselling or psychotherapy when they notice:",
+  signs: [
+    "Difficulty controlling substance use or repetitive behaviours",
+    "Using alcohol, substances, gambling, pornography, food, or other activities to manage emotions",
+    "Continuing a behaviour despite negative consequences",
+    "Feeling ashamed, guilty, or disappointed in themselves",
+    "Frequently comparing themselves to others",
+    "Difficulty accepting compliments or recognizing personal strengths",
+    "Fear of rejection, criticism, or failure",
+    "People-pleasing or difficulty setting boundaries",
+    "Relying on relationships, achievements, appearance, or external approval to feel valued",
+    "Feeling unworthy, inadequate, or “not good enough”",
+    "Withdrawing from others because of embarrassment or low confidence",
+    "Repeated attempts to stop an addictive behaviour without lasting success",
+  ],
+  helpHeading: "How Therapy Can Help",
+  helpIntro: [
+    "Therapy provides a confidential and non-judgmental space to understand the emotional, psychological, and behavioural patterns that contribute to addiction and low self-esteem.",
+    "Treatment is individualized and may include cognitive behavioural therapy, motivational interviewing, schema-informed therapy, trauma-informed care, emotional regulation strategies, and relapse-prevention planning.",
+  ],
+  helpMay: "Therapy may help individuals:",
+  helpList: [
+    "Identify triggers, urges, and high-risk situations",
+    "Understand the function the addictive behaviour serves",
+    "Develop healthier ways to manage stress and difficult emotions",
+    "Challenge negative beliefs about themselves",
+    "Reduce shame and excessive self-criticism",
+    "Build confidence and a more balanced sense of self-worth",
+    "Strengthen boundaries and communication skills",
+    "Improve relationships and social support",
+    "Develop strategies for managing cravings and preventing relapse",
+    "Reconnect with personal values, goals, and meaningful activities",
+  ],
+  esteemHeading: "Building Self-Esteem During Recovery",
+  esteemParagraphs: [
+    "Recovery is not only about reducing or stopping an addictive behaviour. It also involves developing a healthier relationship with oneself.",
+    "This may include learning to recognize personal strengths, tolerate mistakes, set realistic expectations, practise self-compassion, and make choices that are consistent with personal values.",
+    "Self-esteem grows gradually through repeated experiences of accountability, healthy decision-making, meaningful connection, and personal achievement. Therapy can support this process by helping individuals move away from shame-based thinking and toward a more stable and realistic sense of self-worth.",
+  ],
+  approachHeading: "A Compassionate and Individualized Approach",
+  approachParagraphs: [
+    "Addiction is not viewed as a personal weakness or moral failure. It is often a complex response involving emotional distress, learned coping patterns, trauma, relationships, environmental factors, and biological vulnerability.",
+    "Treatment focuses on understanding the whole person rather than defining someone by a diagnosis or behaviour.",
+    "Support is available for individuals at different stages of change, including those who are uncertain about whether they want to stop, those actively working toward recovery, and those seeking support following a relapse.",
+  ],
+} as const;
+
+/** Psychotherapy secondary tabs (Overview / featured focus pages). */
+export const psychotherapyTopicLinks = [
+  {
+    id: "overview",
+    label: "Overview",
+    href: "/psychotherapy",
+  },
+  {
+    id: "men-sexual-abuse",
+    label: "Men & sexual abuse",
+    href: "/psychotherapy/#men-sexual-abuse",
+  },
+  {
+    id: "addiction",
+    label: "Addiction and Self-Esteem",
+    href: "/psychotherapy/addiction-and-self-esteem",
+  },
+] as const;
+
+/**
+ * Fees Sebastian supplied Jul 18, 2026 (Website - more data.).
+ * Sylvie’s fee still pending from client.
+ */
+export const sebastianFees = {
+  initialAssessment: "$150",
+  followUp: "$120",
+  note: "Sliding scale offered (details provided at the first consultation).",
+} as const;
+
+/**
+ * Education hub focus list from Sebastian’s Jul 18 evening email.
+ * Prefer linking live pages; keep short cards for topics still awaiting full articles.
+ */
+export const educationFocusTopics = [
+  {
+    title: "Understanding Neuropsychological Assessment",
+    text: "A neuropsychological assessment is a comprehensive evaluation of cognitive, emotional, behavioural, and everyday functioning. It may include interviews, standardized testing, questionnaires, record review, behavioural observations, feedback, and a written report.",
+    href: "/assessments" as string | undefined,
+    linkLabel: "Learn about assessments" as string | undefined,
+  },
+  {
+    title: "Traumatic Brain Injury",
+    text: "Accessible education about what a TBI is, possible effects, when assessment may help, and recovery supports.",
+    href: "/education/traumatic-brain-injury" as string | undefined,
+    linkLabel: "Read TBI education" as string | undefined,
+  },
+  {
+    title: "Neurodiversity and Neurodivergence",
+    text: "Neurodiversity refers to natural variation in how human brains develop and function. A neuro-affirming approach recognizes both support needs and meaningful strengths.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    title: "ADHD and Executive Functioning",
+    text: "ADHD is associated with differences in attention regulation, impulse control, organization, and executive functioning. Executive functions support planning, initiation, flexible thinking, and goal-directed behaviour across school, work, and daily life.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    title: "Learning Disorders",
+    text: "A specific learning disorder may affect reading, written expression, mathematics, or a combination of academic skills. Assessment examines achievement alongside cognitive processes and educational history.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    title: "Memory and Cognitive Changes",
+    text: "Memory concerns can arise for many reasons. Neuropsychological assessment can help identify patterns of strength and difficulty and whether further medical investigation or support may be appropriate.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    title: "Trauma, Anxiety, and Cognitive Functioning",
+    text: "Anxiety and trauma can interfere with concentration, working memory, sleep, and confidence. Assessment and therapy can help distinguish primary cognitive difficulties from cognitive inefficiency related to emotional distress.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+  {
+    title: "Understanding an Assessment Report",
+    text: "An assessment report summarizes findings, clarifies strengths and difficulties, and outlines practical recommendations. Full article content can be added as the education program develops.",
+    href: undefined,
+    linkLabel: undefined,
+  },
+] as const;

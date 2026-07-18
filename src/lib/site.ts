@@ -1,10 +1,11 @@
 // Brand and contact — from Sebastian’s July 15, 2026 content package.
 
-// GitHub Pages project site lives under /neuropsychologicalassessments/.
-// next/image + static export does not always prefix public/ URLs, so use this
-// for any absolute asset path in <Image> / <img>.
+// GitHub Pages project site lives under /neuropsychologicalassessments/
+// (V1) or /neuropsychologicalassessments/v2/ (V2). next/image + static export
+// does not always prefix public/ URLs, so use assetPath for absolute assets.
 const pagesBase =
-  process.env.GITHUB_PAGES === "1" ? "/neuropsychologicalassessments" : "";
+  process.env.PAGES_BASE_PATH ||
+  (process.env.GITHUB_PAGES === "1" ? "/neuropsychologicalassessments" : "");
 
 export function assetPath(path: string) {
   const normalized = path.startsWith("/") ? path : `/${path}`;
@@ -13,10 +14,9 @@ export function assetPath(path: string) {
 
 // Public URL for metadata/OG. Preview builds use GitHub Pages so share cards
 // resolve under the demo host instead of the future custom domain.
-export const siteOrigin =
-  process.env.GITHUB_PAGES === "1"
-    ? "https://mexemexe02.github.io/neuropsychologicalassessments"
-    : "https://www.neuropsychologicalassessments.com";
+export const siteOrigin = pagesBase
+  ? `https://mexemexe02.github.io${pagesBase}`
+  : "https://www.neuropsychologicalassessments.com";
 
 export const site = {
   // Public brand — confirmed with Sebastian (Jul 2026): shorter header name.
@@ -39,13 +39,77 @@ export const site = {
     "In Person and Virtual Services are Available (In person for Testing and Assessments. Virtual Services for Therapy)",
 } as const;
 
+export type NavChild = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+export type NavItem = {
+  id: string;
+  label: string;
+  href: string;
+  /** Optional flyout — Sebastian asked for selectable tabs under these parents. */
+  children?: readonly NavChild[];
+};
+
 // Home is listed in nav per Sebastian’s brief; logo also links home.
 // Labels are English defaults; LanguageProvider overlays French chrome labels.
-export const navItems = [
+export const navItems: readonly NavItem[] = [
   { id: "home", label: "Home", href: "/" },
-  { id: "assessments", label: "Assessments", href: "/assessments" },
+  {
+    id: "assessments",
+    label: "Assessments",
+    href: "/assessments",
+    children: [
+      { id: "assessments-overview", label: "Overview", href: "/assessments" },
+      {
+        id: "assessments-tbi",
+        label: "Traumatic Brain Injury",
+        href: "/assessments/traumatic-brain-injury",
+      },
+      {
+        id: "assessments-medico",
+        label: "Medico-Legal Assessments",
+        href: "/assessments/medico-legal",
+      },
+    ],
+  },
   { id: "clinicians", label: "Clinicians", href: "/clinicians" },
-  { id: "psychotherapy", label: "Psychotherapy", href: "/psychotherapy" },
-  { id: "education", label: "Education", href: "/education" },
+  {
+    id: "psychotherapy",
+    label: "Psychotherapy",
+    href: "/psychotherapy",
+    children: [
+      {
+        id: "psychotherapy-overview",
+        label: "Overview",
+        href: "/psychotherapy",
+      },
+      {
+        id: "psychotherapy-men",
+        label: "Men & sexual abuse",
+        href: "/psychotherapy/#men-sexual-abuse",
+      },
+      {
+        id: "psychotherapy-addiction",
+        label: "Addiction and Self-Esteem",
+        href: "/psychotherapy/addiction-and-self-esteem",
+      },
+    ],
+  },
+  {
+    id: "education",
+    label: "Education",
+    href: "/education",
+    children: [
+      { id: "education-overview", label: "Overview", href: "/education" },
+      {
+        id: "education-tbi",
+        label: "Traumatic Brain Injury",
+        href: "/education/traumatic-brain-injury",
+      },
+    ],
+  },
   { id: "resources", label: "Resources", href: "/resources" },
 ] as const;

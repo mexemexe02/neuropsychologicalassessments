@@ -1,22 +1,22 @@
 :root {
   --font-body: "Manrope Variable";
   --font-display: "Newsreader Variable";
-  /* Beige palette from Sebastian’s brief (beige bg + French beige accents). */
-  --ink: #2c2620;
-  --ink-soft: #5c534a;
-  --blue: #b89a7a;
-  --blue-deep: #4a3f35;
-  --blue-light: #e8dfd2;
-  --sage: #c4b5a0;
-  --ivory: #f2ebe0;
-  --paper: #faf6f0;
-  --stone: #e6ddd0;
-  --french-beige: #c4a882;
-  --line: rgba(44, 38, 32, 0.14);
-  --shadow: 0 30px 80px rgba(74, 63, 53, 0.12);
+  /* Version 2 — white premium + warm taupe / soft sage (no beige, no dark). */
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --blue: #8a7a68;
+  --blue-deep: #6b5e52;
+  --blue-light: #f0ebe4;
+  --sage: #9aab96;
+  --ivory: #ffffff;
+  --paper: #f5f5f5;
+  --stone: #efefef;
+  --french-beige: #b8a99a;
+  --line: rgba(26, 26, 26, 0.1);
+  --shadow: 0 18px 48px rgba(26, 26, 26, 0.08);
   --radius-sm: 0.85rem;
-  --radius-md: 1.5rem;
-  --radius-lg: 2.25rem;
+  --radius-md: 1.35rem;
+  --radius-lg: 1.75rem;
   --shell: min(1240px, calc(100vw - 48px));
 }
 
@@ -91,13 +91,13 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.2rem, 7vw, 6.4rem);
-  line-height: 0.94;
+  font-size: clamp(3.4rem, 7.2vw, 6.8rem);
+  line-height: 0.96;
 }
 
 h2 {
-  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
-  line-height: 1.02;
+  font-size: clamp(2.55rem, 5vw, 4.85rem);
+  line-height: 1.05;
 }
 
 h3 {
@@ -118,9 +118,10 @@ h3 {
   background: var(--paper);
 }
 
+/* V2: formerly dark teal band — keep light/warm only. */
 .section--blue {
-  color: var(--paper);
-  background: var(--blue-deep);
+  color: var(--ink);
+  background: #f3f1ec;
 }
 
 .section--flush-top {
@@ -148,7 +149,7 @@ h3 {
 }
 
 .eyebrow--light {
-  color: #e2d3c0;
+  color: var(--blue);
 }
 
 .lead {

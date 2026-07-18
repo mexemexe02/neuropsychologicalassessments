@@ -3,16 +3,12 @@ import Link from "next/link";
 import { ArrowUpRight } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
-import {
-  educationArticlePlaceholders,
-  educationTopics,
-} from "@/lib/content";
-import { educationTbi } from "@/lib/content-sebastian-july18";
+import { educationFocusTopics } from "@/lib/content-sebastian-july18";
 
 export const metadata: Metadata = {
   title: "Education",
   description:
-    "Accessible education about neuropsychological assessment, neurodivergence, cognitive functioning, and psychotherapy.",
+    "Accessible education about neuropsychological assessment, traumatic brain injury, neurodivergence, and related topics.",
   alternates: { canonical: "/education" },
 };
 
@@ -39,28 +35,18 @@ export default function EducationPage() {
         }
       />
 
+      {/* Focused topic set from Sebastian’s Jul 18 evening email. */}
       <section className="section section--soft">
         <div className="shell">
           <Reveal className="feature-block">
-            <h2>{educationTbi.title}</h2>
+            <h2>Main education topics</h2>
             <p className="lead">
-              {educationTbi.sections[0].paragraphs[0]}
+              We keep this page focused on the most important topics. Additional
+              articles can be added over time.
             </p>
-            <Link
-              href="/education/traumatic-brain-injury"
-              className="text-link"
-              style={{ marginTop: "1rem" }}
-            >
-              Read the Traumatic Brain Injury education page <ArrowUpRight />
-            </Link>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="shell">
           <div className="reason-grid">
-            {educationTopics.map((topic, index) => (
+            {educationFocusTopics.map((topic, index) => (
               <Reveal
                 key={topic.title}
                 className="reason-card"
@@ -68,24 +54,16 @@ export default function EducationPage() {
               >
                 <h3>{topic.title}</h3>
                 <p>{topic.text}</p>
+                {topic.href && topic.linkLabel ? (
+                  <Link
+                    href={topic.href}
+                    className="text-link"
+                    style={{ marginTop: "1rem" }}
+                  >
+                    {topic.linkLabel} <ArrowUpRight />
+                  </Link>
+                ) : null}
               </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--soft">
-        <div className="shell">
-          <Reveal>
-            <h2>Suggested educational article links</h2>
-            <p className="lead" style={{ marginTop: "1rem" }}>
-              Titles are reserved for upcoming articles. Full pieces and links
-              will be published as the education program is developed.
-            </p>
-          </Reveal>
-          <div className="tag-list" style={{ marginTop: "1.5rem" }}>
-            {educationArticlePlaceholders.map((title) => (
-              <span key={title}>{title}</span>
             ))}
           </div>
           <Reveal className="intro-copy" delay={80}>

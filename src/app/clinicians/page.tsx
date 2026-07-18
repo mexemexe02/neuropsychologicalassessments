@@ -160,6 +160,18 @@ export default function CliniciansPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              {/* Fees from Sebastian’s Jul 18 evening email — Sylvie’s rates TBD. */}
+              <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
+                Psychotherapy fees
+              </p>
+              <ul className="detail-list">
+                <li>Initial assessment — $150</li>
+                <li>Follow-up sessions — $120</li>
+                <li>
+                  Sliding scale offered (details provided at the first
+                  consultation)
+                </li>
+              </ul>
             </Reveal>
           </article>
 

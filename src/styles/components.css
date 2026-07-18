@@ -42,14 +42,16 @@
   transform: translate(2px, -2px);
 }
 
+/* V2 outline button — works on white / soft grey sections. */
 .button--light {
-  border-color: var(--paper);
+  border-color: var(--blue-deep);
   color: var(--blue-deep);
-  background: var(--paper);
+  background: transparent;
 }
 
 .button--light:hover {
-  color: var(--paper);
+  color: #ffffff;
+  background: var(--blue-deep);
 }
 
 .button--small {
@@ -85,8 +87,9 @@
   transform: translate(2px, -2px);
 }
 
+/* V2: former "light text on dark band" — now charcoal on light section. */
 .text-link--light {
-  color: var(--paper);
+  color: var(--blue-deep);
 }
 
 .page-hero {
@@ -94,13 +97,13 @@
 }
 
 .page-hero--blue {
-  color: var(--paper);
-  background: var(--blue-deep);
+  color: var(--ink);
+  background: #f3f1ec;
 }
 
 .page-hero--blue .lead,
 .page-hero--blue .eyebrow {
-  color: #bfd0d1;
+  color: var(--ink-soft);
 }
 
 .page-hero__grid {
@@ -128,8 +131,9 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 90% 5%, rgba(173, 202, 204, 0.32), transparent 34%),
-    var(--ivory);
+    radial-gradient(circle at 90% 5%, rgba(154, 171, 150, 0.22), transparent 34%),
+    #ffffff;
+  box-shadow: var(--shadow);
 }
 
 .consultation-cta h2 {
@@ -144,8 +148,9 @@
 
 .site-footer {
   padding: clamp(6rem, 11vw, 10rem) 0 1.5rem;
-  color: #f3ebe1;
-  background: #3d342c;
+  color: var(--ink);
+  background: #fafafa;
+  border-top: 1px solid var(--line);
 }
 
 .site-footer__lead {
@@ -161,7 +166,7 @@
 .site-footer__lead-copy {
   max-width: 40rem;
   margin-bottom: 1.8rem;
-  color: #d8cbbd;
+  color: var(--ink-soft);
   font-size: 1.05rem;
 }
 
@@ -170,7 +175,7 @@
   grid-template-columns: 1.5fr 0.55fr 0.95fr;
   gap: 5rem;
   padding-block: 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--line);
 }
 
 .site-footer__grid nav,
@@ -185,13 +190,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #d4c6b6;
+  color: var(--ink-soft);
   font-size: 0.82rem;
   transition: color 180ms ease;
 }
 
 .site-footer__grid a:hover {
-  color: white;
+  color: var(--ink);
 }
 
 .site-footer__grid svg {
@@ -201,21 +206,21 @@
 .site-footer__note {
   max-width: 24rem;
   margin-top: 1.2rem;
-  color: #c4b5a4;
+  color: var(--ink-soft);
   font-size: 0.83rem;
 }
 
 .site-footer__privacy-note {
   max-width: 22rem;
   margin-top: 0.6rem;
-  color: #b7a898;
+  color: var(--ink-soft);
   font-size: 0.74rem;
   line-height: 1.45;
 }
 
 .footer-label {
   margin-bottom: 0.55rem;
-  color: white;
+  color: var(--ink);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -226,7 +231,7 @@
   display: flex;
   gap: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--line);
   color: #b7a898;
   font-size: 0.67rem;
 }

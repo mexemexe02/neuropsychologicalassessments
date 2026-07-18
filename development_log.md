@@ -410,3 +410,47 @@ Meeting noted for ~1:10.
 - `src/components/assessment-topic-nav.tsx`
 - `src/app/assessments/**`, `src/app/education/**`
 - `src/styles/content.css`, `src/styles/responsive.css`, `src/app/sitemap.ts`
+
+## 2026-07-18 — Final push: Version 2 + Coolify readiness
+
+### Summary
+Built white/premium Version 2 on branch `version-2` (V1 beige untouched on `master`). Probed Coolify; launch checklist verified.
+
+### Actions
+- V2 tokens: white / #f5f5f5 / taupe+sage; purged dark section/timeline/footer chrome
+- Home hero: Pexels forest video loop + white veil + poster; `npm run build` OK
+- Coolify: server up; CLI lists 44 apps; **no neuropsych app**; Docker/host ready; SSL proven on other custom domains
+- Launch prep confirmed: brand, brain-tree logo, both headshots, Tiny address, EN/FR chrome, Option A form
+
+### Key Decisions
+- Keep V2 on `version-2` until Humberto/Sebastian pick look
+- Coolify can host static export but needs new app + Dockerfile; Pages+custom domain is faster path
+
+### Files Changed
+- `src/styles/*.css`, `src/app/page.tsx`, `src/app/layout.tsx`
+- `public/videos/hero-forest.mp4`, `public/images/hero-forest-poster.jpg`
+- `VERSION2.md`, `drafts/coolify-readiness-2026-07-18.md`
+
+### Blockers / Notes
+- Coolify: create app, static Dockerfile, DNS + SSL for live domain
+- Form still preview-only; full FR clinical copy still pending
+- Hero video is portrait canopy (cover-crops OK); swap to landscape later if desired
+
+## 2026-07-18 — Nav dropdowns + Addiction content + go-live checklist
+
+### Summary
+Treated Sebastian’s “tabs under Assessments/Psychotherapy/Education” as header
+dropdowns; added Addiction & Self-Esteem page; simplified Education hub; drafted
+go-live email checklist for Humberto review.
+
+### Actions
+- Desktop flyouts + mobile accordion under Assessments / Psychotherapy / Education
+- `/psychotherapy/addiction-and-self-esteem/` from Jul 18 evening email (exact copy)
+- Education hub reduced to Sebastian’s 8 focus topics
+- Sebastian psychotherapy fees on Clinicians; Sylvie fee still pending
+- Draft: `drafts/email-sebastian-golive-checklist.md`
+
+### Key Decisions
+- Dropdowns are the clearest UX for “tab under X” without crowding the top bar
+- Content work lives on `version-2` with V2 styles; cherry-pick/merge to `master` for Pages
+

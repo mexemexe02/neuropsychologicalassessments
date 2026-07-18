@@ -1,16 +1,18 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages project sites live under /neuropsychologicalassessments/.
+// GitHub Pages project sites live under /neuropsychologicalassessments/
+// (V1) or /neuropsychologicalassessments/v2/ (V2 preview).
 // Local/Coolify (and custom domain) keep an empty basePath.
-const repoBase = "/neuropsychologicalassessments";
-const useGhPagesBase = process.env.GITHUB_PAGES === "1";
+const pagesBase =
+  process.env.PAGES_BASE_PATH ||
+  (process.env.GITHUB_PAGES === "1" ? "/neuropsychologicalassessments" : "");
 
 const nextConfig: NextConfig = {
   // Static output keeps the site portable for Coolify or any CDN.
   output: "export",
   trailingSlash: true,
-  basePath: useGhPagesBase ? repoBase : "",
-  assetPrefix: useGhPagesBase ? repoBase : undefined,
+  basePath: pagesBase || undefined,
+  assetPrefix: pagesBase || undefined,
   images: {
     unoptimized: true,
   },
