@@ -344,3 +344,21 @@ English/French option, confirmed monthly care, and wants to discuss go-live/visi
 - Invoice for $750 still to be issued by Humberto
 - Custom domain / Coolify only after go-live chat confirmation
 - Reply email drafted — do not send until Humberto approves
+
+## 2026-07-18 — Psychotherapy: men with history of sexual abuse
+
+### Summary
+Sebastian email #2 asked for a visible Psychotherapy section for specialized
+treatment for men with a history of sexual abuse. Added his copy verbatim.
+
+### Changes
+- Featured section on `/psychotherapy/#men-sexual-abuse` (after hero)
+- Added to psychotherapy concern list + home therapy concern list
+- Home psychotherapy plane mentions the service and links to the section
+- Updated draft reply to include this addition
+
+### Files Changed
+- `src/lib/content.ts`
+- `src/app/psychotherapy/page.tsx`
+- `src/app/page.tsx`
+- `drafts/email-sebastian-reply-logo-and-next-steps.md`

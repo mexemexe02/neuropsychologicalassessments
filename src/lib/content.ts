@@ -24,6 +24,7 @@ export const homeTherapyConcerns = [
   "Relationship difficulties",
   "Adjustment to illness or injury",
   "Major life and career transitions",
+  "Counselling for men with a history of sexual abuse",
 ] as const;
 
 export const homeBeginSteps = [
@@ -220,7 +221,22 @@ export const therapyConcernList = [
   "Adjustment to illness, injury, disability, or cognitive changes",
   "Major life, family, or career transitions",
   "Difficulty setting boundaries or communicating needs",
+  "Psychotherapy and counselling for men with a history of sexual abuse",
 ] as const;
+
+/**
+ * Jul 18, 2026 — Sebastian email #2. Exact client wording; do not invent extras.
+ * Featured as its own Psychotherapy section (visible, not a new top-level nav tab).
+ */
+export const therapyMenSexualAbuse = {
+  eyebrow: "Specialized treatment",
+  title: "Psychotherapy and counselling for men with a history of sexual abuse",
+  paragraphs: [
+    "Men who have experienced sexual abuse may carry the effects for many years before seeking support. Abuse may have occurred during childhood, adolescence, or adulthood, and each person’s response is different.",
+    "Some men experience shame, self-blame, anger, emotional disconnection, intrusive memories, difficulties with trust or intimacy, changes in sexual wellbeing, anxiety, depression, substance use, or a persistent need to remain in control. Others may minimize what happened or question whether their experience “counts” as abuse.",
+    "Counselling and psychotherapy provide a confidential, respectful, and non-judgmental space to understand these experiences without pressure to disclose more than feels manageable. Treatment is paced collaboratively and may focus on safety, stabilization, emotional regulation, trauma-related beliefs, relationships, identity, boundaries, and rebuilding a sense of choice and personal agency.",
+  ],
+} as const;
 
 /** Only the concerns Sebastian wrote expanded detail for — do not invent more. */
 export const therapyConcernCards = [

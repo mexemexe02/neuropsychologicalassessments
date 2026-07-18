@@ -136,14 +136,15 @@ export default function HomePage() {
                     experiencing concerns such as anxiety, depression, trauma,
                     post-traumatic stress, grief, stress, burnout, emotional
                     regulation difficulties, relationship concerns, and major
-                    life transitions.
+                    life transitions. We also provide specialized counselling for
+                    men with a history of sexual abuse.
                   </p>
                   <p>
                     Therapy is individualized according to your needs, history,
                     culture, values, and pace.
                   </p>
                 </div>
-                <Link href="/psychotherapy" className="text-link">
+                <Link href="/psychotherapy/#men-sexual-abuse" className="text-link">
                   Learn About Psychotherapy <ArrowUpRight />
                 </Link>
               </div>

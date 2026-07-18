@@ -10,12 +10,13 @@ import {
   therapyConcernList,
   therapyExpectSteps,
   therapyFaqs,
+  therapyMenSexualAbuse,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Psychotherapy",
   description:
-    "Evidence-based, trauma-informed psychotherapy for adults — a private collaborative space for meaningful change.",
+    "Evidence-based, trauma-informed psychotherapy for adults — including specialized counselling for men with a history of sexual abuse.",
   alternates: { canonical: "/psychotherapy" },
 };
 
@@ -51,6 +52,33 @@ export default function PsychotherapyPage() {
           </>
         }
       />
+
+      {/* Featured focus area — Sebastian Jul 18 email; keep wording exact. */}
+      <section
+        id="men-sexual-abuse"
+        className="section section--soft"
+        aria-labelledby="men-sexual-abuse-heading"
+      >
+        <div className="shell">
+          <Reveal className="content-header">
+            <div>
+              <p className="eyebrow">{therapyMenSexualAbuse.eyebrow}</p>
+              <h2 id="men-sexual-abuse-heading">
+                {therapyMenSexualAbuse.title}
+              </h2>
+            </div>
+            <p className="lead">
+              We provide specialized treatment for men with a history of sexual
+              abuse.
+            </p>
+          </Reveal>
+          <Reveal className="intro-copy" delay={80}>
+            {therapyMenSexualAbuse.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))}
+          </Reveal>
+        </div>
+      </section>
 
       <section className="section">
         <div className="shell">

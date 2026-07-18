@@ -16,9 +16,12 @@ I’ve started applying them on the preview site:
 - Dr. Sauriol’s headshot is on the Clinicians page
 - Public brand name is now **Centre for Neuropsychology and Psychotherapy** (domain stays neuropsychologicalassessments.com)
 - **English / Français** language switch is in the header (French navigation and site chrome; full French clinical page text can be added as Sylvie reviews Education and other copy)
+- Psychotherapy page now includes your section on **counselling for men with a history of sexual abuse** (visible near the top of that page, and mentioned on the home page)
 
 Preview:  
-https://mexemexe02.github.io/neuropsychologicalassessments/
+https://mexemexe02.github.io/neuropsychologicalassessments/  
+Direct link to the new section:  
+https://mexemexe02.github.io/neuropsychologicalassessments/psychotherapy/#men-sexual-abuse
 
 Agree completely on Education — we can go live and update that tab as Sylvie’s suggestions come in. Same for other small content tweaks after launch.
 
