@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AssessmentTopicNav } from "@/components/assessment-topic-nav";
 import { ConsultationCta } from "@/components/consultation-cta";
 import { ArrowUpRight } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
@@ -13,6 +14,10 @@ import {
   assessmentSteps,
   neurodivergentConditions,
 } from "@/lib/content";
+import {
+  medicoLegalAssessment,
+  tbiAssessment,
+} from "@/lib/content-sebastian-july18";
 
 export const metadata: Metadata = {
   title: "Neuropsychological Assessments",
@@ -62,7 +67,42 @@ export default function AssessmentsPage() {
         }
       />
 
+      <AssessmentTopicNav active="overview" />
+
+      {/* Focus areas Sebastian requested as separate Assessment tabs (Jul 18). */}
       <section className="section section--soft">
+        <div className="shell">
+          <Reveal className="feature-block">
+            <h2>Assessment focus areas</h2>
+          </Reveal>
+          <div className="reason-grid">
+            <Reveal className="reason-card">
+              <h3>{tbiAssessment.title}</h3>
+              <p>{tbiAssessment.lead}</p>
+              <Link
+                href="/assessments/traumatic-brain-injury"
+                className="text-link"
+                style={{ marginTop: "1rem" }}
+              >
+                Traumatic Brain Injury assessments <ArrowUpRight />
+              </Link>
+            </Reveal>
+            <Reveal className="reason-card" delay={80}>
+              <h3>{medicoLegalAssessment.title}</h3>
+              <p>{medicoLegalAssessment.lead}</p>
+              <Link
+                href="/assessments/medico-legal"
+                className="text-link"
+                style={{ marginTop: "1rem" }}
+              >
+                Medico-Legal assessments <ArrowUpRight />
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="shell">
           <Reveal className="content-header">
             <div>

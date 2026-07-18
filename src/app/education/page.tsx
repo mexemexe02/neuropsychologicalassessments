@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import {
   educationArticlePlaceholders,
   educationTopics,
 } from "@/lib/content";
+import { educationTbi } from "@/lib/content-sebastian-july18";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -38,6 +41,24 @@ export default function EducationPage() {
 
       <section className="section section--soft">
         <div className="shell">
+          <Reveal className="feature-block">
+            <h2>{educationTbi.title}</h2>
+            <p className="lead">
+              {educationTbi.sections[0].paragraphs[0]}
+            </p>
+            <Link
+              href="/education/traumatic-brain-injury"
+              className="text-link"
+              style={{ marginTop: "1rem" }}
+            >
+              Read the Traumatic Brain Injury education page <ArrowUpRight />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
           <div className="reason-grid">
             {educationTopics.map((topic, index) => (
               <Reveal
@@ -53,7 +74,7 @@ export default function EducationPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--soft">
         <div className="shell">
           <Reveal>
             <h2>Suggested educational article links</h2>

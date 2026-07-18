@@ -6,9 +6,12 @@ export const dynamic = "force-static";
 const routes = [
   "",
   "/assessments",
+  "/assessments/traumatic-brain-injury",
+  "/assessments/medico-legal",
   "/clinicians",
   "/psychotherapy",
   "/education",
+  "/education/traumatic-brain-injury",
   "/resources",
   "/contact",
   "/privacy",

@@ -389,3 +389,24 @@ Lint/build pass. Deploy Actions succeeded for both Jul 18 pushes.
 - Live form send / booking backend
 - Privacy legal review; invoice; go-live/domain chat
 - Custom domain / Coolify after yes
+
+## 2026-07-18 — TBI, ABI, Medico-Legal + Education TBI (Sebastian email)
+
+### Summary
+Implemented Sebastian’s Jul 18 afternoon email: separate Assessment tabs for
+TBI (+ Acquired Brain Injury) and Medico-Legal, plus Education TBI article.
+Meeting noted for ~1:10.
+
+### Changes
+- `/assessments/traumatic-brain-injury/` — TBI + ABI (exact copy)
+- `/assessments/medico-legal/` — medico-legal full copy
+- `/education/traumatic-brain-injury/` — education TBI sections
+- Assessment topic nav (Overview / TBI / Medico-Legal)
+- Hub cards on Assessments + featured TBI link on Education
+- Sitemap updated
+
+### Files Changed
+- `src/lib/content-sebastian-july18.ts`
+- `src/components/assessment-topic-nav.tsx`
+- `src/app/assessments/**`, `src/app/education/**`
+- `src/styles/content.css`, `src/styles/responsive.css`, `src/app/sitemap.ts`

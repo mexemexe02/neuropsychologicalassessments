@@ -25,6 +25,15 @@
     width: 100%;
     min-width: 0;
   }
+
+  .topic-nav__inner {
+    gap: 0.25rem;
+  }
+
+  .topic-nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.72rem;
+  }
 }
 
 /*

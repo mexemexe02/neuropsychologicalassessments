@@ -17,6 +17,39 @@
   max-width: 45rem;
 }
 
+/* Secondary tabs under Assessments (Overview / TBI / Medico-Legal). */
+.topic-nav {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.topic-nav__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.15rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.topic-nav a {
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.topic-nav a:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.topic-nav a.is-active {
+  color: var(--paper);
+  background: var(--ink);
+}
+
 /* Full-width feature headings — for long titles that must not use the 11ch header grid. */
 .feature-block {
   max-width: 46rem;
