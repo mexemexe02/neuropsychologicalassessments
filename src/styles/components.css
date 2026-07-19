@@ -118,10 +118,24 @@
   margin-bottom: 0;
 }
 
-/* Assessments title on wide desktop only — long word was overflowing into intro. */
+/*
+ * Assessments (and other long titles) on wide desktop:
+ * huge display type + a tight ch cap overflowed into the intro column.
+ * Give the title the full row, then the intro below — no side-by-side clash.
+ */
 @media (min-width: 1101px) {
+  .page-hero--long-title .page-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+    align-items: start;
+  }
+
   .page-hero--long-title h1 {
-    max-width: 20ch;
+    max-width: 16ch;
+  }
+
+  .page-hero--long-title .page-hero__intro {
+    max-width: 40rem;
   }
 }
 
