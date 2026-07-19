@@ -116,14 +116,23 @@ export default function CliniciansPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              {/* Fees from Sebastian’s Jul 18 evening email (“Sylvie's fees”). */}
+              {/* Psychotherapy fees — Sebastian Jul 19 “Important changes”. */}
               <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
-                Fees
+                Psychotherapy fees
               </p>
               <ul className="detail-list">
-                <li>Initial assessment — {sylvieFees.initialAssessment}</li>
-                <li>Follow-up sessions — {sylvieFees.followUp}</li>
+                <li>
+                  Initial psychotherapy assessment —{" "}
+                  {sylvieFees.initialAssessment}
+                </li>
+                <li>
+                  Follow-up psychotherapy sessions — {sylvieFees.followUp}
+                </li>
               </ul>
+              <p className="clinician__fee-note">
+                Please contact the practice for information about assessment fees
+                and related services.
+              </p>
             </Reveal>
           </article>
 
@@ -172,15 +181,18 @@ export default function CliniciansPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              {/* Fees from Sebastian’s Jul 18 “Website - more data.” email. */}
+              {/* Psychotherapy fees — Sebastian Jul 19 “Important changes”. */}
               <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
                 Psychotherapy fees
               </p>
               <ul className="detail-list">
                 <li>
-                  Initial assessment — {sebastianFees.initialAssessment}
+                  Initial psychotherapy assessment —{" "}
+                  {sebastianFees.initialAssessment}
                 </li>
-                <li>Follow-up sessions — {sebastianFees.followUp}</li>
+                <li>
+                  Follow-up psychotherapy sessions — {sebastianFees.followUp}
+                </li>
                 <li>{sebastianFees.note}</li>
               </ul>
             </Reveal>

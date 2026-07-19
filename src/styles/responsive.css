@@ -317,6 +317,14 @@
     max-width: none;
   }
 
+  .service-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-link-card {
+    min-height: 4.5rem;
+  }
+
   .steps,
   .area-grid,
   .resource-grid,

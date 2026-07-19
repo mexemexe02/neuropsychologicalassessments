@@ -18,7 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master (V1 beige)
+      # V2 white clinic look is now the main site (Sebastian chose the video/V2 direction).
+      - name: Checkout master (production)
         uses: actions/checkout@v4
         with:
           ref: master
@@ -30,36 +31,14 @@ jobs:
 
       - run: npm install
 
-      - name: Build V1 (root preview)
+      - name: Build site
         env:
           GITHUB_PAGES: "1"
         run: npm run build
 
-      - name: Stage V1 into combined site
-        run: |
-          mkdir -p site
-          cp -R out/. site/
-
-      - name: Checkout version-2 (V2 white)
-        uses: actions/checkout@v4
-        with:
-          ref: version-2
-          path: v2-src
-
-      - name: Install and build V2 under /v2/
-        working-directory: v2-src
-        env:
-          GITHUB_PAGES: "1"
-          PAGES_BASE_PATH: "/neuropsychologicalassessments/v2"
-        run: |
-          npm install
-          npm run build
-          mkdir -p ../site/v2
-          cp -R out/. ../site/v2/
-
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: out
 
   deploy:
     needs: build

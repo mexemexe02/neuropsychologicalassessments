@@ -294,15 +294,15 @@ export const psychotherapyTopicLinks = [
 ] as const;
 
 /**
- * Fees Sebastian supplied Jul 18, 2026 (Website - more data.).
+ * Psychotherapy fees — confirmed again in Sebastian’s Jul 19 “Important changes”.
  */
 export const sebastianFees = {
   initialAssessment: "$150",
   followUp: "$120",
-  note: "Sliding scale offered (details provided at the first consultation).",
+  note: "Sliding-scale fees may be available following the initial consultation.",
 } as const;
 
-/** Fees from Sebastian’s Jul 18 evening email (“Sylvie's fees”). */
+/** Psychotherapy fees for Dr. Sauriol (Jul 18 + Jul 19 emails). */
 export const sylvieFees = {
   initialAssessment: "$180",
   followUp: "$150",

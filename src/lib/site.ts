@@ -1,8 +1,8 @@
 // Brand and contact — from Sebastian’s July 15, 2026 content package.
 
-// GitHub Pages project site lives under /neuropsychologicalassessments/
-// (V1) or /neuropsychologicalassessments/v2/ (V2). next/image + static export
-// does not always prefix public/ URLs, so use assetPath for absolute assets.
+// GitHub Pages project site lives under /neuropsychologicalassessments/.
+// next/image + static export does not always prefix public/ URLs, so use
+// assetPath for absolute assets.
 const pagesBase =
   process.env.PAGES_BASE_PATH ||
   (process.env.GITHUB_PAGES === "1" ? "/neuropsychologicalassessments" : "");
@@ -35,9 +35,23 @@ export const site = {
   email: "drsauriolassociates@neuropsychologicalassessments.com",
   addressLine1: "34 County Road",
   addressLine2: "Tiny, Ontario L0L 2J0",
+  // Hours from Sebastian’s Jul 19 “Important changes” email.
+  hours: "Monday through Saturday: 8:00 a.m. to 6:00 p.m.",
   serviceNote:
     "In Person and Virtual Services are Available (In person for Testing and Assessments. Virtual Services for Therapy)",
+  // Neuropsych assessment fees stay off-site; contact after consultation.
+  assessmentFeesNote:
+    "Please contact the practice for information about assessment fees and related services.",
 } as const;
+
+/** Home “Explore our services” buttons — TPWG-style quick links (Sebastian Jul 19). */
+export const homeServiceLinks = [
+  { id: "assessments", label: "Assessments", href: "/assessments" },
+  { id: "psychotherapy", label: "Psychotherapy", href: "/psychotherapy" },
+  { id: "clinicians", label: "Clinicians", href: "/clinicians" },
+  { id: "education", label: "Education", href: "/education" },
+  { id: "resources", label: "Resources", href: "/resources" },
+] as const;
 
 export type NavChild = {
   id: string;

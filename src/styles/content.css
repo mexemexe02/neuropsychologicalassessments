@@ -298,6 +298,15 @@
   line-height: 1.4;
 }
 
+.clinician__fee-note {
+  margin-top: 1rem;
+  max-width: 36rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .clinician__bio > p:not(.clinician__credentials) {
   max-width: 44rem;
   color: var(--ink-soft);

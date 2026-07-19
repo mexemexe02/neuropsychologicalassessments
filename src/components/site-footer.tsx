@@ -30,6 +30,11 @@ export function SiteFooter() {
               <br />
               {site.addressLine2}
             </p>
+            <p className="site-footer__note">
+              <strong>{t.hoursLabel}</strong>
+              <br />
+              {site.hours}
+            </p>
           </div>
           <nav aria-label="Footer navigation">
             <p className="footer-label">{t.explore}</p>

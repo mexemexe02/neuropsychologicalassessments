@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
@@ -7,7 +8,10 @@ import {
   homeBeginSteps,
   homeTherapyConcerns,
 } from "@/lib/content";
-import { assetPath, site } from "@/lib/site";
+import { assetPath, homeServiceLinks, site } from "@/lib/site";
+// Soft service backgrounds — Sebastian Jul 19 “with client” photos (content stays primary).
+import sebastianWithClient from "@/assets/sebastian-with-client.png";
+import sylvieWithClient from "@/assets/sylvie-with-client.png";
 
 export const metadata: Metadata = {
   title: {
@@ -90,9 +94,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TPWG-style service buttons — Sebastian Jul 19 request for clearer paths. */}
       <section id="services" className="section section--flush-top">
         <div className="shell">
+          <Reveal className="service-links-header">
+            <p className="eyebrow">Explore our services</p>
+            <h2>Find the right next step.</h2>
+          </Reveal>
+          <div className="service-links">
+            {homeServiceLinks.map((item, index) => (
+              <Reveal key={item.id} delay={index * 60}>
+                <Link href={item.href} className="service-link-card">
+                  <span>{item.label}</span>
+                  <ArrowUpRight />
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--flush-top">
+        <div className="shell">
           <Reveal className="service-plane">
+            {/* Soft background — Sylvie photo; text stays the focus. */}
+            <div className="service-plane__media" aria-hidden="true">
+              <Image
+                src={sylvieWithClient}
+                alt=""
+                fill
+                sizes="(max-width: 1100px) 100vw, 70vw"
+                className="service-plane__media-img"
+              />
+            </div>
             <div className="service-plane__content">
               <div>
                 <p className="eyebrow eyebrow--light">
@@ -119,6 +153,9 @@ export default function HomePage() {
                     Assessments are available for children, adolescents, adults,
                     and older adults.
                   </p>
+                  <p className="service-plane__fee-note">
+                    {site.assessmentFeesNote}
+                  </p>
                 </div>
                 <Link href="/assessments" className="text-link text-link--light">
                   Learn About Assessments <ArrowUpRight />
@@ -132,6 +169,16 @@ export default function HomePage() {
       <section className="section">
         <div className="shell">
           <Reveal className="service-plane service-plane--light">
+            {/* Soft background — Sebastian photo; content remains primary. */}
+            <div className="service-plane__media" aria-hidden="true">
+              <Image
+                src={sebastianWithClient}
+                alt=""
+                fill
+                sizes="(max-width: 1100px) 100vw, 70vw"
+                className="service-plane__media-img"
+              />
+            </div>
             <div className="service-plane__content">
               <div>
                 <p className="eyebrow">Psychotherapy</p>
@@ -241,7 +288,6 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-
     </>
   );
 }

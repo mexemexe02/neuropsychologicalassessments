@@ -42,6 +42,7 @@ const ui = {
     privacyNote:
       "Please avoid including sensitive personal or health information in email or text messages.",
     websitePreview: "Website preview",
+    hoursLabel: "Hours",
     tagline: "Thoughtful care. Clear next steps.",
   },
   fr: {
@@ -68,6 +69,7 @@ const ui = {
     privacyNote:
       "Veuillez éviter d’inclure des renseignements personnels ou de santé sensibles dans les courriels ou les textos.",
     websitePreview: "Aperçu du site",
+    hoursLabel: "Heures",
     tagline: "Des soins réfléchis. Des prochaines étapes claires.",
   },
 } as const;

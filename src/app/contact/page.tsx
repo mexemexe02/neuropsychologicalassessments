@@ -53,6 +53,11 @@ export default function ContactPage() {
               <br />
               {site.addressLine2}
             </p>
+            <p className="service-note">
+              <strong>Hours</strong>
+              <br />
+              {site.hours}
+            </p>
             <p className="service-note">{site.serviceNote}</p>
           </Reveal>
           <Reveal delay={120}>
