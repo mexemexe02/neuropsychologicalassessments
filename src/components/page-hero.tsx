@@ -9,6 +9,8 @@ type PageHeroProps = {
   aside?: ReactNode;
   actions?: ReactNode;
   tone?: "light" | "blue";
+  /** Wider h1 on desktop only — for long titles like “Neuropsychological Assessments”. */
+  longTitle?: boolean;
 };
 
 export function PageHero({
@@ -18,9 +20,12 @@ export function PageHero({
   aside,
   actions,
   tone = "light",
+  longTitle = false,
 }: PageHeroProps) {
   return (
-    <section className={`page-hero page-hero--${tone}`}>
+    <section
+      className={`page-hero page-hero--${tone}${longTitle ? " page-hero--long-title" : ""}`}
+    >
       <div className="shell page-hero__grid">
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>

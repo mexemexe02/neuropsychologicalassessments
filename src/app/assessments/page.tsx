@@ -32,6 +32,7 @@ export default function AssessmentsPage() {
       <PageHero
         eyebrow="Thoughtful care. Clear next steps."
         title={<>Neuropsychological Assessments</>}
+        longTitle
         intro={
           <>
             <p className="lead">

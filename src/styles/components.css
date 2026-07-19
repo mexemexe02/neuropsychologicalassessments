@@ -118,6 +118,13 @@
   margin-bottom: 0;
 }
 
+/* Assessments title on wide desktop only — long word was overflowing into intro. */
+@media (min-width: 1101px) {
+  .page-hero--long-title h1 {
+    max-width: 20ch;
+  }
+}
+
 .page-hero__intro {
   padding-bottom: 0.5rem;
 }
