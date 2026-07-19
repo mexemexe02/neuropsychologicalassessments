@@ -147,9 +147,10 @@
 }
 
 .service-plane__media-img {
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.28;
+  /* Less zoom — show more of the photo; plane bg fills any letterbox. */
+  object-fit: contain;
+  object-position: center center;
+  opacity: 0.32;
   filter: saturate(0.85) contrast(0.95);
 }
 
@@ -159,7 +160,7 @@
 }
 
 .service-plane--light .service-plane__media-img {
-  opacity: 0.22;
+  opacity: 0.26;
 }
 
 .service-plane__media::after {
