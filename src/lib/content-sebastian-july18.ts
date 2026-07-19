@@ -295,12 +295,17 @@ export const psychotherapyTopicLinks = [
 
 /**
  * Fees Sebastian supplied Jul 18, 2026 (Website - more data.).
- * Sylvie’s fee still pending from client.
  */
 export const sebastianFees = {
   initialAssessment: "$150",
   followUp: "$120",
   note: "Sliding scale offered (details provided at the first consultation).",
+} as const;
+
+/** Fees from Sebastian’s Jul 18 evening email (“Sylvie's fees”). */
+export const sylvieFees = {
+  initialAssessment: "$180",
+  followUp: "$150",
 } as const;
 
 /**

@@ -3,6 +3,10 @@ import Image from "next/image";
 import { ConsultationCta } from "@/components/consultation-cta";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import {
+  sebastianFees,
+  sylvieFees,
+} from "@/lib/content-sebastian-july18";
 // Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
 import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
 import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
@@ -112,6 +116,14 @@ export default function CliniciansPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              {/* Fees from Sebastian’s Jul 18 evening email (“Sylvie's fees”). */}
+              <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
+                Fees
+              </p>
+              <ul className="detail-list">
+                <li>Initial assessment — {sylvieFees.initialAssessment}</li>
+                <li>Follow-up sessions — {sylvieFees.followUp}</li>
+              </ul>
             </Reveal>
           </article>
 
@@ -160,17 +172,16 @@ export default function CliniciansPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              {/* Fees from Sebastian’s Jul 18 evening email — Sylvie’s rates TBD. */}
+              {/* Fees from Sebastian’s Jul 18 “Website - more data.” email. */}
               <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
                 Psychotherapy fees
               </p>
               <ul className="detail-list">
-                <li>Initial assessment — $150</li>
-                <li>Follow-up sessions — $120</li>
                 <li>
-                  Sliding scale offered (details provided at the first
-                  consultation)
+                  Initial assessment — {sebastianFees.initialAssessment}
                 </li>
+                <li>Follow-up sessions — {sebastianFees.followUp}</li>
+                <li>{sebastianFees.note}</li>
               </ul>
             </Reveal>
           </article>
