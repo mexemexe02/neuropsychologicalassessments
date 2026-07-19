@@ -147,20 +147,22 @@
 }
 
 .service-plane__media-img {
-  /* Less zoom — show more of the photo; plane bg fills any letterbox. */
-  object-fit: contain;
-  object-position: center center;
-  opacity: 0.32;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.28;
   filter: saturate(0.85) contrast(0.95);
 }
 
-/* Assessments block — mirror Sylvie photo left↔right as requested. */
+/* Assessments only — mirror + less zoom so more of Sylvie’s photo shows. */
 .service-plane__media--mirror .service-plane__media-img {
+  object-fit: contain;
+  object-position: center center;
+  opacity: 0.32;
   transform: scaleX(-1);
 }
 
 .service-plane--light .service-plane__media-img {
-  opacity: 0.26;
+  opacity: 0.22;
 }
 
 .service-plane__media::after {
