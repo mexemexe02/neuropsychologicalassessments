@@ -105,10 +105,9 @@ export default function AssessmentsPage() {
 
       <section className="section">
         <div className="shell">
-          <Reveal className="content-header">
-            <div>
-              <h2>What is a neuropsychological assessment?</h2>
-            </div>
+          {/* feature-block: content-header’s 11ch h2 overlaps “neuropsychological”. */}
+          <Reveal className="feature-block">
+            <h2>What is a neuropsychological assessment?</h2>
             <p className="lead">
               A neuropsychological assessment examines how different areas of
               thinking and behaviour are functioning.

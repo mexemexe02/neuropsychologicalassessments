@@ -120,8 +120,8 @@
 
 /*
  * Assessments (and other long titles) on wide desktop:
- * huge display type + a tight ch cap overflowed into the intro column.
- * Give the title the full row, then the intro below — no side-by-side clash.
+ * side-by-side hero + huge type made “Neuropsychological” spill into intro.
+ * Stack title above intro; let the long word use full width.
  */
 @media (min-width: 1101px) {
   .page-hero--long-title .page-hero__grid {
@@ -131,11 +131,11 @@
   }
 
   .page-hero--long-title h1 {
-    max-width: 16ch;
+    max-width: none;
   }
 
   .page-hero--long-title .page-hero__intro {
-    max-width: 40rem;
+    max-width: 42rem;
   }
 }
 
