@@ -117,8 +117,11 @@ export default function HomePage() {
       <section className="section section--flush-top">
         <div className="shell">
           <Reveal className="service-plane">
-            {/* Soft background — Sylvie photo; text stays the focus. */}
-            <div className="service-plane__media" aria-hidden="true">
+            {/* Soft background — Sylvie photo (mirrored L↔R); text stays the focus. */}
+            <div
+              className="service-plane__media service-plane__media--mirror"
+              aria-hidden="true"
+            >
               <Image
                 src={sylvieWithClient}
                 alt=""

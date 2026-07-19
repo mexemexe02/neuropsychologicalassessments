@@ -153,6 +153,11 @@
   filter: saturate(0.85) contrast(0.95);
 }
 
+/* Assessments block — mirror Sylvie photo left↔right as requested. */
+.service-plane__media--mirror .service-plane__media-img {
+  transform: scaleX(-1);
+}
+
 .service-plane--light .service-plane__media-img {
   opacity: 0.22;
 }
