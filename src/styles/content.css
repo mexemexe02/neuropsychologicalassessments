@@ -187,7 +187,8 @@
 .reason-card h3,
 .stage-card h3 {
   margin-bottom: 0.75rem;
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  /* Smaller headings — stronger bump per Sebastian’s “about four sizes” ask. */
+  font-size: clamp(1.5rem, 2.35vw, 1.9rem);
 }
 
 .reason-card p,

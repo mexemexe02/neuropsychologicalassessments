@@ -90,20 +90,23 @@ h3 {
   text-wrap: balance;
 }
 
-/* Modest bump per Sebastian Jul 19 — judgment over literal “+3/+4 sizes”. */
+/*
+ * Heading scale — Sebastian Jul 19 (“+3 main / +4 smaller”, use judgment).
+ * Clearer bump than the first pass; fluid clamp keeps phone/tablet/desktop balanced.
+ */
 h1 {
-  font-size: clamp(3.75rem, 7.6vw, 7.45rem);
+  font-size: clamp(4.05rem, 8vw, 8rem);
   line-height: 0.96;
 }
 
 h2 {
-  font-size: clamp(2.9rem, 5.4vw, 5.4rem);
+  font-size: clamp(3.15rem, 5.7vw, 5.85rem);
   line-height: 1.05;
 }
 
 h3 {
-  font-size: clamp(1.9rem, 2.75vw, 2.65rem);
-  line-height: 1.1;
+  font-size: clamp(2.05rem, 3vw, 2.95rem);
+  line-height: 1.12;
 }
 
 .shell {
