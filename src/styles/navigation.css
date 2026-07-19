@@ -249,11 +249,14 @@
   position: relative;
   display: flex;
   align-items: center;
+  /* Extend hover hit area into the visual gap under the label. */
+  padding-bottom: 0.85rem;
+  margin-bottom: -0.85rem;
 }
 
 .nav-dropdown__panel {
   position: absolute;
-  top: calc(100% + 0.85rem);
+  top: 100%;
   left: 50%;
   z-index: 20;
   display: grid;
