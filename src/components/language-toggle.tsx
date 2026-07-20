@@ -2,7 +2,7 @@
 
 import { useLanguage, type Locale } from "@/lib/i18n";
 
-/** Header / home language switch — English clinical copy remains until FR content arrives. */
+/** Header language switch — unused at English-only launch; restore with FR after Portugal. */
 export function LanguageToggle() {
   const { locale, setLocale, t } = useLanguage();
 

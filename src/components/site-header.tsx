@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Close, Menu } from "./icons";
-import { LanguageToggle } from "./language-toggle";
 import { Logo } from "./logo";
 import { useLanguage } from "@/lib/i18n";
 import { navItems, type NavItem } from "@/lib/site";
@@ -28,7 +27,8 @@ function itemIsActive(pathname: string, item: NavItem) {
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { t, navLabel, locale } = useLanguage();
+  // English-only for launch (Sebastian Jul 20 — FR after Portugal return).
+  const { t, navLabel } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   // Mobile accordion: which parent with children is expanded.
@@ -118,7 +118,6 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="site-header__actions">
-          <LanguageToggle />
           {/* Consultation is header CTA only — not a primary nav item. */}
           <Link href="/contact" className="button button--small desktop-book">
             {t.consultationCta} <ArrowUpRight />
@@ -185,9 +184,6 @@ export function SiteHeader() {
               </div>
             );
           })}
-          <div className="mobile-menu__lang">
-            <LanguageToggle />
-          </div>
           <Link
             href="/contact"
             className="button"
@@ -198,15 +194,6 @@ export function SiteHeader() {
           <p>{t.tagline}</p>
         </nav>
       </div>
-
-      {/* FR chrome is live; clinical bodies stay English until Sylvie supplies FR copy. */}
-      {locale === "fr" && !isOpen ? (
-        <div className="locale-notice" role="status">
-          <div className="shell">
-            <p>{t.frContentNotice}</p>
-          </div>
-        </div>
-      ) : null}
     </header>
   );
 }

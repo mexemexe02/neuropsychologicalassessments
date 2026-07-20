@@ -2,7 +2,6 @@
 
 import {
   createContext,
-  startTransition,
   useCallback,
   useContext,
   useEffect,
@@ -83,6 +82,12 @@ const navFr: Record<(typeof navItems)[number]["id"], string> = {
   resources: "Ressources",
 };
 
+/** Kept for bilingual restore after Portugal return. */
+export const frenchChrome = {
+  ui: ui.fr,
+  nav: navFr,
+} as const;
+
 type UiStrings = {
   [K in keyof (typeof ui)["en"]]: string;
 };
@@ -97,28 +102,28 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  // English-only for launch (Sebastian Jul 20). FR UI + toggle return after Portugal.
   const [locale, setLocaleState] = useState<Locale>("en");
 
   useEffect(() => {
     try {
+      // Clear any prior FR preference so chrome cannot stick in French with no toggle.
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      // Defer so hydration stays English-first; then apply saved preference.
-      if (saved === "en" || saved === "fr") {
-        startTransition(() => setLocaleState(saved));
+      if (saved === "fr") {
+        window.localStorage.setItem(STORAGE_KEY, "en");
       }
     } catch {
       // Ignore private-mode / blocked storage.
     }
+    document.documentElement.lang = "en";
   }, []);
 
-  useEffect(() => {
-    document.documentElement.lang = locale;
-  }, [locale]);
-
   const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
+    // Keep API for later restore; ignore FR until bilingual launch.
+    if (next !== "en") return;
+    setLocaleState("en");
     try {
-      window.localStorage.setItem(STORAGE_KEY, next);
+      window.localStorage.setItem(STORAGE_KEY, "en");
     } catch {
       // Ignore private-mode / blocked storage.
     }
@@ -128,11 +133,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     () => ({
       locale,
       setLocale,
-      t: ui[locale],
-      navLabel: (id) =>
-        locale === "fr"
-          ? navFr[id]
-          : (navItems.find((n) => n.id === id)?.label ?? id),
+      t: ui.en,
+      navLabel: (id) => navItems.find((n) => n.id === id)?.label ?? id,
     }),
     [locale, setLocale],
   );
