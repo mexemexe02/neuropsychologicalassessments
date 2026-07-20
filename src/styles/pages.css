@@ -153,11 +153,8 @@
   filter: saturate(0.85) contrast(0.95);
 }
 
-/* Assessments only — mirror + less zoom so more of Sylvie’s photo shows. */
+/* Assessments block — mirror Sylvie photo left↔right as requested. */
 .service-plane__media--mirror .service-plane__media-img {
-  object-fit: contain;
-  object-position: center center;
-  opacity: 0.32;
   transform: scaleX(-1);
 }
 
