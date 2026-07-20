@@ -65,7 +65,8 @@ export function SiteHeader() {
       }`}
     >
       <div className="shell site-header__inner">
-        <Logo light={isOpen} />
+        {/* Logo stays dark — mobile menu is a light clinic panel. */}
+        <Logo />
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => {
             const active = itemIsActive(pathname, item);
@@ -136,24 +137,26 @@ export function SiteHeader() {
 
       <div className={`mobile-menu ${isOpen ? "is-open" : ""}`}>
         <nav className="shell mobile-menu__nav" aria-label="Mobile navigation">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             if (!item.children?.length) {
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  className="mobile-menu__link"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span>0{index + 1}</span>
                   {navLabel(item.id)}
-                  <ArrowUpRight />
                 </Link>
               );
             }
 
             const expanded = mobileOpenId === item.id;
             return (
-              <div key={item.href} className="mobile-nav-group">
+              <div
+                key={item.href}
+                className={`mobile-nav-group ${expanded ? "is-open" : ""}`}
+              >
                 <button
                   type="button"
                   className="mobile-nav-group__toggle"
@@ -162,7 +165,6 @@ export function SiteHeader() {
                     setMobileOpenId((id) => (id === item.id ? null : item.id))
                   }
                 >
-                  <span>0{index + 1}</span>
                   {navLabel(item.id)}
                   <span className="mobile-nav-group__chevron" aria-hidden>
                     {expanded ? "−" : "+"}
@@ -186,12 +188,12 @@ export function SiteHeader() {
           })}
           <Link
             href="/contact"
-            className="button"
+            className="button mobile-menu__cta"
             onClick={() => setIsOpen(false)}
           >
             {t.consultationCta} <ArrowUpRight />
           </Link>
-          <p>{t.tagline}</p>
+          <p className="mobile-menu__tagline">{t.tagline}</p>
         </nav>
       </div>
     </header>
