@@ -59,8 +59,8 @@
 .feature-block h2 {
   max-width: none;
   margin-bottom: 1rem;
-  /* Global h2 line-height (~1.02) overlaps descenders when titles wrap on large screens. */
-  line-height: 1.2;
+  /* Extra room after Jul 20 size bump so wrapped titles never collide. */
+  line-height: 1.22;
 }
 
 .feature-block .lead {
@@ -83,7 +83,8 @@
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   font-family: var(--font-display), serif;
-  font-size: clamp(1.25rem, 2.1vw, 1.8rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+  line-height: 1.2;
 }
 
 .area-item:nth-child(3n) {
@@ -148,9 +149,9 @@
   max-width: 19ch;
   margin-inline: auto;
   font-family: var(--font-display), serif;
-  font-size: clamp(2.4rem, 5.5vw, 5.3rem);
+  font-size: clamp(2.65rem, 5.7vw, 5.65rem);
   letter-spacing: -0.045em;
-  line-height: 1.05;
+  line-height: 1.08;
   text-align: center;
   text-wrap: balance;
 }
@@ -187,8 +188,9 @@
 .reason-card h3,
 .stage-card h3 {
   margin-bottom: 0.75rem;
-  /* Smaller headings — stronger bump per Sebastian’s “about four sizes” ask. */
-  font-size: clamp(1.5rem, 2.35vw, 1.9rem);
+  /* Card headings — Jul 20 companion bump (+2 / +2–3) after Jul 19 pass. */
+  font-size: clamp(1.65rem, 2.45vw, 2.1rem);
+  line-height: 1.2;
 }
 
 .reason-card p,

@@ -171,19 +171,20 @@
     word-break: break-word;
   }
 
+  /* Phone/tablet heading bump — Sebastian Jul 20 (+2 / +2–3). */
   h1 {
-    font-size: clamp(2.7rem, 10vw, 3.9rem);
-    line-height: 1.05;
+    font-size: clamp(2.95rem, 10.2vw, 4.2rem);
+    line-height: 1.08;
   }
 
   h2 {
-    font-size: clamp(2.15rem, 8vw, 3.05rem);
-    line-height: 1.12;
+    font-size: clamp(2.4rem, 8.2vw, 3.35rem);
+    line-height: 1.14;
   }
 
   h3 {
-    font-size: clamp(1.6rem, 6vw, 2.05rem);
-    line-height: 1.2;
+    font-size: clamp(1.8rem, 6.2vw, 2.25rem);
+    line-height: 1.22;
   }
 
   .eyebrow {
@@ -200,7 +201,7 @@
   .stage-card p,
   .page-hero__intro p,
   .faq-list details p {
-    font-size: 1.05rem;
+    font-size: 1.12rem;
     line-height: 1.7;
   }
 

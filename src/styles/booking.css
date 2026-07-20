@@ -25,7 +25,9 @@
 .booking-header h2 {
   max-width: 10ch;
   margin-bottom: 0;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  /* Jul 20 heading bump — keep booking titles in step with site scale. */
+  font-size: clamp(2.4rem, 4.2vw, 3.65rem);
+  line-height: 1.12;
 }
 
 .booking-header > span {
