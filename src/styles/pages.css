@@ -85,6 +85,8 @@
   flex-wrap: wrap;
   gap: 0.9rem;
   align-items: center;
+  /* Breathing room under hero copy (esp. Assessments stacked long-title). */
+  margin-top: 1.75rem;
 }
 
 .scroll-cue {

@@ -170,6 +170,30 @@
   color: var(--paper);
 }
 
+/*
+ * Wide desktop only: EN/FR was reading like another nav link beside the menu.
+ * Shrink it and sit it with the CTA cluster, away from the center nav.
+ * Tablet/hamburger layout unchanged.
+ */
+@media (min-width: 1101px) {
+  .site-header__actions {
+    gap: 0.55rem 0.75rem;
+    padding-left: 1.25rem;
+    margin-left: 0.5rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .site-header__actions .lang-toggle {
+    padding: 0.1rem;
+  }
+
+  .site-header__actions .lang-toggle__btn {
+    padding: 0.22rem 0.48rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+  }
+}
+
 .site-header.on-dark:not(.is-scrolled) .lang-toggle {
   border-color: rgba(255, 255, 255, 0.35);
   background: rgba(0, 0, 0, 0.18);
