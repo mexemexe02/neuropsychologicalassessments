@@ -140,7 +140,7 @@
   background: #ffffff;
 }
 
-/* Soft photo underlay — visible atmosphere, content stays readable. */
+/* Soft photo underlay — Sebastian Jul 20: a bit more visible; text still readable. */
 .service-plane__media {
   position: absolute;
   inset: 0;
@@ -151,8 +151,8 @@
 .service-plane__media-img {
   object-fit: cover;
   object-position: center 30%;
-  opacity: 0.28;
-  filter: saturate(0.85) contrast(0.95);
+  opacity: 0.44;
+  filter: saturate(0.9) contrast(0.98);
 }
 
 /* Assessments block — mirror Sylvie photo left↔right as requested. */
@@ -161,17 +161,18 @@
 }
 
 .service-plane--light .service-plane__media-img {
-  opacity: 0.22;
+  opacity: 0.4;
 }
 
 .service-plane__media::after {
   position: absolute;
   inset: 0;
+  /* Lighter wash so more of the photo reads through on the open side. */
   background: linear-gradient(
     105deg,
-    rgba(247, 246, 243, 0.94) 0%,
-    rgba(247, 246, 243, 0.78) 48%,
-    rgba(247, 246, 243, 0.55) 100%
+    rgba(247, 246, 243, 0.86) 0%,
+    rgba(247, 246, 243, 0.62) 48%,
+    rgba(247, 246, 243, 0.32) 100%
   );
   content: "";
 }
@@ -179,9 +180,9 @@
 .service-plane--light .service-plane__media::after {
   background: linear-gradient(
     105deg,
-    rgba(255, 255, 255, 0.94) 0%,
-    rgba(255, 255, 255, 0.8) 48%,
-    rgba(255, 255, 255, 0.58) 100%
+    rgba(255, 255, 255, 0.86) 0%,
+    rgba(255, 255, 255, 0.64) 48%,
+    rgba(255, 255, 255, 0.34) 100%
   );
 }
 
