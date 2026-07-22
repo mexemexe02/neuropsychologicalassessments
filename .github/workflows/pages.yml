@@ -31,9 +31,10 @@ jobs:
 
       - run: npm install
 
+      # Custom domain (neuropsychologicalassessments.com) serves from site root.
+      # Do NOT set GITHUB_PAGES=1 — that prefixes /neuropsychologicalassessments/
+      # and breaks every link/asset on the real domain.
       - name: Build site
-        env:
-          GITHUB_PAGES: "1"
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

@@ -12,11 +12,11 @@ export function assetPath(path: string) {
   return `${pagesBase}${normalized}`;
 }
 
-// Public URL for metadata/OG. Preview builds use GitHub Pages so share cards
-// resolve under the demo host instead of the future custom domain.
+// Public URL for metadata/OG. Project-path builds use github.io; production
+// custom domain uses the apex (www CNAME redirects there in DNS).
 export const siteOrigin = pagesBase
   ? `https://mexemexe02.github.io${pagesBase}`
-  : "https://www.neuropsychologicalassessments.com";
+  : "https://neuropsychologicalassessments.com";
 
 export const site = {
   // Public brand — confirmed with Sebastian (Jul 2026): shorter header name.
