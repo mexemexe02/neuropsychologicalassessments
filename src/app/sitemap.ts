@@ -15,6 +15,8 @@ const routes = [
   "/education/traumatic-brain-injury",
   "/resources",
   "/contact",
+  "/faq",
+  "/neuropsychology-in-tiny",
   "/privacy",
 ];
 
@@ -26,7 +28,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${site.domain}${path}`,
       lastModified: new Date(),
       changeFrequency: index === 0 ? "monthly" : "yearly",
-      priority: index === 0 ? 1 : route === "/contact" ? 0.9 : 0.7,
+      priority:
+        index === 0
+          ? 1
+          : route === "/contact" ||
+              route === "/faq" ||
+              route === "/neuropsychology-in-tiny"
+            ? 0.9
+            : 0.7,
     };
   });
 }

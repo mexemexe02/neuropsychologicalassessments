@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ConsultationCta } from "@/components/consultation-cta";
+import { RankingLinks } from "@/components/ranking-links";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import {
@@ -216,6 +217,7 @@ export default function CliniciansPage() {
               useful. Our goal is not only to describe concerns, but also to
               identify strengths, practical supports, and meaningful next steps.
             </p>
+            <RankingLinks />
           </Reveal>
         </div>
       </section>

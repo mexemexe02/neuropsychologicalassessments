@@ -454,3 +454,27 @@ go-live email checklist for Humberto review.
 - Dropdowns are the clearest UX for “tab under X” without crowding the top bar
 - Content work lives on `version-2` with V2 styles; cherry-pick/merge to `master` for Pages
 
+## 2026-08-13 — Google ranking: Tiny landing, FAQ, schema
+
+### Goal
+Make the practice eligible for the local pack (via GBP later), organic blue links, and AI Overviews/AI Mode. No #1 guarantee. Distance cannot be hacked.
+
+### Approach
+Recovered existing sitemap/robots/canonicals and in-page FAQs. Added one Tiny Township landing (not a city doorway farm), a crawlable `/faq` with answers from hours/NAP/service copy, MedicalClinic JSON-LD without invented geo or ratings, and a noindex owner checklist.
+
+### Files
+- `src/lib/site.ts`, `src/lib/faq.ts`, `src/lib/schema.ts`, `src/lib/google-ranking-checklist.ts`
+- `src/app/faq/page.tsx`, `src/app/neuropsychology-in-tiny/page.tsx`, `src/app/owner/google-ranking/page.tsx`
+- `src/app/layout.tsx`, `src/app/sitemap.ts`, `src/app/robots.ts`, Home/Contact/Clinicians/Footer
+- `tests/e2e/ranking.spec.ts`
+
+### Tests
+- `npx playwright test tests/e2e/ranking.spec.ts --project=desktop` (6 passed)
+- `npx playwright test --project=desktop` (ranking + overflow for new URLs passed; preexisting booking background-color assertion still fails on V2 grey)
+- `npm run build` (static export includes `/faq` and `/neuropsychology-in-tiny`)
+
+### Follow-ups
+- Owner: claim GBP, categories, NAP/hours match, Maps Q&A, reviews (no incentive)
+- Developer: GSC URL inspection after deploy; directory listings with exact NAP
+- Unproven facts left off the page: office lat/long, unit/street-number confirmation, parking, social sameAs
+

@@ -35,8 +35,30 @@ export const site = {
   email: "drsauriolassociates@neuropsychologicalassessments.com",
   addressLine1: "34 County Road",
   addressLine2: "Tiny, Ontario L0L 2J0",
+  // Structured NAP for JSON-LD. Geo is omitted until the owner confirms
+  // the office coordinates — do not point schema at Tiny’s township centre.
+  postalAddress: {
+    streetAddress: "34 County Road",
+    addressLocality: "Tiny",
+    addressRegion: "ON",
+    postalCode: "L0L 2J0",
+    addressCountry: "CA",
+  },
+  telephoneE164: "+17053218146",
   // Hours from Sebastian’s Jul 19 “Important changes” email.
   hours: "Monday through Saturday: 8:00 a.m. to 6:00 p.m.",
+  openingHours: {
+    days: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ] as const,
+    opens: "08:00",
+    closes: "18:00",
+  },
   serviceNote:
     "In Person and Virtual Services are Available (In person for Testing and Assessments. Virtual Services for Therapy)",
   // Neuropsych assessment fees stay off-site; contact after consultation.

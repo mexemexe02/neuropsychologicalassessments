@@ -53,6 +53,8 @@ export function SiteFooter() {
               <Mail /> {site.email}
             </a>
             <Link href="/contact">{t.bookConsultationShort}</Link>
+            <Link href="/neuropsychology-in-tiny">Neuropsychology in Tiny</Link>
+            <Link href="/faq">Common questions</Link>
             <p className="site-footer__privacy-note">{t.privacyNote}</p>
           </div>
         </div>

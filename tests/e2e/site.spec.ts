@@ -8,6 +8,11 @@ const routes = [
   ["/education", "Clear information supports informed decisions."],
   ["/resources", "Practical information for preparing and finding support."],
   ["/contact", "Begin with a brief conversation."],
+  ["/faq", "Common questions about assessment and psychotherapy."],
+  [
+    "/neuropsychology-in-tiny",
+    "Neuropsychological assessment and psychotherapy in Tiny, Ontario.",
+  ],
   ["/privacy", "Your information deserves careful treatment."],
 ] as const;
 

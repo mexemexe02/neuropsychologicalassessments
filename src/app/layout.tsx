@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { DemoNoticeProvider } from "@/components/demo-notice";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
 import { LanguageProvider } from "@/lib/i18n";
+import { medicalClinicJsonLd } from "@/lib/schema";
 import { site, siteOrigin } from "@/lib/site";
 import "./globals.css";
 
@@ -47,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <JsonLd data={medicalClinicJsonLd()} />
         <LanguageProvider>
           <DemoNoticeProvider>
             <SkipLink />

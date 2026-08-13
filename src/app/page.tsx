@@ -8,6 +8,7 @@ import {
   homeBeginSteps,
   homeTherapyConcerns,
 } from "@/lib/content";
+import { RankingLinks } from "@/components/ranking-links";
 import { assetPath, homeServiceLinks, site } from "@/lib/site";
 // Soft service backgrounds — Sebastian Jul 19 “with client” photos (content stays primary).
 import sebastianWithClient from "@/assets/sebastian-with-client.png";
@@ -266,6 +267,7 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+          <RankingLinks />
         </div>
       </section>
 

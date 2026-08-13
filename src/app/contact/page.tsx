@@ -3,6 +3,7 @@ import { ConsultationForm } from "@/components/consultation-form";
 import { Mail, Phone } from "@/components/icons";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { RankingLinks } from "@/components/ranking-links";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default function ContactPage() {
               {site.hours}
             </p>
             <p className="service-note">{site.serviceNote}</p>
+            <RankingLinks />
           </Reveal>
           <Reveal delay={120}>
             <ConsultationForm />
