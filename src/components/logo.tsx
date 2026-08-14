@@ -21,7 +21,7 @@ export function Logo({ light = false }: { light?: boolean }) {
         priority
       />
       <span>
-        <strong>Centre for Neuropsychology</strong>
+        <strong>Center for Neuropsychology</strong>
         <small>and Psychotherapy</small>
       </span>
     </Link>

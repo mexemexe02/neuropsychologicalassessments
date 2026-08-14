@@ -45,7 +45,7 @@ export const GOOGLE_RANKING_CHECKLIST: RankingItem[] = [
     audience: "developer",
     title: "Submit directory listings with the exact NAP",
     detail:
-      "Psychology Today, Ontario Psychological Association Find a Psychologist, College of Psychologists and Behaviour Analysts of Ontario public register, CRPO public register, Yellow Pages Canada, and Canada411. Copy: Centre for Neuropsychology and Psychotherapy, 34 County Road, Tiny, Ontario L0L 2J0, 705-321-8146.",
+      "Psychology Today, Ontario Psychological Association Find a Psychologist, College of Psychologists and Behaviour Analysts of Ontario public register, CRPO public register, Yellow Pages Canada, and Canada411. Copy: Center for Neuropsychology and Psychotherapy, 34 County Road, Tiny, Ontario L0L 2J0, 705-321-8146.",
   },
   {
     id: "owner-gbp-create",
@@ -66,7 +66,7 @@ export const GOOGLE_RANKING_CHECKLIST: RankingItem[] = [
     audience: "owner",
     title: "Match NAP and hours to the website",
     detail:
-      "Name: Centre for Neuropsychology and Psychotherapy. Address: 34 County Road, Tiny, Ontario L0L 2J0. Phone: 705-321-8146. Hours: Monday through Saturday, 8:00 a.m. to 6:00 p.m.",
+      "Name: Center for Neuropsychology and Psychotherapy. Address: 34 County Road, Tiny, Ontario L0L 2J0. Phone: 705-321-8146. Hours: Monday through Saturday, 8:00 a.m. to 6:00 p.m.",
   },
   {
     id: "owner-maps-qa",

@@ -478,3 +478,38 @@ Recovered existing sitemap/robots/canonicals and in-page FAQs. Added one Tiny To
 - Developer: GSC URL inspection after deploy; directory listings with exact NAP
 - Unproven facts left off the page: office lat/long, unit/street-number confirmation, parking, social sameAs
 
+
+## 2026-08-14 — Free marketing plan (GBP + citations audit)
+
+### Summary
+Audited free marketing stack vs live assets; duplicate Maps report submitted earlier; hours mismatch documented (site wins); Psychology Today phone mismatch found.
+
+### Actions
+- Compared live Maps hours/address to website (site Mon–Sat 8–6; Google weekdays 9–6 / Sat–Sun 10–4; street/postal differ).
+- Found Sebastian Psychology Today profile with phone 705-996-5298 and Mississauga primary — not practice 705-321-8146.
+- Built free-first phased plan canvas for Humberto-owned execution; client questions limited to facts/consent.
+
+### Key Decisions
+- Do not create social for SEO in free phase; reviews + NAP + directories first.
+- Update Google hours to site hours; hold address until Sebastian confirms.
+- Fix PT listing after phone confirmation; wire consultation form before paid ads.
+
+### Files Changed
+- Canvas only: free-marketing-plan.canvas.tsx (Cursor canvases folder)
+
+### Blockers / Notes
+- Waiting: duplicate merge review; street/postal yes from Sebastian; PT phone ownership.
+
+## 2026-08-14 — Email: marketing questions to Sebastian
+
+Sent via himalaya from humbertobizes@gmail.com to sebejk@gmail.com (CC mexemexe02). Subject: Quick marketing questions (Google + website). Asks: address/postal, PT phone, review ask OK, optional Sylvie PT.
+
+## 2026-08-14 — Persist marketing plan
+
+- `.cursor/rules/marketing-plan.mdc` (alwaysApply)
+- `drafts/marketing-do-now.md` — today vs wait checklist
+
+## 2026-08-14 — Brand spelling: Center (match Google)
+
+Renamed public brand Centre to Center in site.ts, logo, Tiny page, checklist, ranking test, README. Left centred/person-centred body copy. Not deployed until push.
+

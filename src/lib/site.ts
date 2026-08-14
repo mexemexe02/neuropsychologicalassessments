@@ -21,8 +21,9 @@ export const siteOrigin = pagesBase
 export const site = {
   // Public brand — confirmed with Sebastian (Jul 2026): shorter header name.
   // Domain stays neuropsychologicalassessments.com for search visibility.
-  name: "Centre for Neuropsychology and Psychotherapy",
-  shortName: "Centre for Neuropsychology and Psychotherapy",
+  // Spelling matches Google Business Profile ("Center").
+  name: "Center for Neuropsychology and Psychotherapy",
+  shortName: "Center for Neuropsychology and Psychotherapy",
   // Longer descriptor for footer / SEO context (not the header lockup).
   longDescriptor:
     "Neuropsychological assessments for children through older adulthood and evidence-based psychotherapy for adults.",

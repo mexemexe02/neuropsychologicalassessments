@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Neuropsychology in Tiny, Ontario",
   description:
-    "Centre for Neuropsychology and Psychotherapy is in Tiny, Ontario. In-person neuropsychological assessment and virtual psychotherapy, with a complimentary 15-minute consultation.",
+    "Center for Neuropsychology and Psychotherapy is in Tiny, Ontario. In-person neuropsychological assessment and virtual psychotherapy, with a complimentary 15-minute consultation.",
   alternates: { canonical: "/neuropsychology-in-tiny" },
 };
 

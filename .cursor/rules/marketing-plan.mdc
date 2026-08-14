@@ -1,0 +1,40 @@
+---
+description: Paid client marketing plan — Center for Neuropsychology and Psychotherapy (Sebastian/Sylvie). Resume from this when ranking/GBP/outreach comes up.
+alwaysApply: true
+---
+
+# Marketing plan (paid monthly client)
+
+Live site: https://neuropsychologicalassessments.com/  
+Practice phone: 705-321-8146  
+Practice email: drsauriolassociates@neuropsychologicalassessments.com  
+Sebastian: sebejk@gmail.com  
+Humberto Manager on GBP (his Gmail). Do not paste passwords. Do not change site unless asked.
+
+## Brand / NAP
+
+- Public name: **Center** for Neuropsychology and Psychotherapy (match Google; code may need deploy).
+- Site hours (source of truth): Mon–Sat 8:00 a.m.–6:00 p.m., Sunday closed. Google hours updated 2026-08-14.
+- Address pending Sebastian: Google `34 County Rd 6 S, L4N 5R7` vs site `34 County Road, L0L 2J0`.
+- Duplicate service-area listing: merge/duplicate report submitted; wait for Google.
+
+## Phase order (Humberto owns)
+
+0. NAP lock — hours done; wait address reply; monitor duplicate.
+1. GBP polish — categories, services, description, Maps Q&A; reviews after yes.
+2. Form send + GSC inspect `/faq/` + `/neuropsychology-in-tiny/`.
+3. Citations — fix Sebastian Psychology Today phone if he chooses 705-321-8146 (he edits PT login); Canada411/YP/OPA/college; Sylvie PT optional.
+4. Referral one-pager (GP/lawyer). Social last (one FB only if they post).
+5. Paid ads only after form + reviews work.
+
+## Client questions (email sent 2026-08-14)
+
+Address/postal; PT which phone; OK to ask Google reviews; optional Sylvie PT.
+
+## Do not
+
+Doorway city pages; fake reviews; empty social stack; say “free” about Humberto’s fee; close the County Rd 6 South listing.
+
+Canvas: `canvases/free-marketing-plan.canvas.tsx` under the Cursor project folder.
+Tracker: `drafts/marketing-do-now.md` in this repo.
+---

@@ -108,7 +108,7 @@ test.describe("ranking eligibility", () => {
       openingHoursSpecification?: unknown;
     };
 
-    expect(clinic?.name).toContain("Centre for Neuropsychology");
+    expect(clinic?.name).toContain("Center for Neuropsychology");
     expect(clinic?.telephone).toBe("+17053218146");
     expect(clinic?.address?.streetAddress).toBe(NAP_STREET);
     expect(clinic?.address?.addressLocality).toBe(NAP_CITY);

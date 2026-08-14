@@ -1,4 +1,4 @@
-# Centre for Neuropsychology and Psychotherapy
+# Center for Neuropsychology and Psychotherapy
 
 Custom Next.js website for Sebastian Jose / Dr. Sylvie Sauriol.
 
@@ -6,7 +6,7 @@ Custom Next.js website for Sebastian Jose / Dr. Sylvie Sauriol.
 
 ## Brand
 
-Public name: **Centre for Neuropsychology and Psychotherapy**  
+Public name: **Center for Neuropsychology and Psychotherapy**  
 Domain stays `neuropsychologicalassessments.com` for search visibility.
 
 Tagline: Thoughtful care. Clear next steps.
