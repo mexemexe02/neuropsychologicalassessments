@@ -4,7 +4,7 @@ Updated 2026-08-14. Plan rule: `.cursor/rules/marketing-plan.mdc`
 
 ## Waiting on Sebastian (email sent)
 
-- Exact street + postal (County Rd 6 S? L4N 5R7 vs L0L 2J0)
+- ~~Address~~ — locked and on site: **34 County Rd 6 South, Tiny, ON L0L 2J0**
 - Psychology Today phone (321-8146 vs 996-5298)
 - OK to ask clients for Google reviews
 - Optional: Sylvie on Psychology Today

@@ -34,12 +34,13 @@ export const site = {
   phone: "705-321-8146",
   phoneHref: "tel:+17053218146",
   email: "drsauriolassociates@neuropsychologicalassessments.com",
-  addressLine1: "34 County Road",
+  addressLine1: "34 County Rd 6 South",
   addressLine2: "Tiny, Ontario L0L 2J0",
   // Structured NAP for JSON-LD. Geo is omitted until the owner confirms
   // the office coordinates — do not point schema at Tiny’s township centre.
+  // Street + postal locked 2026-08-14: Google street kept; postal L0L 2J0.
   postalAddress: {
-    streetAddress: "34 County Road",
+    streetAddress: "34 County Rd 6 South",
     addressLocality: "Tiny",
     addressRegion: "ON",
     postalCode: "L0L 2J0",

@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 const NAP_PHONE = "705-321-8146";
-const NAP_STREET = "34 County Road";
+const NAP_STREET = "34 County Rd 6 South";
 const NAP_CITY = "Tiny";
 const NAP_POSTAL = "L0L 2J0";
 
