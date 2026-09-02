@@ -504,12 +504,120 @@ Audited free marketing stack vs live assets; duplicate Maps report submitted ear
 
 Sent via himalaya from humbertobizes@gmail.com to sebejk@gmail.com (CC mexemexe02). Subject: Quick marketing questions (Google + website). Asks: address/postal, PT phone, review ask OK, optional Sylvie PT.
 
+## 2026-08-27 — Follow-up email sent to Sebastian
+
+Sent via himalaya from humbertobizes@gmail.com to sebejk@gmail.com (CC mexemexe02). Subject: Quick check-in + two small items. Thanks for Aug 14 text (postal + reviews); asks PT phone, optional Sylvie PT, billing email preference for $45/mo care. No Payment Link in email.
+
+## 2026-08-14 — Sebastian text reply (not email)
+
+- Postal **L0L 2J0**; reviews OK (“We can make reviews happen… I put one and will ask other people”).
+- Still open after that: PT phone; optional Sylvie PT.
+
 ## 2026-08-14 — Persist marketing plan
 
 - `.cursor/rules/marketing-plan.mdc` (alwaysApply)
 - `drafts/marketing-do-now.md` — today vs wait checklist
 
+## 2026-08-14 — NAP: County Rd 6 South + L0L 2J0
+
+Sebastian confirmed postal L0L 2J0 (Google street kept). Updated site `addressLine1` / schema / checklist / ranking test. Pushed master + version-2.
+
+## 2026-08-14 — End of day: plan updated
+
+GBP polish + post done. Maps Q&A skipped (UI not available). Resume next: GSC, form wiring, directories; wait on PT phone + review permission. Trackers: `.cursor/rules/marketing-plan.mdc`, `drafts/marketing-do-now.md`.
+
 ## 2026-08-14 — Brand spelling: Center (match Google)
 
 Renamed public brand Centre to Center in site.ts, logo, Tiny page, checklist, ranking test, README. Left centred/person-centred body copy. Not deployed until push.
 
+
+## 2026-08-27 — Billing: Stripe vs this client site
+
+### Summary
+Confirmed: no Stripe in this repo for Humberto's fees. Clinic site ≠ Humberto billing.
+
+### Notes
+- Agreed: $750 build + $45/mo care (Sebastian confirmed care Jul 18).
+- Log still shows $750 invoice as to-be-issued.
+- Billing/ops belongs in Life-OS (Humberto business), not this clinic project.
+
+## 2026-08-27 — Billing note (Humberto)
+
+- Prior fees (including $750 build) are **paid**.
+- Do **not** contact Sebastian about billing from this project/agents.
+- Ongoing: $45/mo care only — set up in Life-OS / Humberto Stripe, not on clinic site.
+
+## 2026-09-02 — Online presence: share cards, schema, sitemap, compliance
+
+### Summary
+Invisible-to-visitors upgrades so links, search results, and social previews
+represent the practice correctly; no visible copy or styling changed. Found
+that soliciting Google reviews is prohibited for both clinicians — replaced the
+planned review-ask script with a compliance note.
+
+### Actions
+- Live audit: all URLs 200, www/http → 301, robots + sitemap OK. Found
+  `og:image` was an SVG (ignored by Facebook/LinkedIn/iMessage) that still
+  carried the retired “Centre for Neuropsychological Assessments” brand, and
+  every page shared the home page’s og:title/description.
+- New `public/og-image.png` (1200×630, current brand, site fonts) via
+  `scripts/make-og-image.mjs`; deleted `public/og-image.svg`.
+- Layout `openGraph`/`twitter` no longer hard-code title/description, so each
+  page’s own title and description flow into share previews (verified in
+  `out/faq/index.html`).
+- Added `src/app/apple-icon.png` (180) + `src/app/manifest.ts` with 192/512
+  icons (`public/icons/`). Next auto-links both.
+- Schema: `WebSite` node (site-name eligibility), `MedicalClinic` now has
+  `@id`, `logo`, PNG `image`, `availableLanguage` (EN/FR), two
+  `availableService` entries; new `Person` graph on `/clinicians` for Dr.
+  Sauriol and Sebastian (`affiliation`, not `employee`). Still no geo/ratings.
+- Sitemap `lastmod` now comes from real git dates per route (+ shared content
+  files) instead of `new Date()`; Pages workflow uses `fetch-depth: 0`.
+- Tests: `tests/e2e/ranking.spec.ts` +2 tests (PNG card, per-page OG,
+  manifest, WebSite/Person schema, real lastmod). 8/8 pass on desktop.
+  `site.spec.ts` 11 pass; the 1 failure is the pre-existing booking
+  background-colour assertion from V2 grey (not touched).
+- Research: CRPO Standard 6.2.2 and CPBAO Standard 6.3(e)/6.5 — registrants
+  may not request/solicit reviews, link to review pages, or reply in a way
+  that identifies a client. Wrote
+  `drafts/reviews-and-testimonials-compliance-2026-09-02.md`.
+- Citation audit (subagent, read-only) → `drafts/citation-audit-2026-09-02.md`.
+
+### Key Decisions
+- OG image regenerated from code, not hand-drawn, so future brand tweaks are
+  one command.
+- `affiliation` over `employee` in Person schema — employment relationship is
+  not stated anywhere on the site.
+- No review-ask script. Prominence effort redirected to registers,
+  directories, referral partners, GBP completeness.
+
+### Files Changed
+- `src/app/layout.tsx`, `src/lib/schema.ts`, `src/app/clinicians/page.tsx`
+- `src/app/sitemap.ts`, `src/app/manifest.ts`, `src/app/apple-icon.png`
+- `public/og-image.png`, `public/icons/*`, `public/og-image.svg` (deleted)
+- `scripts/make-og-image.mjs`, `.github/workflows/pages.yml`
+- `tests/e2e/ranking.spec.ts`
+- `drafts/reviews-and-testimonials-compliance-2026-09-02.md`,
+  `drafts/citation-audit-2026-09-02.md`, `drafts/marketing-do-now.md`,
+  `.cursor/rules/marketing-plan.mdc`
+
+### Blockers / Notes
+- `/owner/google-ranking/` still tells the owner to ask for reviews — needs
+  Humberto’s OK to reword (site text) + test update.
+- Sebastian’s self-posted Google review should be removed (Google policy +
+  testimonial rules).
+- Hero video is 5.9 MB and autoplays on mobile; `preload="metadata"` would cut
+  data use but may delay first frame — left alone (look unchanged).
+- Owner-only: GSC URL inspection for `/faq/`, `/neuropsychology-in-tiny/`;
+  Bing Places + Apple Business Connect claims; PT phone answer.
+
+### Verify locally
+```powershell
+npm run build
+$env:PLAYWRIGHT_BROWSERS_PATH="$env:LOCALAPPDATA\ms-playwright"
+npx playwright test tests/e2e/ranking.spec.ts --project=desktop
+node scripts/make-og-image.mjs   # regenerate share card + icons
+```
+After deploy: paste https://neuropsychologicalassessments.com/faq/ into
+https://developers.facebook.com/tools/debug/ and
+https://search.google.com/test/rich-results.

@@ -106,6 +106,7 @@ test.describe("ranking eligibility", () => {
       geo?: unknown;
       aggregateRating?: unknown;
       openingHoursSpecification?: unknown;
+      hasMap?: string;
     };
 
     expect(clinic?.name).toContain("Center for Neuropsychology");
@@ -116,6 +117,8 @@ test.describe("ranking eligibility", () => {
     expect(clinic?.openingHoursSpecification).toBeTruthy();
     expect(clinic?.geo).toBeUndefined();
     expect(clinic?.aggregateRating).toBeUndefined();
+    // Verified Maps listing (CID link) — must stay a maps.google.com URL.
+    expect(clinic?.hasMap).toMatch(/^https:\/\/maps\.google\.com\/\?cid=\d+$/);
   });
 
   test("share previews use a PNG card and each page's own title", async ({
@@ -191,13 +194,18 @@ test.describe("ranking eligibility", () => {
     expect(xml).toContain("/neuropsychology-in-tiny/");
     expect(xml).not.toContain("/owner/google-ranking");
     // lastmod must be a real git date, not "now" — Google ignores fake ones.
-    const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(
-      (m) => new Date(m[1]).getTime(),
-    );
+    // A git date is stable between two requests; `new Date()` is not.
+    const readLastmods = (text: string) =>
+      [...text.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((m) => m[1]);
+    const lastmods = readLastmods(xml);
     expect(lastmods.length).toBeGreaterThan(0);
-    for (const t of lastmods) {
-      expect(t).toBeLessThan(Date.now() - 60 * 60 * 1000);
+    for (const iso of lastmods) {
+      const t = new Date(iso).getTime();
+      expect(Number.isNaN(t)).toBe(false);
+      expect(t).toBeLessThanOrEqual(Date.now());
     }
+    const again = await (await request.get("/sitemap.xml")).text();
+    expect(readLastmods(again)).toEqual(lastmods);
 
     const robots = await request.get("/robots.txt");
     expect(robots.status()).toBe(200);

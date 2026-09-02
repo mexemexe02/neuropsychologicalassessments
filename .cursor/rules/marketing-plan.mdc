@@ -10,31 +10,65 @@ Practice phone: 705-321-8146
 Practice email: drsauriolassociates@neuropsychologicalassessments.com  
 Sebastian: sebejk@gmail.com  
 Humberto Manager on GBP (his Gmail). Do not paste passwords. Do not change site unless asked.
+Never say “free” about Humberto’s monthly fee.
 
-## Brand / NAP
+## Locked NAP (site + Google)
 
-- Public name: **Center** for Neuropsychology and Psychotherapy (match Google; code may need deploy).
-- Site hours (source of truth): Mon–Sat 8:00 a.m.–6:00 p.m., Sunday closed. Google hours updated 2026-08-14.
-- Address locked (2026-08-14): **34 County Rd 6 South, Tiny, Ontario L0L 2J0**. Site + Google should match.
-- Duplicate service-area listing: merge/duplicate report submitted; wait for Google.
+- Name: **Center for Neuropsychology and Psychotherapy**
+- Address: **34 County Rd 6 South, Tiny, Ontario L0L 2J0**
+- Phone: **705-321-8146**
+- Hours: Mon–Sat **8:00 a.m.–6:00 p.m.**, Sunday closed
 
-## Phase order (Humberto owns)
+## Done (2026-08-14)
 
-0. NAP lock — hours done; wait address reply; monitor duplicate.
-1. GBP polish — categories, services, description, Maps Q&A; reviews after yes.
-2. Form send + GSC inspect `/faq/` + `/neuropsychology-in-tiny/`.
-3. Citations — fix Sebastian Psychology Today phone if he chooses 705-321-8146 (he edits PT login); Canada411/YP/OPA/college; Sylvie PT optional.
-4. Referral one-pager (GP/lawyer). Social last (one FB only if they post).
-5. Paid ads only after form + reviews work.
+- Google hours matched to site
+- Duplicate service-area listing: merge/duplicate report submitted (monitor)
+- Marketing questions email sent to Sebastian
+- Site brand Centre → Center deployed
+- Site street updated to County Rd 6 South + L0L 2J0 deployed
+- Google postal set to L0L 2J0
+- GBP: Psychologist primary; Neuropsychologist + Mental health service additional
+- GBP services + descriptions (site-accurate); attributes (onsite Yes, English, etc.)
+- Google Post published (Update + Learn more → /contact/)
+- Photos already on profile
 
-## Client questions (email sent 2026-08-14)
+## Done (2026-09-02)
 
-Address/postal; PT which phone; OK to ask Google reviews; optional Sylvie PT.
+- PNG share card (current brand), per-page OG titles, WebSite + Person schema, touch icon/manifest, real sitemap lastmod — deployed
+- Reviews compliance checked: **do not ask clients for reviews** (CRPO 6.2.2; CPBAO 6.3e/6.5). Note: `drafts/reviews-and-testimonials-compliance-2026-09-02.md`
+- Citation audit: `drafts/citation-audit-2026-09-02.md`
+
+## Skipped / N/A
+
+- **Maps Q&A** — not available in this profile’s Maps or dashboard UI (Google UI change). Do not spend more time hunting. Live `/faq` covers the same answers. Revisit only if Q&A reappears.
+- **Review-ask script** — prohibited for both clinicians (regulated RP + psychologist). Never draft one. Reviews only if clients post unprompted; no links to review pages; uniform or no replies.
+
+## Waiting on Sebastian
+
+- Psychology Today phone: keep **705-996-5298** or use **705-321-8146**?
+- Optional: Sylvie Psychology Today profile?
+- Billing email for $45/mo care (personal vs clinic) — when sending Stripe link
+
+## Answered (2026-08-14 text from Sebastian)
+
+- Postal **L0L 2J0**
+- Google reviews: **yes** — “We can make reviews happen”; he put one and will ask others
+
+## Next session (Humberto — no reply needed unless noted)
+
+1. Search Console — inspect `/faq/` and `/neuropsychology-in-tiny/`; AI opt-in if shown; confirm site name shows practice name
+2. Wire consultation form → `drsauriolassociates@neuropsychologicalassessments.com`
+3. Work citation-audit fixes (registers + directories, locked NAP); Bing Places + Apple Business Connect
+4. Tell Sebastian: no review asks; remove self-posted review
+5. Re-check Maps — one open listing only; duplicate status
+6. After PT answer — he/Humberto update Psychology Today phone + site link
+7. Reword `/owner/google-ranking/` review items (site text — needs Humberto OK)
+8. Later — referral one-pager (B2B allowed); social only if they will post; paid ads only after form works
 
 ## Do not
 
-Doorway city pages; fake reviews; empty social stack; say “free” about Humberto’s fee; close the County Rd 6 South listing.
+Doorway city pages; ask clients for reviews or link to review pages; empty social stack; close the County Rd 6 South listing; invent clinical copy; buy ads early.
 
-Canvas: `canvases/free-marketing-plan.canvas.tsx` under the Cursor project folder.
-Tracker: `drafts/marketing-do-now.md` in this repo.
+Tracker: `drafts/marketing-do-now.md`  
+Canvas: Cursor project `canvases/free-marketing-plan.canvas.tsx` (may be stale — prefer this rule + do-now file)
 ---

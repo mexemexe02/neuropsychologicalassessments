@@ -43,6 +43,9 @@ export function medicalClinicJsonLd() {
       "@type": "AdministrativeArea",
       name: "Tiny, Ontario",
     },
+    // Verified 2026-09-02: the one Google Maps listing whose name, street,
+    // postal code, phone and hours all match this site (CID link is stable).
+    hasMap: "https://maps.google.com/?cid=7948801661534074125",
     // Clinicians page: Dr. Sauriol offers services in English and French.
     availableLanguage: ["English", "French"],
     // Matches the two service pillars named on the home page.
@@ -117,6 +120,11 @@ export function cliniciansJsonLd() {
         image: `${site.domain}/images/sebastian-jose-headshot.jpg`,
         url,
         affiliation: { "@id": CLINIC_ID },
+        // His verified Psychology Today profile (found in the 2026-09-02
+        // citation audit). Phone/city there still need his update.
+        sameAs: [
+          "https://www.psychologytoday.com/ca/therapists/sebastian-jose-mississauga-on/1678004",
+        ],
       },
     ],
   };
