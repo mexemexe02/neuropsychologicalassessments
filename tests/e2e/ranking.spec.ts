@@ -118,6 +118,69 @@ test.describe("ranking eligibility", () => {
     expect(clinic?.aggregateRating).toBeUndefined();
   });
 
+  test("share previews use a PNG card and each page's own title", async ({
+    page,
+    request,
+  }) => {
+    // SVG og:image is ignored by Facebook/LinkedIn/iMessage — must be PNG.
+    await page.goto("/faq");
+    const ogImage = page.locator('meta[property="og:image"]');
+    await expect(ogImage).toHaveAttribute("content", /\/og-image\.png$/);
+    const png = await request.get("/og-image.png");
+    expect(png.status()).toBe(200);
+    expect(png.headers()["content-type"]).toContain("image/png");
+
+    // Per-page title/description must flow into OG + Twitter tags.
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+      "content",
+      /^Common questions/,
+    );
+    await expect(
+      page.locator('meta[property="og:description"]'),
+    ).toHaveAttribute("content", /consultation/i);
+    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
+      "content",
+      /^Common questions/,
+    );
+
+    // Touch icon + manifest exist (no visual change on the site).
+    await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveCount(1);
+    const manifest = await request.get("/manifest.webmanifest");
+    expect(manifest.status()).toBe(200);
+    expect((await manifest.json()).name).toContain(
+      "Center for Neuropsychology",
+    );
+  });
+
+  test("WebSite schema names the practice and clinicians have Person schema", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const homeBlocks = jsonLdBlocks(await page.content());
+    const website = homeBlocks.find(
+      (block) =>
+        (block as { "@type"?: string })["@type"] === "WebSite",
+    ) as { name?: string; url?: string } | undefined;
+    expect(website?.name).toContain("Center for Neuropsychology");
+    expect(website?.url).toMatch(/\/$/);
+
+    await page.goto("/clinicians");
+    const blocks = jsonLdBlocks(await page.content());
+    const graph = blocks.find(
+      (block) => Array.isArray((block as { "@graph"?: unknown[] })["@graph"]),
+    ) as { "@graph": { "@type": string; name: string; jobTitle: string }[] };
+    const people = graph["@graph"].filter((n) => n["@type"] === "Person");
+    expect(people.map((p) => p.name)).toEqual([
+      "Dr. Sylvie Sauriol",
+      "Sebastian Jose",
+    ]);
+    // Schema must match the visible bios.
+    for (const person of people) {
+      await expect(page.getByText(person.name).first()).toBeVisible();
+    }
+    expect(people[1].jobTitle).toBe("Registered Psychotherapist (Qualifying)");
+  });
+
   test("sitemap lists the new ranking URLs and robots allow crawling", async ({
     request,
   }) => {
@@ -127,6 +190,14 @@ test.describe("ranking eligibility", () => {
     expect(xml).toContain("/faq/");
     expect(xml).toContain("/neuropsychology-in-tiny/");
     expect(xml).not.toContain("/owner/google-ranking");
+    // lastmod must be a real git date, not "now" — Google ignores fake ones.
+    const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(
+      (m) => new Date(m[1]).getTime(),
+    );
+    expect(lastmods.length).toBeGreaterThan(0);
+    for (const t of lastmods) {
+      expect(t).toBeLessThan(Date.now() - 60 * 60 * 1000);
+    }
 
     const robots = await request.get("/robots.txt");
     expect(robots.status()).toBe(200);

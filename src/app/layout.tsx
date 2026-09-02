@@ -5,9 +5,18 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SkipLink } from "@/components/skip-link";
 import { LanguageProvider } from "@/lib/i18n";
-import { medicalClinicJsonLd } from "@/lib/schema";
+import { medicalClinicJsonLd, webSiteJsonLd } from "@/lib/schema";
 import { site, siteOrigin } from "@/lib/site";
 import "./globals.css";
+
+// Share card. PNG, not SVG: Facebook, LinkedIn, WhatsApp and iMessage do
+// not render SVG og:image files. Regenerate with `node scripts/make-og-image.mjs`.
+const ogImage = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: `${site.name} — ${site.tagline}`,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteOrigin}/`),
@@ -18,19 +27,18 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   alternates: { canonical: "/" },
+  // No title/description here on purpose: Next then falls back to each
+  // page's own <title> and description, so shared links to /faq or
+  // /clinicians preview that page instead of the generic home text.
   openGraph: {
     type: "website",
     locale: "en_CA",
     siteName: site.name,
-    title: site.name,
-    description: site.description,
-    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.shortName,
-    description: site.description,
-    images: ["/og-image.svg"],
+    images: [ogImage.url],
   },
 };
 
@@ -50,6 +58,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         <JsonLd data={medicalClinicJsonLd()} />
+        <JsonLd data={webSiteJsonLd()} />
         <LanguageProvider>
           <DemoNoticeProvider>
             <SkipLink />

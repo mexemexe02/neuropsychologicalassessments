@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ConsultationCta } from "@/components/consultation-cta";
+import { JsonLd } from "@/components/json-ld";
 import { RankingLinks } from "@/components/ranking-links";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
@@ -8,6 +9,7 @@ import {
   sebastianFees,
   sylvieFees,
 } from "@/lib/content-sebastian-july18";
+import { cliniciansJsonLd } from "@/lib/schema";
 // Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
 import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
 import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
@@ -46,6 +48,8 @@ const joseFocus = [
 export default function CliniciansPage() {
   return (
     <>
+      {/* Person schema for both clinicians — invisible, mirrors the bios below. */}
+      <JsonLd data={cliniciansJsonLd()} />
       <PageHero
         eyebrow="Clinicians"
         title={<>Experienced care. A collaborative approach.</>}
