@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
+import { RankingLinks } from "@/components/ranking-links";
 import { Reveal } from "@/components/reveal";
+import { VideoGallery } from "@/components/video-gallery";
 import {
   homeAssessmentConcerns,
   homeBeginSteps,
   homeTherapyConcerns,
 } from "@/lib/content";
-import { RankingLinks } from "@/components/ranking-links";
+import { videosJsonLd } from "@/lib/schema";
 import { assetPath, homeServiceLinks, site } from "@/lib/site";
+import { homeVideos } from "@/lib/videos";
 // Soft service backgrounds — Sebastian Jul 19 “with client” photos (content stays primary).
 import sebastianWithClient from "@/assets/sebastian-with-client.png";
 import sylvieWithClient from "@/assets/sylvie-with-client.png";
@@ -25,6 +29,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* VideoObject schema for the three visible YouTube cards below. */}
+      <JsonLd data={videosJsonLd(homeVideos)} />
       <section className="home-hero">
         {/* Nature loop — calm sunlight through trees (Pexels). Poster keeps first paint light. */}
         <video
@@ -225,7 +231,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section--soft">
+      {/* Meet / Watch — practice YouTube intros (click-to-load; no self-hosted mp4). */}
+      <section
+        id="meet-the-team"
+        className="section section--soft"
+        aria-labelledby="meet-the-team-heading"
+      >
+        <div className="shell">
+          <Reveal className="video-section-header">
+            <p className="eyebrow">Meet the team</p>
+            <h2 id="meet-the-team-heading">Watch</h2>
+            <p className="lead">
+              Short introductions from our clinicians, and a clear overview of
+              what a neuropsychological assessment involves.
+            </p>
+          </Reveal>
+          <VideoGallery videos={homeVideos} layout="home" />
+        </div>
+      </section>
+
+      <section className="section">
         <div className="shell">
           <Reveal className="content-header">
             <div>

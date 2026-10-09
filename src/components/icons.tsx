@@ -79,3 +79,19 @@ export function Menu(props: IconProps) {
     </svg>
   );
 }
+
+/** Filled play triangle for video cards — calm clinical overlay control. */
+export function Play(props: IconProps) {
+  return (
+    <svg
+      width={28}
+      height={28}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M8.2 5.4c-.7-.4-1.5.1-1.5.9v11.4c0 .8.8 1.3 1.5.9l9.6-5.7c.7-.4.7-1.4 0-1.8L8.2 5.4Z" />
+    </svg>
+  );
+}

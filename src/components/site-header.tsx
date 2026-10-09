@@ -33,6 +33,13 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   // Mobile accordion: which parent with children is expanded.
   const [mobileOpenId, setMobileOpenId] = useState<string | null>(null);
+  // Reset menu state when the route changes (avoid setState-in-effect lint).
+  const [menuPathname, setMenuPathname] = useState(pathname);
+  if (pathname !== menuPathname) {
+    setMenuPathname(pathname);
+    setIsOpen(false);
+    setMobileOpenId(null);
+  }
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 18);
@@ -51,12 +58,6 @@ export function SiteHeader() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  useEffect(() => {
-    // Close mobile menu when the route changes.
-    setIsOpen(false);
-    setMobileOpenId(null);
-  }, [pathname]);
 
   return (
     <header
