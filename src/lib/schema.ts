@@ -1,5 +1,6 @@
 import { rankingFaqs } from "@/lib/faq";
 import { site } from "@/lib/site";
+import { homeVideos, type PracticeVideo } from "@/lib/videos";
 
 // Stable node ids so the WebSite, clinic, and clinician nodes can reference
 // each other across pages (Google merges them into one entity graph).
@@ -143,5 +144,33 @@ export function faqPageJsonLd() {
         text: faq.answer,
       },
     })),
+  };
+}
+
+/** One VideoObject node — mirrors a visible card (title, duration, thumbnail). */
+function videoObjectNode(video: PracticeVideo) {
+  return {
+    "@type": "VideoObject",
+    "@id": `${site.domain}/#video-${video.id}`,
+    name: video.title,
+    description: video.summary,
+    thumbnailUrl: `${site.domain}${video.thumbnailPublicPath}`,
+    uploadDate: video.uploadDate,
+    duration: video.durationIso,
+    contentUrl: video.watchUrl,
+    embedUrl: video.embedUrl,
+    inLanguage: video.inLanguage,
+    publisher: { "@id": CLINIC_ID },
+  };
+}
+
+/**
+ * VideoObject JSON-LD for pages that show the practice YouTube cards.
+ * Pass the same video list rendered on the page so schema stays in sync.
+ */
+export function videosJsonLd(videos: readonly PracticeVideo[] = homeVideos) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": videos.map(videoObjectNode),
   };
 }

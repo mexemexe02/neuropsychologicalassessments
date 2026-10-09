@@ -5,11 +5,13 @@ import { JsonLd } from "@/components/json-ld";
 import { RankingLinks } from "@/components/ranking-links";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { VideoGallery } from "@/components/video-gallery";
 import {
   sebastianFees,
   sylvieFees,
 } from "@/lib/content-sebastian-july18";
-import { cliniciansJsonLd } from "@/lib/schema";
+import { cliniciansJsonLd, videosJsonLd } from "@/lib/schema";
+import { homeVideos, sebastianVideos, sylvieVideos } from "@/lib/videos";
 // Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
 import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
 import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
@@ -50,6 +52,8 @@ export default function CliniciansPage() {
     <>
       {/* Person schema for both clinicians — invisible, mirrors the bios below. */}
       <JsonLd data={cliniciansJsonLd()} />
+      {/* Same VideoObject graph as home — cards appear beside each bio. */}
+      <JsonLd data={videosJsonLd(homeVideos)} />
       <PageHero
         eyebrow="Clinicians"
         title={<>Experienced care. A collaborative approach.</>}
@@ -138,6 +142,14 @@ export default function CliniciansPage() {
                 Please contact the practice for information about assessment fees
                 and related services.
               </p>
+              <div className="clinician-videos">
+                <p className="clinician-videos__label">Watch</p>
+                <VideoGallery
+                  videos={sylvieVideos}
+                  layout="pair"
+                  headingLevel="h3"
+                />
+              </div>
             </Reveal>
           </article>
 
@@ -200,6 +212,14 @@ export default function CliniciansPage() {
                 </li>
                 <li>{sebastianFees.note}</li>
               </ul>
+              <div className="clinician-videos">
+                <p className="clinician-videos__label">Watch</p>
+                <VideoGallery
+                  videos={sebastianVideos}
+                  layout="stack"
+                  headingLevel="h3"
+                />
+              </div>
             </Reveal>
           </article>
 

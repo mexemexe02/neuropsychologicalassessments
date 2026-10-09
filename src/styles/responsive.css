@@ -332,8 +332,20 @@
   .reason-grid,
   .stage-grid,
   .split-concerns,
-  .field-row {
+  .field-row,
+  .video-gallery--home,
+  .video-gallery--pair {
     grid-template-columns: 1fr;
+  }
+
+  /* Portrait Short reads better centred and slightly narrower on phones. */
+  .video-gallery--home .video-card--portrait {
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  .video-gallery--stack {
+    max-width: none;
   }
 
   .steps {

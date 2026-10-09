@@ -331,6 +331,224 @@
   font-size: 0.78rem;
 }
 
+/* ——— Practice YouTube cards (click-to-load; no iframe until play) ——— */
+.video-section-header {
+  max-width: 36rem;
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+}
+
+.video-section-header h2 {
+  max-width: 14ch;
+  margin-bottom: 0.85rem;
+}
+
+.video-section-header .lead {
+  margin-bottom: 0;
+}
+
+.video-gallery--home {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: stretch;
+}
+
+.video-gallery__landscape {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.video-gallery--pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.video-gallery--stack {
+  display: grid;
+  gap: 1rem;
+  max-width: 22rem;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.video-card__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--stone);
+}
+
+/* Portrait Short keeps a tall frame; landscape explainers stay 16:9. */
+.video-card--portrait .video-card__media {
+  aspect-ratio: 9 / 16;
+}
+
+.video-card--landscape .video-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+.video-card__trigger {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+}
+
+.video-card__thumb {
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-card__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.05) 0%,
+    rgba(26, 26, 26, 0.28) 100%
+  );
+  transition: opacity 200ms ease;
+}
+
+.video-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.18);
+  transform: translate(-50%, -50%);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.video-card__play svg {
+  margin-left: 0.15rem;
+}
+
+.video-card__trigger:hover .video-card__play,
+.video-card__trigger:focus-visible .video-card__play {
+  background: #ffffff;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.video-card__trigger:hover .video-card__veil,
+.video-card__trigger:focus-visible .video-card__veil {
+  opacity: 0.85;
+}
+
+.video-card__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.video-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--blue-deep);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.video-card__lang--fr {
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.video-card__title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.video-card__summary {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.video-card__youtube-link {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  color: var(--blue-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.video-card__youtube-link:hover {
+  color: var(--ink);
+}
+
+.clinician-videos {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.clinician-videos__label {
+  margin: 0 0 1rem;
+  color: var(--blue);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-card__play,
+  .video-card__veil {
+    transition: none;
+  }
+
+  .video-card__trigger:hover .video-card__play,
+  .video-card__trigger:focus-visible .video-card__play {
+    transform: translate(-50%, -50%);
+  }
+}
+
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -621,3 +621,36 @@ node scripts/make-og-image.mjs   # regenerate share card + icons
 After deploy: paste https://neuropsychologicalassessments.com/faq/ into
 https://developers.facebook.com/tools/debug/ and
 https://search.google.com/test/rich-results.
+
+## 2026-10-09 — Practice YouTube video cards (home + clinicians)
+
+### Client request
+Sebastian asked for three new YouTube videos on the front page as link +
+thumbnail so visitors can watch. Sylvie’s explainer also on Clinicians;
+Sebastian’s intro beside his bio. French video clearly labelled.
+
+### Decisions
+- No self-hosted mp4 clinician videos (hero forest loop unchanged).
+- Click-to-load youtube-nocookie embeds; thumbnails hosted in-repo.
+- Portrait Short + landscape explainers share one card system with native
+  aspect ratios (9:16 / 16:9).
+- VideoObject JSON-LD added; existing MedicalClinic / WebSite / Person intact.
+- Footer has no social-links area — skipped channel link (per brief).
+- PR only; do not merge to master.
+
+### Files
+- `src/lib/videos.ts`, `src/components/youtube-video-card.tsx`,
+  `src/components/video-gallery.tsx`
+- `src/lib/schema.ts` (videosJsonLd), `src/components/icons.tsx` (Play)
+- `src/app/page.tsx`, `src/app/clinicians/page.tsx`
+- `src/styles/content.css`, `src/styles/responsive.css`
+- `src/assets/videos/*`, `public/images/videos/*`
+- `tests/e2e/site.spec.ts`
+
+### Verify
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+npx playwright test
+```
