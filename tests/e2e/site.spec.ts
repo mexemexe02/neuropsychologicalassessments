@@ -45,8 +45,9 @@ test("mobile menu reveals all primary destinations", async ({ page }, testInfo) 
 
   const mobileNav = page.getByRole("navigation", { name: "Mobile navigation" });
   await expect(mobileNav).toBeVisible();
-  await expect(mobileNav.getByRole("link", { name: /Assessments/ })).toBeVisible();
-  await expect(mobileNav.getByRole("link", { name: /Education/ })).toBeVisible();
+  // Parents with children are accordion toggles; leaf items stay links.
+  await expect(mobileNav.getByRole("button", { name: /Assessments/ })).toBeVisible();
+  await expect(mobileNav.getByRole("button", { name: /Education/ })).toBeVisible();
   await mobileNav.getByRole("link", { name: /Clinicians/ }).click();
   await expect(page).toHaveURL(/\/clinicians\/?$/);
 });
@@ -55,7 +56,8 @@ test("consultation request form completes its preview flow", async ({ page }) =>
   await page.goto("/contact");
 
   const booking = page.getByRole("region", { name: "Free consultation request" });
-  await expect(booking).toHaveCSS("background-color", "rgb(250, 246, 240)");
+  // Matches --paper / .contact-booking background in the current design system.
+  await expect(booking).toHaveCSS("background-color", "rgb(245, 245, 245)");
   await expect(page.locator(".page-hero")).not.toHaveClass(/page-hero--blue/);
 
   await page
@@ -75,8 +77,9 @@ test("consultation request form completes its preview flow", async ({ page }) =>
   );
   await page.getByRole("button", { name: "Continue browsing" }).click();
 
+  await expect(page.getByRole("status")).toContainText("Request not sent yet");
   await expect(page.getByRole("status")).toContainText(
-    "Thank you — your request is ready to send.",
+    "does not transmit or store your details",
   );
 });
 
