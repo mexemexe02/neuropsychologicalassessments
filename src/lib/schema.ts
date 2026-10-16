@@ -112,7 +112,7 @@ export function cliniciansJsonLd() {
         "@type": "Person",
         "@id": `${url}#sebastian-jose`,
         name: "Sebastian Jose",
-        honorificSuffix: "MPsy, MTh, RPQ",
+        honorificSuffix: "MPsy, MTh, RP (Qualifying)",
         jobTitle: "Registered Psychotherapist (Qualifying)",
         description:
           "Registered Psychotherapist (Qualifying) providing collaborative, trauma-informed psychotherapy for adults.",
@@ -120,8 +120,9 @@ export function cliniciansJsonLd() {
         image: `${site.domain}/images/sebastian-jose-headshot.jpg`,
         url,
         affiliation: { "@id": CLINIC_ID },
-        // His verified Psychology Today profile (found in the 2026-09-02
-        // citation audit). Phone/city there still need his update.
+        // Psychology Today profile (citation audit 2026-09-02). Sebastian
+        // confirmed 2026-09-05: public phone should be 705-321-8146 (he
+        // updates PT). Add Sylvie sameAs when her live PT URL arrives.
         sameAs: [
           "https://www.psychologytoday.com/ca/therapists/sebastian-jose-mississauga-on/1678004",
         ],

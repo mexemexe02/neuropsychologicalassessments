@@ -64,7 +64,6 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {site.shortName}
           </span>
           <Link href="/privacy">{t.privacy}</Link>
-          <span>{t.websitePreview}</span>
         </div>
       </div>
     </footer>

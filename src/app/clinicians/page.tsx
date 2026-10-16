@@ -10,6 +10,7 @@ import {
   sylvieFees,
 } from "@/lib/content-sebastian-july18";
 import { cliniciansJsonLd } from "@/lib/schema";
+import { assetPath } from "@/lib/site";
 // Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
 import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
 import sebastianHeadshot from "@/assets/sebastian-jose-headshot.jpg";
@@ -113,6 +114,26 @@ export default function CliniciansPage() {
                 are considered within the individual&apos;s broader life context
                 rather than interpreted as isolated test scores.
               </p>
+              {/* Sylvie neuropsych explainer (FR) — Filmora polish 2026-09-23.
+                  Click-to-play only; also on homepage. English take held until
+                  Sebastian confirms placement. */}
+              <figure className="clinician__video">
+                <video
+                  className="clinician__video-player"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={assetPath("/images/sylvie-intro-poster.jpg")}
+                >
+                  <source
+                    src={assetPath("/videos/sylvie-intro.mp4")}
+                    type="video/mp4"
+                  />
+                </video>
+                <figcaption>
+                  Dr. Sauriol explains neuropsychological assessment (in French).
+                </figcaption>
+              </figure>
               <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
                 Areas of professional focus
               </p>
@@ -155,7 +176,7 @@ export default function CliniciansPage() {
               </div>
             </Reveal>
             <Reveal className="clinician__bio" delay={100}>
-              <h2>Sebastian Jose, MPsy, MTh, RPQ</h2>
+              <h2>Sebastian Jose, MPsy, MTh, RP (Qualifying)</h2>
               <p>
                 Sebastian Jose is a Registered Psychotherapist (Qualifying) who
                 provides psychotherapy for adults and contributes to
@@ -178,6 +199,25 @@ export default function CliniciansPage() {
                 approach that respects each client&apos;s values, culture,
                 beliefs, and lived experience.
               </p>
+              {/* Sebastian clinician intro — Filmora polish 2026-09-23.
+                  Clinicians page only; click-to-play, no autoplay. */}
+              <figure className="clinician__video clinician__video--portrait">
+                <video
+                  className="clinician__video-player"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={assetPath("/images/sebastian-intro-poster.jpg")}
+                >
+                  <source
+                    src={assetPath("/videos/sebastian-intro.mp4")}
+                    type="video/mp4"
+                  />
+                </video>
+                <figcaption>
+                  Sebastian Jose introduces his psychotherapy approach.
+                </figcaption>
+              </figure>
               <p className="eyebrow" style={{ marginTop: "1.5rem" }}>
                 Areas of professional focus
               </p>
