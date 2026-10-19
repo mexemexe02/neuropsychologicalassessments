@@ -4,7 +4,7 @@ import { FaqList } from "@/components/faq-list";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { rankingFaqs } from "@/lib/faq";
-import { faqPageJsonLd } from "@/lib/schema";
+import { breadcrumbJsonLd, faqPageJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,6 +18,12 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqPageJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Common questions", path: "/faq/" },
+        ])}
+      />
       <PageHero
         eyebrow="Questions"
         title={<>Common questions about assessment and psychotherapy.</>}

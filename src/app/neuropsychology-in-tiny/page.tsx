@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
+import { breadcrumbJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -13,6 +15,15 @@ export const metadata: Metadata = {
 export default function TinyLandingPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          {
+            name: "Neuropsychology in Tiny, Ontario",
+            path: "/neuropsychology-in-tiny/",
+          },
+        ])}
+      />
       <PageHero
         eyebrow="Tiny, Ontario"
         title={<>Neuropsychological assessment and psychotherapy in Tiny, Ontario.</>}

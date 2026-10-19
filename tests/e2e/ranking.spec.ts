@@ -121,6 +121,45 @@ test.describe("ranking eligibility", () => {
     expect(clinic?.hasMap).toMatch(/^https:\/\/maps\.google\.com\/\?cid=\d+$/);
   });
 
+  test("clinician videos and breadcrumbs expose matching JSON-LD", async ({
+    page,
+  }) => {
+    await page.goto("/clinicians");
+    const cliniciansHtml = await page.content();
+    const cliniciansBlocks = jsonLdBlocks(cliniciansHtml);
+    // Prefer the @graph that actually contains VideoObject (Person graph also uses @graph).
+    const videos = cliniciansBlocks.flatMap((block) => {
+      if (typeof block !== "object" || block === null) return [];
+      const graph = (block as { "@graph"?: { "@type"?: string; contentUrl?: string }[] })[
+        "@graph"
+      ];
+      if (!Array.isArray(graph)) return [];
+      return graph.filter((node) => node["@type"] === "VideoObject");
+    });
+    expect(videos.length).toBeGreaterThanOrEqual(2);
+    expect(videos.some((v) => v.contentUrl?.includes("/videos/sylvie-intro.mp4"))).toBe(
+      true,
+    );
+    expect(
+      videos.some((v) => v.contentUrl?.includes("/videos/sebastian-intro.mp4")),
+    ).toBe(true);
+
+    await page.goto("/faq");
+    const faqBlocks = jsonLdBlocks(await page.content());
+    const crumbs = faqBlocks.find(
+      (block) =>
+        typeof block === "object" &&
+        block !== null &&
+        (block as { "@type"?: string })["@type"] === "BreadcrumbList",
+    ) as { itemListElement?: { name?: string }[] };
+    expect(crumbs?.itemListElement?.some((item) => item.name === "Home")).toBe(
+      true,
+    );
+    expect(
+      crumbs?.itemListElement?.some((item) => item.name === "Common questions"),
+    ).toBe(true);
+  });
+
   test("share previews use a PNG card and each page's own title", async ({
     page,
     request,
@@ -249,7 +288,7 @@ test.describe("ranking eligibility", () => {
     ).toBeVisible();
     await expect(
       page.getByRole("heading", {
-        name: "Ask for a Google review at every happy visit",
+        name: "Do not ask clients for Google reviews",
       }),
     ).toBeVisible();
     await expect(page.getByText(/Google Business Profile/i).first()).toBeVisible();

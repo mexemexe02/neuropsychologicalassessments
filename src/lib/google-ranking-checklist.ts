@@ -36,16 +36,30 @@ export const GOOGLE_RANKING_CHECKLIST: RankingItem[] = [
   {
     id: "dev-gsc-ai",
     audience: "developer",
-    title: "Search Console AI-features opt-in",
+    title: "Search Console generative AI include + report",
     detail:
-      "If Search Console shows a toggle for generative AI features, opt this property in. Measure later in the Generative AI performance report.",
+      "Confirm the property is included in Search generative AI features (toggle if shown). Open the Generative AI performance report (worldwide as of 2026-08-31) and note impressions on /faq/ and assessment URLs. Do not add llms.txt or AEO files — Google ignores them for Search.",
+  },
+  {
+    id: "dev-bing-apple",
+    audience: "developer",
+    title: "Claim Bing Places and Apple Business (same NAP)",
+    detail:
+      "Bing Places (helps Bing + often Copilot local) and Apple Business for Apple Maps. Exact NAP: Center for Neuropsychology and Psychotherapy, 34 County Rd 6 South, Tiny, Ontario L0L 2J0, 705-321-8146. Also submit the sitemap in Bing Webmaster Tools.",
   },
   {
     id: "dev-directories",
     audience: "developer",
     title: "Submit directory listings with the exact NAP",
     detail:
-      "Psychology Today, Ontario Psychological Association Find a Psychologist, College of Psychologists and Behaviour Analysts of Ontario public register, CRPO public register, Yellow Pages Canada, and Canada411. Copy: Center for Neuropsychology and Psychotherapy, 34 County Rd 6 South, Tiny, Ontario L0L 2J0, 705-321-8146.",
+      "Psychology Today, Ontario Psychological Association Find a Psychologist, College of Psychologists and Behaviour Analysts of Ontario public register, CRPO public register, Yellow Pages Canada, and Canada411. Copy: Center for Neuropsychology and Psychotherapy, 34 County Rd 6 South, Tiny, Ontario L0L 2J0, 705-321-8146. Paste pack: marketing/nap-paste-pack-2026-10.md.",
+  },
+  {
+    id: "dev-form-wire",
+    audience: "developer",
+    title: "Wire consultation form to practice email",
+    detail:
+      "Site is static export — needs a form provider (e.g. Formspree/Web3Forms) or Coolify serverless. Destination: drsauriolassociates@neuropsychologicalassessments.com. Until then, phone and email still work. Do not invent clinical form fields without Monday approval.",
   },
   {
     id: "owner-gbp-create",
@@ -76,18 +90,18 @@ export const GOOGLE_RANKING_CHECKLIST: RankingItem[] = [
       "Use the same answers as /faq for office location, hours, in-person vs virtual, referral, and how to book.",
   },
   {
-    id: "owner-review-ask",
+    id: "owner-review-policy",
     audience: "owner",
-    title: "Ask for a Google review at every happy visit",
+    title: "Do not ask clients for Google reviews",
     detail:
-      "A spoken or printed request is enough. Do not offer discounts, gifts, or other incentives for reviews.",
+      "CRPO and CPBAO treat online reviews as testimonials. Do not ask clients to review, do not link to the review page, and do not post a review of your own listing. Clients may leave reviews on their own.",
   },
   {
     id: "owner-review-reply",
     audience: "owner",
-    title: "Reply to Google reviews",
+    title: "Decide a uniform Google review reply policy",
     detail:
-      "Thank people who write reviews. Keep replies factual. Do not include private health details.",
+      "Safest: do not reply. If you reply, use the same short thanks on every 4–5 star review and never include health details. Move complaints offline to 705-321-8146.",
   },
   {
     id: "owner-confirm-street",
@@ -106,9 +120,9 @@ export const GOOGLE_RANKING_CHECKLIST: RankingItem[] = [
   {
     id: "weekly-reviews",
     audience: "weekly",
-    title: "Ask for a Google review after happy visits",
+    title: "Monitor unprompted Google reviews only",
     detail:
-      "Keep asking at completed visits. Reply to any new reviews the same week. This item does not finish.",
+      "Check for new reviews clients left on their own. Do not solicit. Apply your uniform reply policy (or no replies) the same week.",
   },
 ];
 

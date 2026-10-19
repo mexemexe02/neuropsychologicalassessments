@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AssessmentTopicNav } from "@/components/assessment-topic-nav";
 import { ConsultationCta } from "@/components/consultation-cta";
 import { ArrowUpRight } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import {
@@ -18,6 +19,7 @@ import {
   medicoLegalAssessment,
   tbiAssessment,
 } from "@/lib/content-sebastian-july18";
+import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Neuropsychological Assessments",
@@ -29,6 +31,12 @@ export const metadata: Metadata = {
 export default function AssessmentsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Assessments", path: "/assessments/" },
+        ])}
+      />
       <PageHero
         eyebrow="Thoughtful care. Clear next steps."
         title={<>Neuropsychological Assessments</>}

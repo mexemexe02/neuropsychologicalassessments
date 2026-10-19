@@ -9,7 +9,11 @@ import {
   sebastianFees,
   sylvieFees,
 } from "@/lib/content-sebastian-july18";
-import { cliniciansJsonLd } from "@/lib/schema";
+import {
+  breadcrumbJsonLd,
+  clinicianVideosJsonLd,
+  cliniciansJsonLd,
+} from "@/lib/schema";
 import { assetPath } from "@/lib/site";
 // Static imports so GitHub Pages basePath/assetPrefix is applied automatically.
 import sauriolHeadshot from "@/assets/dr-sylvie-sauriol-headshot.png";
@@ -49,8 +53,15 @@ const joseFocus = [
 export default function CliniciansPage() {
   return (
     <>
-      {/* Person schema for both clinicians — invisible, mirrors the bios below. */}
+      {/* Person + video schema — invisible; mirrors bios and figcaptions below. */}
       <JsonLd data={cliniciansJsonLd()} />
+      <JsonLd data={clinicianVideosJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Clinicians", path: "/clinicians/" },
+        ])}
+      />
       <PageHero
         eyebrow="Clinicians"
         title={<>Experienced care. A collaborative approach.</>}

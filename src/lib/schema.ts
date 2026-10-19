@@ -146,3 +146,58 @@ export function faqPageJsonLd() {
     })),
   };
 }
+
+/**
+ * BreadcrumbList JSON-LD. Names match on-page nav / headings only.
+ * Invisible to visitors; helps Search understand site structure.
+ */
+export function breadcrumbJsonLd(
+  crumbs: readonly { name: string; path: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: `${site.domain}${crumb.path.endsWith("/") || crumb.path === "/" ? crumb.path : `${crumb.path}/`}`,
+    })),
+  };
+}
+
+// Video facts match visible figcaptions only. uploadDate = Filmora polish 2026-09-23.
+const sylvieIntroVideo = {
+  "@type": "VideoObject" as const,
+  name: "Dr. Sauriol explains neuropsychological assessment (in French)",
+  description:
+    "Dr. Sylvie Sauriol, Psy.D., explains neuropsychological assessment (in French).",
+  thumbnailUrl: `${site.domain}/images/sylvie-intro-poster.jpg`,
+  contentUrl: `${site.domain}/videos/sylvie-intro.mp4`,
+  uploadDate: "2026-09-23",
+  inLanguage: "fr",
+};
+
+const sebastianIntroVideo = {
+  "@type": "VideoObject" as const,
+  name: "Sebastian Jose introduces his psychotherapy approach",
+  description:
+    "Sebastian Jose, MPsy, MTh, RP (Qualifying), introduces his psychotherapy approach.",
+  thumbnailUrl: `${site.domain}/images/sebastian-intro-poster.jpg`,
+  contentUrl: `${site.domain}/videos/sebastian-intro.mp4`,
+  uploadDate: "2026-09-23",
+  inLanguage: "en",
+};
+
+/** Sylvie intro — home + /clinicians (video is on both pages). */
+export function sylvieIntroVideoJsonLd() {
+  return { "@context": "https://schema.org", ...sylvieIntroVideo };
+}
+
+/** Both clinician intros for /clinicians (both videos embedded there). */
+export function clinicianVideosJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [sylvieIntroVideo, sebastianIntroVideo],
+  };
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
 import {
   homeAssessmentConcerns,
@@ -9,6 +10,7 @@ import {
   homeTherapyConcerns,
 } from "@/lib/content";
 import { RankingLinks } from "@/components/ranking-links";
+import { sylvieIntroVideoJsonLd } from "@/lib/schema";
 import { assetPath, homeServiceLinks, site } from "@/lib/site";
 // Soft service backgrounds — Sebastian Jul 19 “with client” photos (content stays primary).
 import sebastianWithClient from "@/assets/sebastian-with-client.png";
@@ -25,6 +27,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* VideoObject for Sylvie’s intro already embedded below — no look change. */}
+      <JsonLd data={sylvieIntroVideoJsonLd()} />
       <section className="home-hero">
         {/* Nature loop — calm sunlight through trees (Pexels). Poster keeps first paint light. */}
         <video
@@ -91,6 +95,38 @@ export default function HomePage() {
               We begin by listening carefully to your concerns and helping you
               identify the service that best fits your needs.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Sylvie neuropsych explainer (FR) — same file as Clinicians; placement
+          locked homepage + clinicians (2026-09-15). */}
+      <section className="section section--soft">
+        <div className="shell">
+          <Reveal className="home-clinician-video">
+            <p className="eyebrow">From Dr. Sylvie Sauriol</p>
+            <h2>What is a neuropsychological assessment?</h2>
+            <p className="lead" style={{ maxWidth: "40rem" }}>
+              A short explanation of how assessments work and when they can help
+              — in French.
+            </p>
+            <figure className="clinician__video">
+              <video
+                className="clinician__video-player"
+                controls
+                playsInline
+                preload="metadata"
+                poster={assetPath("/images/sylvie-intro-poster.jpg")}
+              >
+                <source
+                  src={assetPath("/videos/sylvie-intro.mp4")}
+                  type="video/mp4"
+                />
+              </video>
+              <figcaption>
+                Dr. Sauriol explains neuropsychological assessment (in French).
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>

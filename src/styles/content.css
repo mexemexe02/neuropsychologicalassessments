@@ -310,6 +310,33 @@
   line-height: 1.5;
 }
 
+/* Clinician intro video — sits in the bio column, click-to-play. */
+.clinician__video {
+  margin: 1.75rem 0 0;
+  max-width: 44rem;
+}
+
+.clinician__video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background: #1a1714;
+}
+
+/* Portrait clinician intros (e.g. Sebastian phone vertical). */
+.clinician__video--portrait .clinician__video-player {
+  max-width: 22rem;
+}
+
+.clinician__video figcaption {
+  margin-top: 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .clinician__bio > p:not(.clinician__credentials) {
   max-width: 44rem;
   color: var(--ink-soft);

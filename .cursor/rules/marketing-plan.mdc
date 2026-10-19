@@ -38,37 +38,60 @@ Never say “free” about Humberto’s monthly fee.
 - Reviews compliance checked: **do not ask clients for reviews** (CRPO 6.2.2; CPBAO 6.3e/6.5). Note: `drafts/reviews-and-testimonials-compliance-2026-09-02.md`
 - Citation audit: `drafts/citation-audit-2026-09-02.md`
 
+## Done (2026-09-05 answers + 2026-09-09 meeting)
+
+- PT phone decision: use **705-321-8146** (Sebastian updates his Psychology Today listing)
+- Sylvie PT profile: **yes** — waiting on live URL to link from `/clinicians`
+- Care-plan receipts: **sebejk@gmail.com**
+- Sylvie intro video: emailed copy only — **edit blocked** until original via shared Drive; Filmora polish after that
+- Meeting: he has Facebook (will share link); no Instagram yet; create LinkedIn personal then Company Page; YouTube under practice name (claim soon, FB cadence first)
+- Referrals today: **Psychology Today + hospital + word of mouth** — improve by adding Google/local parents + LinkedIn/B2B referrer channel (not only PT)
+
 ## Skipped / N/A
 
 - **Maps Q&A** — not available in this profile’s Maps or dashboard UI (Google UI change). Do not spend more time hunting. Live `/faq` covers the same answers. Revisit only if Q&A reappears.
 - **Review-ask script** — prohibited for both clinicians (regulated RP + psychologist). Never draft one. Reviews only if clients post unprompted; no links to review pages; uniform or no replies.
 
+## Done (2026-09-15 emails)
+
+- August $45 Interac + September $45 Stripe — **both received** (Humberto confirmed 2026-09-15; no billing reply)
+- Drive folder shared: `Center Neuropsych — website media` (3 videos, including **Sebastian Video 1 Intro.mp4**)
+- Sylvie video placement: **homepage + clinicians**
+- YouTube: https://www.youtube.com/@neuropsychologicalassessments (empty; owned by practice email)
+- Instagram: https://www.instagram.com/drsauriolassociates/ (exists; do not add to site yet)
+
 ## Waiting on Sebastian
 
-- Psychology Today phone: keep **705-996-5298** or use **705-321-8146**?
-- Optional: Sylvie Psychology Today profile?
-- Billing email for $45/mo care (personal vs clinic) — when sending Stripe link
+- **3A** — his PT listing is still **(705) 996-5298** / Mississauga (checked 2026-09-15). Decision is 705-321-8146; he has not changed the public page yet.
+- Sylvie Psychology Today **live URL** (no profile found)
+- Real Facebook **profile** URL (he sent only facebook.com)
+- LinkedIn personal profile created
+- Post-meeting items 7–16 (audience, consult reply, pricing, towns, ads, goal)
 
 ## Answered (2026-08-14 text from Sebastian)
 
 - Postal **L0L 2J0**
-- Google reviews: **yes** — “We can make reviews happen”; he put one and will ask others
+- Google reviews: he was willing to ask — **superseded**: do **not** ask (College rules); tell him to remove any self-posted review
 
-## Next session (Humberto — no reply needed unless noted)
+## Next session (Humberto — Monday 10:00 a.m. call)
 
-1. Search Console — inspect `/faq/` and `/neuropsychology-in-tiny/`; AI opt-in if shown; confirm site name shows practice name
-2. Wire consultation form → `drsauriolassociates@neuropsychologicalassessments.com`
-3. Work citation-audit fixes (registers + directories, locked NAP); Bing Places + Apple Business Connect
-4. Tell Sebastian: no review asks; remove self-posted review
-5. Re-check Maps — one open listing only; duplicate status
-6. After PT answer — he/Humberto update Psychology Today phone + site link
-7. Reword `/owner/google-ranking/` review items (site text — needs Humberto OK)
-8. Later — referral one-pager (B2B allowed); social only if they will post; paid ads only after form works
+1. Walk handout: `marketing/sebastian-growth-plan-2026-10.md` + checklist `marketing/monday-call-checklist-2026-10.md`
+2. Get answers: private assessment capacity, fee sentence, same-day form owner, LinkedIn Company URL
+3. Sebastian: PT fields (`marketing/psychology-today-sebastian-fields-2026-10.md`) + LinkedIn paste (`marketing/linkedin-company-drafts-2026-10.md`)
+4. Humberto: Bing Places + Apple Business (`marketing/nap-paste-pack-2026-10.md`); GSC inspect + generative AI include
+5. After Monday yes: private vs medico form tags; wire consult form via Formspree/Web3Forms (static site)
+6. Do not link empty YouTube/Instagram; no AI clone; no review asks; no ads early
+
+## Done (2026-10-19 pre-Monday)
+
+- Monday handout pack written under `marketing/*-2026-10.md`
+- Invisible VideoObject + BreadcrumbList JSON-LD (no look/copy change)
+- Ranking checklist updated (GSC AI report, Bing/Apple, form-wire note)
 
 ## Do not
 
-Doorway city pages; ask clients for reviews or link to review pages; empty social stack; close the County Rd 6 South listing; invent clinical copy; buy ads early.
+Doorway city pages; ask clients for reviews or link to review pages; empty social stack; close the County Rd 6 South listing; invent clinical copy; buy ads early; AI clinician clone.
 
 Tracker: `drafts/marketing-do-now.md`  
-Canvas: Cursor project `canvases/free-marketing-plan.canvas.tsx` (may be stale — prefer this rule + do-now file)
+Handout: `marketing/sebastian-growth-plan-2026-10.md`
 ---

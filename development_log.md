@@ -621,3 +621,196 @@ node scripts/make-og-image.mjs   # regenerate share card + icons
 After deploy: paste https://neuropsychologicalassessments.com/faq/ into
 https://developers.facebook.com/tools/debug/ and
 https://search.google.com/test/rich-results.
+
+## 2026-09-15 — Reviewed Sebastian answer emails (Sep 5 + Sep 15)
+
+### Summary
+Read his numbered replies to the post-meeting list plus the Sep 5 check-in.
+Video edit is unblocked. Psychology Today public listing is still the old
+phone. Payments claimed but not confirmed in this inbox.
+
+### Actions
+- Read Himalaya IDs 375, 376, 403, 435, 438, 441, 442 and the Drive share.
+- Checked live Psychology Today: still (705) 996-5298 / Mississauga.
+- Checked live /clinicians: no Sylvie video deployed yet (local code has it).
+- YouTube @neuropsychologicalassessments exists, empty, owned by the practice
+  email. Instagram URL received; Facebook was only facebook.com.
+
+### Key Decisions
+- Placement locked: Sylvie video on homepage + clinicians.
+- Do not add YouTube or Instagram to the live site until they have real content
+  and match the locked practice name.
+- Do not change the live site until Humberto approves.
+
+### Files Changed
+- `drafts/marketing-do-now.md` — PT still 996-5298
+- `.cursor/rules/marketing-plan.mdc` — waiting list
+- `marketing/todo-list-sebastian.md` — PT checklist
+- Canvas: sebastian-sep15-email-answers.canvas.tsx
+
+### Blockers / Notes
+- Confirm August Interac on mexemexe02 and September Stripe $45 before replying.
+- Still waiting: 3A, 3B, real Facebook profile, LinkedIn 5A–5C, items 7–16.
+
+## 2026-09-23 — Session start: clinician video pipeline
+
+### Summary
+Prepared today's work list. Priority is Drive masters → Filmora → site wiring →
+approve → deploy. Payments already confirmed earlier.
+
+### Actions
+- Confirmed Drive folder has 3 files: Sebastian Video 1 Intro (~15.3 MB),
+  video1195428817 (~8.5 MB), video1733633386 ANG (~9.0 MB).
+- Local: emailed Sylvie copy already in source-assets + public/videos;
+  Clinicians page embeds it (not live). Homepage has no Sylvie block yet;
+  Sebastian has no video block.
+- Created session canvas + Cursor todos; updated marketing-do-now.
+
+### Key Decisions
+- Filmora polish is Humberto (desktop GUI). Agent does download/compare,
+  export guidance, wiring, deploy on approval.
+- Placement locked: Sylvie Home + Clinicians; Sebastian Clinicians only.
+
+### Files Changed
+- `drafts/marketing-do-now.md` — today focus
+- Canvas: `session-2026-09-23-videos.canvas.tsx`
+
+### Blockers / Notes
+- Drive files not downloaded yet this session.
+- Do not deploy until polished cuts approved.
+
+## 2026-09-23 — Resume after interrupted agent turn
+
+### Summary
+Retried Drive download after connection interrupt. Private Drive + Cursor
+browser cannot land files on disk without a one-click user Download. Catch-up
+on Sebastian homework refreshed in marketing-do-now.
+
+### Actions
+- Created `client-content/source-assets/drive-masters/` + README
+- Confirmed Drive folder still has 3 mp4s (opened in Cursor browser as humbertobizes)
+- gdown failed (not public); Drive MCP / browser download blocked or no disk write
+- Opened Explorer on drive-masters for manual drop-in
+- Updated today canvas + marketing-do-now catch-up (payments already confirmed)
+
+### Key Decisions
+- No video edits until files are local and we watch together
+- Humberto downloads 3 files manually; agent continues compare/advice after that
+
+### Files Changed
+- `client-content/source-assets/drive-masters/README-DOWNLOAD.txt`
+- `drafts/marketing-do-now.md`
+- Canvas: `session-2026-09-23-videos.canvas.tsx`
+
+### Blockers / Notes
+- Waiting on local mp4s in drive-masters (or Downloads to move).
+
+## 2026-09-23 — Drive masters copied locally
+
+### Summary
+After hdominguesdigital Drive desktop switch, copied all 3 masters from
+`G:\.shortcut-targets-by-id\…\Center Neuropsych - website media` into
+`client-content/source-assets/drive-masters/`. No edits.
+
+### Probe (ffprobe)
+- Sebastian Video 1 Intro: 848×480, ~1:50, ~1.16 Mbps
+- video1195428817: 1920×1080, ~2:43, ~0.44 Mbps
+- video1733633386 ANG: 1920×1080, ~2:30, ~0.50 Mbps
+- Emailed Sylvie: 1080p ~3:20 — different hash from both Drive files
+
+### Next
+Watch together → pick Sylvie master → Filmora → wire → approve → deploy
+
+## 2026-09-23 — Emailed Sylvie uploaded to shared Drive
+
+- Copied `client-content/source-assets/sylvie-intro-video.mp4` → shared folder as
+  `Sylvie intro - emailed.mp4` (7.7 MB, hash verified). Folder now has 4 videos.
+
+## 2026-09-23 — Organized shared Drive media folder
+
+Created subfolders and moved all 4 current videos into originals:
+- `01-originals/` — Sebastian intro, Sylvie emailed, video119, ANG (renamed from masters)
+- `02-editing/` — empty (any editor projects + working exports; renamed from filmora)
+- `03-web-ready/` — empty (site MP4s + posters)
+- `04-photos/` — empty
+- `05-archive/` — empty
+
+## 2026-09-23 — Filmora upgraded to 16; skill added
+
+- Active: **Wondershare Filmora 16** build **16.0.9.22260** (Configure.ini + uninstall).
+- Upgraded mid-session (was 15.x). Personal skill:
+  `C:\Users\Humberto\.cursor\skills\filmora-editing\SKILL.md`
+- Researched official V16.0 what’s-new (Jul 2026): Camera Tracking, Color Mask,
+  AI Media Analysis, Smart Text Correction, Multi-Source Recording, Auto Color,
+  Dynamic Captions, Shortcut Manager, AI Video Enhancer upgrades, etc.
+- Skill + `reference.md` updated with **use / try / skip** for clinician intros.
+
+## 2026-09-23 — Filmora exports + Drive inbox
+
+### Summary
+Clinician video polish in Filmora 16; added shared Drive `00-inbox` drop folder.
+
+### Actions
+- Sebastian intro exported to `03-web-ready` (portrait phone vertical; final good version).
+- Sylvie: French emailed → `sylvie-intro-fr.mp4`; English ANG → `sylvie-intro-en.mp4`; `video119` enhancer in progress → export as `sylvie-intro-fr-alt.mp4`.
+- Created Drive folder `00-inbox` + `README-DROP-HERE.txt` (new drops only; placement one-liner).
+- Filmora skill Drive layout updated for inbox → originals → web-ready → archive.
+
+### Next
+- Finish video119 export; wire FR Sylvie Home+Clinicians, Sebastian Clinicians; ask where EN goes; status email; approve → deploy.
+
+## 2026-09-23 — Videos wired locally (approve before deploy)
+
+### Summary
+Renamed Sylvie files to “neuropsych-explainer”; wired FR + Sebastian on local site; email draft updated.
+
+### Actions
+- Fixed naming: 160s take was mislabeled EN → `sylvie-neuropsych-explainer-fr-alt`; real EN (148s) → `sylvie-neuropsych-explainer-en`.
+- `public/videos/`: web-sized `sylvie-intro.mp4` (FR), `sebastian-intro.mp4`, `sylvie-neuropsych-explainer-en.mp4` (not linked yet).
+- Clinicians: updated Sylvie caption; added Sebastian intro player.
+- Homepage: added Sylvie FR explainer section.
+- Old site Sylvie archived to Drive `05-archive`.
+
+### Blockers / Notes
+- Local review + deploy still pending Humberto approval.
+- English explainer placement still needs Sebastian’s answer (in draft email).
+
+## 2026-09-23 — Draft A sent (videos only)
+
+### Summary
+Split client follow-ups into A/B/C; sent video-placement email only.
+
+### Actions
+- Sequence: A videos · B Facebook/Meta · C Psychology Today (B/C parked).
+- Sent Draft A from `hdominguesdigital@gmail.com` → `sebejk@gmail.com` (no CC). Subject: “Videos ready — where should each one go?” Message id `1a0d115bc369f180`.
+- Updated `drafts/marketing-do-now.md` tracker.
+
+### Blockers / Notes
+- Waiting on V1–V4 placements before site/YouTube adjust + deploy.
+- Next emails only when Humberto says: B then C. No payments talk.
+
+
+## 2026-10-19 — Pre-Monday marketing pack + safe SEO
+
+### Summary
+Prepared Monday meeting handout and invisible JSON-LD SEO so the call can focus on decisions. No look or clinical copy changes.
+
+### Actions
+- Wrote `marketing/sebastian-growth-plan-2026-10.md`, Monday checklist, LinkedIn drafts, PT field list, NAP paste pack.
+- Added VideoObject + BreadcrumbList JSON-LD (home, clinicians, faq, assessments, contact, Tiny page).
+- Updated ranking checklist (GSC generative AI report, Bing/Apple, form-wire note).
+- Added e2e coverage for video/breadcrumb schema; ranking video test passed.
+- Skipped consult-form wiring: static `output: export` needs a third-party form service + explicit provider choice.
+- Updated `drafts/marketing-do-now.md` with done vs Monday talk list.
+
+### Key Decisions
+- No AI clone; Tier A first; multi-channel discovery (Google + Bing/Apple + LinkedIn + PT).
+- Form stays preview until Formspree/Web3Forms (or similar) is approved.
+
+### Files Changed
+- `src/lib/schema.ts`, page JsonLd wires, `google-ranking-checklist.ts`, `tests/e2e/ranking.spec.ts`
+- `marketing/*-2026-10.md`, `drafts/marketing-do-now.md`
+
+### Blockers / Notes
+- Monday 10am: capacity, fees, form owner, LinkedIn URL, PT fix.
+- Deploy/live verify after push if Coolify/GitHub Pages auto-deploys.

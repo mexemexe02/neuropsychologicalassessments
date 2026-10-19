@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { ConsultationForm } from "@/components/consultation-form";
 import { Mail, Phone } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { RankingLinks } from "@/components/ranking-links";
+import { breadcrumbJsonLd } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,6 +18,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact/" },
+        ])}
+      />
       <PageHero
         eyebrow="Book / contact"
         title={<>Begin with a brief conversation.</>}
